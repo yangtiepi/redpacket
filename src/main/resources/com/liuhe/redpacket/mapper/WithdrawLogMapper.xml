@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.WithdrawLogMapper" >
+  <insert id="save" parameterType="WithdrawLog" useGeneratedKeys="true" keyProperty="id">
+    insert into t_withdraw_log (
+        	userName ,
+        	openid ,
+        	orderNo ,
+        	receiveTime ,
+        	amount 
+        ) VALUES (
+        	#{userName} ,
+        	#{openid} ,
+        	#{orderNo} ,
+        	#{receiveTime} ,
+        	#{amount} 
+        )
+  </insert>
+  
+  <update id="update" parameterType="WithdrawLog">
+  	update t_withdraw_log set 
+        userName = #{userName} ,
+        openid = #{openid} ,
+        orderNo = #{orderNo} ,
+        receiveTime = #{receiveTime} ,
+        amount = #{amount} 
+  	where id=#{id} 
+  </update>
+  
+  <delete id="delete" parameterType="long" >
+    delete from t_withdraw_log
+    where id = #{id}
+  </delete>
+  
+     <select id="get" resultType="WithdrawLog" parameterType="long">
+   	 select * from t_withdraw_log
+   	 where id = #{id}
+  </select>
+  
+  <select id="getAll" resultType="WithdrawLog" >
+   	 select * from t_withdraw_log 
+  </select>
+  
+</mapper>

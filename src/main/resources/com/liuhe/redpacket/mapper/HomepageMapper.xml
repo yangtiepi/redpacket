@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.HomepageMapper" >
+  <insert id="save" parameterType="Homepage" useGeneratedKeys="true" keyProperty="id">
+    insert into t_homepage (
+        	title ,
+        	image ,
+        	info ,
+        	adMaxNum ,
+        	createTime ,
+        	status ,
+        	isDel ,
+        	delTime ,
+        	qrcode 
+        ) VALUES (
+        	#{title} ,
+        	#{image} ,
+        	#{info} ,
+        	#{adMaxNum} ,
+        	#{createTime} ,
+        	#{status} ,
+        	#{isDel} ,
+        	#{delTime} ,
+        	#{qrcode} 
+        )
+  </insert>
+  
+  
+	<!-- 保存中间表 -->
+	<insert id="saveAdHomepageLink" parameterType="arraylist">
+		insert into t_ad_homepage(adId,homepageId)
+		                     values
+		                     <foreach collection="list" item="item" separator=",">
+		                     	(#{item.adId},#{item.homepageId})
+		                     </foreach>
+	</insert>
+	
+	<!-- 删除中间表 -->
+	<delete id="deleteAdHomepageLink" parameterType="long">
+		delete from t_ad_homepage where homepageId=#{homepageId}
+	</delete>
+  
+  <resultMap type="Homepage" id="HomepageMap">
+		<id property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="image" column="image"/>
+		<result property="info" column="info"/>
+		<result property="adMaxNum" column="adMaxNum"/>
+		<result property="status" column="status"/>
+		<result property="isDel" column="isDel"/>
+		<result property="delTime" column="delTime"/>
+		<result property="qrcode" column="qrcode"/>
+		<collection property="ads" javaType="arraylist" ofType="Homepage">			
+			<id property="id" column="aid"/>
+			<result property="title" column="atitle"/>
+		</collection>
+	</resultMap>
+	
+  <update id="update" parameterType="Homepage">
+  	update t_homepage set 
+		<if test="image != null">
+        	image = #{image} ,
+		</if>
+		<if test="isDel != null">
+	        isDel = #{isDel} ,
+	        delTime = #{delTime} ,
+		</if>
+		<if test="qrcode != null">
+       	 	qrcode = #{qrcode}, 
+		</if>
+		<if test="status != null">
+       	 	status = #{status}, 
+		</if>
+		title = #{title} ,
+        info = #{info} ,
+        adMaxNum = #{adMaxNum}
+  	where id=#{id} 
+  </update>
+  
+  <delete id="delete" parameterType="long" >
+    delete from t_homepage
+    where id = #{id}
+  </delete>
+  
+  
+  <select id="getAll" resultType="Homepage" >
+   	 select * from t_homepage 
+  </select>
+  
+   <select id="get" resultType="Homepage" parameterType="long">
+   	 select * from t_homepage
+   	 where id = #{id}
+  </select>
+   <select id="getByAd" resultType="Homepage" parameterType="long">
+   	 select * from t_homepage h
+   	 left join t_ad_homepage a on h.id = a.homepageId
+   	 where a.adId = #{adId}
+  </select>
+  
+  <select id="query" resultMap="HomepageMap"  parameterType="BaseQuery">
+		select h.*,a.id aid,a.title atitle
+		from t_homepage h
+		left join t_ad_homepage ah on h.id = ah.homepageId
+		left join t_ad a on a.id = ah.adId
+		where h.isDel = 0
+		group by h.id
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select count(1) from
+		(select count(1)
+		from t_homepage h
+		left join t_ad_homepage ah on h.id = ah.homepageId
+		left join t_ad a on a.id = ah.adId
+		where h.isDel = 0
+		group by h.id) c
+	</select>
+	
+	<!-- 获取总记录数 -->
+	<select id="getTotalClicked" resultType="int" parameterType="long">
+		select sum(a.clickedNum) from t_ad a 
+		left join t_ad_homepage ah on a.id = ah.adId
+		where ah.homepageId = #{homepageId}
+	</select>
+</mapper>

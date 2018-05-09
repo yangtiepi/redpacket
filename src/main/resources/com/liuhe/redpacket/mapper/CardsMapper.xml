@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.CardsMapper">
+	<insert id="save" parameterType="Cards" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into t_cards (
+		name ,
+		info ,
+		image ,
+		createTime ,
+		status ,
+		isDel ,
+		delTime ,
+		beginTime ,
+		endTime
+		) VALUES (
+		#{name} ,
+		#{info} ,
+		#{image} ,
+		#{createTime} ,
+		#{status} ,
+		#{isDel} ,
+		#{delTime} ,
+		#{beginTime} ,
+		#{endTime}
+		)
+	</insert>
+
+	<update id="update" parameterType="Cards">
+		update t_cards set
+		name = #{name} ,
+		info = #{info} ,
+		<if test="image != null">
+			image = #{image} ,
+		</if>
+		<if test="status != null">
+			status = #{status} ,
+		</if>
+		<if test="isDel != null">
+			isDel = #{isDel} ,
+		</if>
+		<if test="delTime != null">
+			delTime = #{delTime} ,
+		</if>
+		beginTime = #{beginTime} ,
+		endTime = #{endTime}
+		where id=#{id}
+	</update>
+
+	<delete id="delete" parameterType="long">
+		delete from t_cards
+		where id = #{id}
+	</delete>
+
+	<select id="get" resultType="Cards" parameterType="long">
+		select * from t_cards
+		where id = #{id}
+	</select>
+
+	<select id="getAll" resultType="Cards">
+		select * from t_cards where isDel = 0;
+	</select>
+	<select id="getOfRatio" resultType="com.alibaba.fastjson.JSONObject">
+		select c.*,r.ratio ratio
+			from t_cards c
+			left join  (
+				select cardsId,if((sum(ratio) > 100),0,(100 - sum(ratio))) ratio from t_card 
+				<where>
+				<if test="cardId != null and cardId != -1">
+				and id != #{cardId} 
+				</if>
+				and isDel = 0
+				</where>
+				group by cardsId 
+			) r on c.id = r.cardsId
+		where isDel = 0;
+	</select>
+
+	<sql id="whereSql">
+		<where>
+			<if test="status != null and status != -1">
+				and a.status = #{status}
+			</if>
+			<if test="isDel != null">
+				and a.isDel = #{isDel}
+			</if>
+			<if test="isDel == null">
+				and a.isDel = 0
+			</if>
+			<if test="openid != null and openid != ''">
+				and u.openid = #{openid}
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultType="Cards" parameterType="BaseQuery">
+		select a.*
+		from t_cards a
+		left join t_card c on c.cardsId = a.id
+		left
+		join t_user_card u on u.cardId = c.id
+		<include refid="whereSql" />
+		group by a.id
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select count(1) from
+		(select count(1)
+		from t_cards a
+		left join t_card c on c.cardsId = a.id
+		left join t_user_card u on u.cardId
+		= c.id
+		<include refid="whereSql" />
+		group by a.id) c
+	</select>
+</mapper>

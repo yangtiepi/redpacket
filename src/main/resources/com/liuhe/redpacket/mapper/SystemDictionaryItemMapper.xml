@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liuhe.redpacket.mapper.SystemDictionaryItemMapper">
+
+	<!-- 关联查询结果集 -->
+	<resultMap type="SystemDictionaryItem" id="systemDictionaryItemMap">
+		<id property="id" column="id"/>
+		<result  property="sn" column="sn"/>
+		<result  property="value" column="value"/>
+		<result  property="intro" column="intro"/>
+		<association property="parent" javaType="SystemDictionary">
+			<id property="id" column="sid"/>
+			<result  property="sn" column="ssn"/>
+			<result  property="key" column="skey"/>
+			<result  property="name" column="sname"/>
+			<result  property="status" column="sstatus"/>
+		</association>
+	</resultMap>
+	<!-- 查询单个 -->
+	<select id="getMap" parameterType="long" resultMap="systemDictionaryItemMap">
+		select i.*,s.id sid,s.sn ssn,s.key skey,s.name sname,s.status sstatus
+			from t_systemDictionaryItem i left join t_systemDictionary s
+			on(s.id=i.parent_id) 
+			where i.id=#{id}
+	</select>
+	<!-- 查询对应目录id的 -->
+	<select id="findByParent" resultMap="systemDictionaryItemMap">
+		select i.*,s.id sid,s.sn ssn,s.key skey,s.name sname,s.status sstatus
+			from t_systemDictionaryItem i left join t_systemDictionary s
+			on(s.id=i.parent_id) 
+		where i.parent_id=#{id}
+		order by i.sn
+	</select>
+	<!-- 查询对应目录key的 -->
+	<select id="findByParentKey" resultMap="systemDictionaryItemMap">
+		select i.*,s.id sid,s.sn ssn,s.key skey,s.name sname,s.status sstatus
+			from t_systemDictionaryItem i left join t_systemDictionary s
+			on(s.id=i.parent_id) 
+		where s.key=#{key}
+		order by i.sn
+	</select>
+	<!-- 查询所有 -->
+	<select id="getAll" resultMap="systemDictionaryItemMap">
+		select i.*,s.id sid,s.sn ssn,s.key skey,s.name sname,s.status sstatus
+			from t_systemDictionaryItem i left join t_systemDictionary s
+			on(s.id=i.parent_id) 
+		order by i.sn
+	</select>
+	<!-- 保存 -->
+	<insert id="save" parameterType="SystemDictionaryItem">
+		insert into t_systemDictionaryItem (value,sn,intro,parent_id)
+		values(#{value},#{sn},#{intro},#{parent.id})
+	</insert>
+	<!-- 更新 -->
+	<update id="update" parameterType="SystemDictionaryItem">
+		update t_systemDictionaryItem set
+		value=#{value},sn=#{sn},intro=#{intro},parent_id=#{parent.id}
+		where id=#{id}
+	</update>
+	<!-- 删除 -->
+	<delete id="delete" parameterType="long">
+		delete from t_systemDictionaryItem 
+		where id=#{id}
+	</delete>
+</mapper>

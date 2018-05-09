@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.AdClickLogMapper">
+	<insert id="save" parameterType="AdClickLog" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into t_ad_click_log
+		(userId,clickTime,adId,adTitle,userName,openid,wechat,homepageId)
+		values
+		(#{userId},#{clickTime},#{adId},#{adTitle},#{userName},#{openid},#{wechat},#{homepageId})
+	</insert>
+
+
+	<delete id="delete" parameterType="long">
+		delete from t_ad_click_log
+		where id = #{id}
+	</delete>
+
+
+	<select id="get" resultType="AdClickLog" parameterType="long">
+		select * from t_ad_click_log
+		where id = #{id}
+	</select>
+	<select id="getByAdOpenid" resultType="AdClickLog" parameterType="long">
+		select * from t_ad_click_log
+		where adId = #{adId} and openid = #{openid}
+	</select>
+	<select id="getByOpenId" resultType="AdClickLog" parameterType="String">
+		select * from t_ad_click_log
+		where openid = #{openid}
+	</select>
+	<select id="getAll" resultType="AdClickLog">
+		select * from t_ad_click_log
+	</select>
+
+	<sql id="whereSql">
+		<where>
+			<if test="adTitle != null and adTitle != ''">
+				and a.title like concat('%',#{adTitle},'%')
+			</if>
+			<if test="adId != null and adId != -1">
+				and c.adId = #{adId}
+			</if>
+			<if test="homepageId != null and homepageId != -1">
+				and c.homepageId = #{homepageId}
+			</if>
+			<if test="openid != null and openid != ''">
+				and c.openid = #{openid}
+			</if>
+			<if test="beginTime != null and beginTime != ''">
+				and c.clickTime>=#{beginTime}
+			</if>
+			<if test="endTime != null and endTime != ''">
+				and c.clickTime &lt; #{endTime}
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultType="AdClickLog" parameterType="BaseQuery">
+		select c.*
+		from t_ad_click_log c
+		<include refid="whereSql" />
+		order by c.clickTime desc
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select count(1)
+		from t_ad_click_log c
+		<include refid="whereSql" />
+	</select>
+
+	<select id="queryGroupAd" resultType="com.alibaba.fastjson.JSONObject"
+		parameterType="BaseQuery">
+		select count(1) clickNum,a.title adTitle,a.id adId
+		from t_ad_click_log c
+		left join t_ad a on c.adId = a.id
+		<include refid="whereSql" />
+		group by c.adId
+		order by c.clickTime desc
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryGroupAdTotal" resultType="long" parameterType="BaseQuery">
+		select count(1) from(
+		select count(1)
+		from t_ad_click_log c
+		left join t_ad a on c.adId = a.id
+		<include refid="whereSql" />
+		group by c.adId
+		)ca
+	</select>
+</mapper>

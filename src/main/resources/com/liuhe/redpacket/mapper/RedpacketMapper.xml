@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.RedpacketMapper">
+	<insert id="save" parameterType="Redpacket" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into t_redpacket (
+		name ,
+		info ,
+		cardsId ,
+		min ,
+		max ,
+		status ,
+		isDel ,
+		delTime ,
+		qrcode
+		) VALUES (
+		#{name} ,
+		#{info} ,
+		#{cardsId} ,
+		#{min} ,
+		#{max} ,
+		#{status} ,
+		#{isDel} ,
+		#{delTime} ,
+		#{qrcode}
+		)
+	</insert>
+
+	<update id="update" parameterType="Redpacket">
+		update t_redpacket set
+		name = #{name} ,
+		info = #{info} ,
+		cardsId = #{cardsId} ,
+		<if test="status != null">
+			status = #{status} ,
+		</if>
+		<if test="isDel != null">
+			isDel = #{isDel} ,
+		</if>
+		<if test="delTime != null">
+			delTime = #{delTime} ,
+		</if>
+		<if test="qrcode != null">
+			qrcode = #{qrcode} ,
+		</if>
+		min = #{min} ,
+		max = #{max}
+		where id=#{id}
+	</update>
+
+	<delete id="delete" parameterType="long">
+		delete from t_redpacket
+		where id = #{id}
+	</delete>
+
+
+	<select id="getAll" resultType="Redpacket">
+		select * from t_redpacket where isDel = 0;
+	</select>
+
+	<select id="get" resultType="Redpacket" parameterType="long">
+		select * from t_redpacket
+		where id = #{id}
+	</select>
+
+	<select id="query" resultType="Redpacket" parameterType="BaseQuery">
+		select r.*
+		from t_redpacket r
+		where r.isDel = 0
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select
+		count(1)
+		from t_redpacket r
+		where r.isDel = 0
+	</select>
+</mapper>

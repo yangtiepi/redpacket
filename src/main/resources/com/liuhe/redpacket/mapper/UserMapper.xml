@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.liuhe.redpacket.mapper.UserMapper"> 
+	
+	
+	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+	 	insert into t_user(username,password,amount,headImage,wechat,openid,remark)
+		values(#{username},#{password},#{amount},#{headImage},#{wechat},#{openid},#{remark}) 
+	</insert>
+	
+	<select id="get" resultType="User" parameterType="long">
+		 select u.*
+		 from t_user u
+		 where u.id=#{id}
+	</select>
+	
+	<update id="update" parameterType="User">
+		update t_user set 
+			password=#{password},
+			amount=#{amount},
+			headImage=#{headImage},
+			status=#{status},
+			remark=#{remark}
+ 			where id=#{id} 
+	</update>
+	<update id="updateWechat" parameterType="User">
+		update t_user set 
+			wechat=#{wechat},
+			openid=#{openid}
+ 			where id=#{id} 
+	</update>
+	
+	<delete id="delete" parameterType="long">
+		delete from t_user 
+		where id=#{id}
+	</delete>
+	
+	<select id="getAll" resultType="User">
+		 select * from t_user 
+	</select>
+	
+	<select id="checkLogin" resultType="User">
+		 select u.*
+		 from t_user u
+		 where u.username=#{username}
+	</select>
+	<select id="getByWechat" resultType="User">
+		 select u.*
+		 from t_user u
+		 where u.openid=#{openid}
+	</select>
+	
+	
+		<!-- 公共的高级查询条件 -->
+	<sql id="whereSql">
+		<where>
+			<if test="username!=null and username!=''">
+				u.username like concat('%',#{username},'%')
+			</if>
+			<if test="status!=null and status!=-99">
+				and u.status=#{status}
+			</if>
+		</where>
+	</sql>
+	
+	<select id="query" resultType="User" parameterType="UserQuery">
+		 select u.*
+		 from t_user u
+		<include refid="whereSql"/>
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="UserQuery">
+		select count(u.id)
+		from t_user u
+		<include refid="whereSql"/>
+	</select>
+</mapper> 

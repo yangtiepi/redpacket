@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.UserCardMapper" >
+  <insert id="save" parameterType="UserCard" useGeneratedKeys="true" keyProperty="id">
+    insert into t_user_card (
+        	cardId ,
+        	openid ,
+        	userId ,
+        	wechat ,
+        	redPacketLogId ,
+        	receiveTime 
+        ) VALUES (
+        	#{cardId} ,
+        	#{openid} ,
+        	#{userId} ,
+        	#{wechat} ,
+        	#{redPacketLogId} ,
+        	#{receiveTime} 
+        )
+  </insert>
+  
+  <update id="update" parameterType="UserCard">
+  	update t_user_card set 
+		cardId = #{cardId} ,
+        openid = #{openid} ,
+        userId = #{userId} ,
+        wechat = #{wechat} ,
+        redPacketLogId = #{redPacketLogId} ,
+        receiveTime = #{receiveTime}
+  	where id=#{id} 
+  </update>
+  
+  <delete id="delete" parameterType="long" >
+    delete from t_user_card
+    where id = #{id}
+  </delete>
+  
+  <select id="get" resultType="UserCard" parameterType="long">
+   	 select * from t_user_card
+   	 where id = #{id}
+  </select>
+  <select id="getByRedPacketLog" resultType="UserCard" parameterType="long">
+   	 select * from t_user_card
+   	 where redPacketLogId = #{redPacketLogId}
+  </select>
+  
+  <select id="getAll" resultType="UserCard" >
+   	 select * from t_user_card 
+  </select>
+  
+  <select id="query" resultType="UserCard"  parameterType="BaseQuery">
+		select a.*
+		from t_user_card a
+		where a.receiveTime is not null
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select count(a.id)
+		from t_user_card a 
+	</select>
+	<!-- 用户时间段内领取数量 -->
+	<select id="getTotal" resultType="int" >
+	select count(1)
+	from t_user_card a
+	where openid = #{openid}
+	and a.receiveTime is not null
+	and a.receiveTime>=#{start}
+	and a.receiveTime &lt; #{end}
+	</select>
+</mapper>

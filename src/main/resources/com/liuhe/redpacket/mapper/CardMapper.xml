@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.CardMapper">
+	<insert id="save" parameterType="Card" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into t_card (
+		name ,
+		image ,
+		cardsId ,
+		isDel ,
+		delTime ,
+		ratio
+		) VALUES (
+		#{name} ,
+		#{image} ,
+		#{cardsId} ,
+		#{isDel} ,
+		#{delTime} ,
+		#{ratio}
+		)
+	</insert>
+
+	<resultMap type="Card" id="CardMap">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="image" column="image" />
+		<result property="ratio" column="ratio" />
+		<result property="isDel" column="isDel" />
+		<result property="delTime" column="delTime" />
+		<association property="cards" column="cardsId"
+			select="com.liuhe.redpacket.mapper.CardsMapper.get" />
+	</resultMap>
+
+	<update id="update" parameterType="Card">
+		update t_card set
+		name = #{name} ,
+		<if test="image != null">
+			image = #{image} ,
+		</if>
+		<if test="isDel != null">
+			isDel = #{isDel} ,
+		</if>
+		<if test="delTime != null">
+			delTime = #{delTime} ,
+		</if>
+		cardsId = #{cardsId} ,
+		ratio = #{ratio}
+		where id=#{id}
+	</update>
+
+	<delete id="delete" parameterType="long">
+		delete from t_card
+		where id = #{id}
+	</delete>
+	<select id="get" resultType="Card" parameterType="long">
+		select * from t_card
+		where id = #{id}
+	</select>
+
+	<select id="getAll" resultType="Card">
+		select * from t_card
+	</select>
+
+	<sql id="whereSql">
+		<where>
+			<if test="cardsId != null and cardsId != -1">
+				and c.cardsId = #{cardsId}
+			</if>
+			<if test="name != null and name != ''">
+				and c.name = #{name}
+			</if>
+			<if test="cardsName != null and cardsName != ''">
+				and cs.name = #{cardsName}
+			</if>
+			<if test="isDel != null">
+				and c.isDel = #{isDel}
+			</if>
+			<if test="isDel == null">
+				and c.isDel = 0
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultMap="CardMap" parameterType="BaseQuery">
+		select c.*
+		from t_card c
+		left join t_cards cs on c.cardsId = cs.id
+		<include refid="whereSql" />
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select
+		count(1)
+		from t_card c
+		left join t_cards cs on c.cardsId = cs.id
+		<include refid="whereSql" />
+	</select>
+	<select id="getUserCard" resultType="com.alibaba.fastjson.JSONObject">
+		select c.*,count(u.id) cardNum from t_card c
+		left join t_user_card u on c.id = u.cardId
+		where c.cardsId = #{cardsId} and
+		u.openid = #{openid} and c.isDel = 0
+		group by c.id
+		order by cardNum
+	</select>
+</mapper>

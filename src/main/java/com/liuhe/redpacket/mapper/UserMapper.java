@@ -32,7 +32,7 @@ public interface UserMapper {
 	/**
 	 * 根据微信信息查询
 	 * 
-	 * @param storeId
+	 * @param openid
 	 * @return
 	 */
 	User getByWechat(@Param("openid") String openid);
@@ -42,9 +42,7 @@ public interface UserMapper {
 	/**
 	 * 登录检查用户是否存在
 	 * 
-	 * @param name
-	 * @param password
-	 *            @ return 包含店铺对象
+	 * @param username
 	 */
 	User checkLogin(String username);
 

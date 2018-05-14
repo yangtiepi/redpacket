@@ -72,7 +72,7 @@ $(function(){
 			<tr>
 				<!-- field：指定需要显示列对应JSON数据属性 -->
 				<th field="wechat" width="10" align="center">用户名称</th>
-				<th field="cards" width="10" align="center" data-options="formatter:formatName">主卡</th>
+				<%--<th field="cards" width="10" align="center" data-options="formatter:formatName">主卡</th>--%>
 				<th field="code" width="10" align="center">验证码</th>
 				<th field="completeTime" width="10" align="center" data-options="formatter:formatDateTime">时间</th>
 				<th field="status" width="10" align="center" data-options="formatter:formatCardsCompleteStatus">状态</th>

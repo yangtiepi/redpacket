@@ -162,9 +162,9 @@ function enableCards(id){
 		<thead>
 			<tr>
 				<!-- field：指定需要显示列对应JSON数据属性 -->
-				<th field="name" width="10" align="center">名称</th>
-				<th field="info" width="40" align="center">说明</th>
-				<th field="status" width="10" align="center" data-options="formatter:formatCardsStatus">状态</th>
+				<th field="name" width="10" align="center">完成条件</th>
+				<th field="info" width="40" align="center">奖品名称</th>
+				<%--<th field="status" width="10" align="center" data-options="formatter:formatCardsStatus">状态</th>--%>
 			</tr>
 		</thead>
 	</table>
@@ -172,10 +172,10 @@ function enableCards(id){
 	<div id="cards_toolbar">
 	 	<div>
 		 	<form method="post" id="cards_searchForm">
-				<a class="easyui-linkbutton" iconCls="icon-add" data-cmd="cards_create">添加</a>
+				<%--<a class="easyui-linkbutton" iconCls="icon-add" data-cmd="cards_create">添加</a>--%>
 				<a class="easyui-linkbutton" iconCls="icon-edit" data-cmd="cards_edit">修改</a>
-				<a class="easyui-linkbutton" iconCls="icon-remove" data-cmd="cards_del">删除</a>
-			<a class="easyui-linkbutton" iconCls="icon-reload"  data-cmd="cards_refresh">刷新</a>
+				<%--<a class="easyui-linkbutton" iconCls="icon-remove" data-cmd="cards_del">删除</a>--%>
+				<%--<a class="easyui-linkbutton" iconCls="icon-reload"  data-cmd="cards_refresh">刷新</a>--%>
 		 	</form>
 		 </div> 
 	</div>
@@ -186,12 +186,9 @@ function enableCards(id){
 	data-options="title:'编辑集卡',modal:true,iconCls:'icon-edit',buttons:'#cards_bs',closed:true">
 			<form id="cardsForm" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="id"></input>
+			<input type="hidden"  name="name" >
 			<div style="margin-top: 20px;margin-left: 35px" >
-	 			集卡名字：
-	 			<input  name="name"  class="easyui-textbox" data-options="required:true" style="width: 250px">
-			</div>		
-			<div style="margin-top: 20px;margin-left: 35px" >
-	 			集卡说明：
+	 			奖品名称：
 	 			<input  name="info"  class="easyui-textbox" data-options="required:true,multiline:true" style="width: 250px;height:150px">
 			</div>		
 			</form>

@@ -166,7 +166,7 @@ $(function(){
 			<tr>
 				<!-- field：指定需要显示列对应JSON数据属性 -->
 				<th field="name" width="10" align="center">名称</th>
-				<th field="cards" width="10" align="center" data-options="formatter:formatName">主卡</th>
+				<%--<th field="cards" width="10" align="center" data-options="formatter:formatName">主卡</th>--%>
 				<th field="image" width="10" align="center" data-options="formatter:formatImg">图片</th>
 				<th field="ratio" width="10" align="center">出现概率（%）</th>
 			</tr>
@@ -180,7 +180,7 @@ $(function(){
 				<a class="easyui-linkbutton" iconCls="icon-edit" data-cmd="card_edit">编辑</a>
 				<a class="easyui-linkbutton" iconCls="icon-remove" data-cmd="card_del">删除</a>
 				卡片名称:<input class="easyui-textbox" name="name" style="width: 150px">
-				主卡名称:<input class="easyui-textbox" name="cardsName" style="width: 150px">
+				<%--主卡名称:<input class="easyui-textbox" name="cardsName" style="width: 150px">--%>
 				<a class="easyui-linkbutton" iconCls="icon-search"
 					data-cmd="card_search">搜索</a>
 		 	</form>
@@ -201,10 +201,10 @@ $(function(){
 	 			出现概率：
 	 			<input  name="ratio" id="ratio"  class="easyui-numberbox" data-options="required:true,max:100,min:0.01,precision:2" style="width: 150px">
 			</div>	
-			<div style="margin-top: 15px;margin-left: 35px" >
-				选择主卡：
-				<select id="cardsCombobox" name="cardsId" style="width: 150px"> </select>
-			</div>	
+			<%--<div style="margin-top: 15px;margin-left: 35px" >--%>
+				<%--选择主卡：--%>
+				<%--<select id="cardsCombobox" name="cardsId" style="width: 150px"> </select>--%>
+			<%--</div>	--%>
 			<div style="margin-top: 10px;margin-left: 35px" >
 	 			卡片图片：
 	 			<input class="easyui-filebox" name="img" style="width: 150px" >

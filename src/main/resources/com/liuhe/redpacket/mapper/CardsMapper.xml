@@ -12,7 +12,8 @@
 		isDel ,
 		delTime ,
 		beginTime ,
-		endTime
+		endTime,
+		completeNum
 		) VALUES (
 		#{name} ,
 		#{info} ,
@@ -22,7 +23,8 @@
 		#{isDel} ,
 		#{delTime} ,
 		#{beginTime} ,
-		#{endTime}
+		#{endTime},
+		#{completeNum}
 		)
 	</insert>
 
@@ -41,6 +43,9 @@
 		</if>
 		<if test="delTime != null">
 			delTime = #{delTime} ,
+		</if>
+		<if test="completeNum != null">
+			completeNum = #{completeNum} ,
 		</if>
 		beginTime = #{beginTime} ,
 		endTime = #{endTime}

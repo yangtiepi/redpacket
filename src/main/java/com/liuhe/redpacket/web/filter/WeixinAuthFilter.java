@@ -13,6 +13,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -22,6 +25,8 @@ import com.liuhe.redpacket.utils.HttpClientUtil;
 import com.liuhe.redpacket.utils.WeixinContants;
 
 public class WeixinAuthFilter implements Filter {
+	private final Logger log = LogManager.getLogger(this.getClass());
+
 	private IUserService userService;
 
 	@Override
@@ -51,7 +56,7 @@ public class WeixinAuthFilter implements Filter {
 				String state = request.getParameter("state");
 				// 如果code不为空，scope为base,scope为userInfo代表用户已经同意
 				if (code != null && state != null && state.equals("1")) {
-					System.out.println("1111111111111");
+					log.info("1111111111111");
 					// 通过Code获取openid来进行授权
 					String url = WeixinContants.GET_OPENID_URL
 							.replace("APPID", WeixinContants.APPID)
@@ -60,17 +65,19 @@ public class WeixinAuthFilter implements Filter {
 					String json = HttpClientUtil.httpGet(url);
 					JSONObject jsonObject = JSONObject.parseObject(json);
 					openid = jsonObject.getString("openid");
-					String refresh_token = jsonObject
-							.getString("refresh_token");
-					System.out.println("=========微信授权参数==========" + json);
-					// 刷新token
-					url = WeixinContants.REFRESH_TOKEN_URL.replace("APPID",
-							WeixinContants.APPID).replace("REFRESH_TOKEN",
-							refresh_token);
-					json = HttpClientUtil.httpGet(url);
-					System.out.println("=========刷新token==========" + json);
-					jsonObject = JSONObject.parseObject(json);
-					String access_token = jsonObject.getString("access_token");
+					String access_token = jsonObject
+							.getString("access_token");
+					log.info("=========微信授权参数==========" + json);
+					if (StringUtils.isBlank(access_token)) {
+						String path = hRequest.getRequestURL().toString();
+						String query = hRequest.getQueryString();
+						if (query != null) {
+							path = path + "?" + query;
+						}
+						log.info("=========授权失败重定向==========" + path);
+						hResponse.sendRedirect(path);
+						return;
+					}
 					// 拉取用户信息
 					url = WeixinContants.GET_USERINFO_URL.replace("OPENID",
 							openid).replace("ACCESS_TOKEN", access_token);
@@ -99,14 +106,14 @@ public class WeixinAuthFilter implements Filter {
 					hRequest.getSession()
 							.setAttribute("headimgurl", headimgurl);
 				} else {
-					System.out.println("2222222222222222");
+					log.info("2222222222222222");
 					// 发送用户同意的请求
 					String path = hRequest.getRequestURL().toString();
 					String query = hRequest.getQueryString();
 					if (query != null) {
 						path = path + "?" + query;
 					}
-					System.out.println(path);
+					log.info(path);
 					String uri = WeixinContants.AUTHORIZE_URL
 							.replace("APPID", WeixinContants.APPID)
 							.replace("REDIRECT_URI",

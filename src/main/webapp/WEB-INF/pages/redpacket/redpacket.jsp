@@ -175,7 +175,7 @@ function enableRedpacket(id){
 				<!-- field：指定需要显示列对应JSON数据属性 -->
 				<th field="name" width="20" align="center">名称</th>
 				<th field="info" width="50" align="center">说明</th>
-				<th field="id" width="50" align="center" data-options="formatter:formatRedpacketUrl">红包网址</th>
+				<th field="ratio" width="20" align="center" >出现概率（%）</th>
 				<th field="qrcode" width="10" align="center" data-options="formatter:formatImg">二维码</th>
 				<th field="status" width="10" align="center" data-options="formatter:formatRedpacketStatus">状态</th>
 			</tr>
@@ -210,11 +210,11 @@ function enableRedpacket(id){
 				<div style="margin-top: 20px;margin-left: 35px" >
 	 				最大金额：
 	 				<input  name="max"  class="easyui-numberbox" data-options="required:true,min:0.01,precision:2" style="width: 250px;">
-				</div>	
-				<div style="margin-top: 15px;margin-left: 35px" >
-					选择卡集：
-					<select id="cardsCombobox" name="cardsId" style="width: 250px"> </select>
-				</div>	
+				</div>
+				<div style="margin-top: 20px;margin-left: 35px" >
+					出现概率：
+					<input  name="ratio" id="ratio"  class="easyui-numberbox" data-options="required:true,max:100,min:0.01,precision:2" style="width: 250px">
+				</div>
 				<div style="margin-top: 20px;margin-left: 35px" >
 	 				红包说明：
 	 				<input  name="info"  class="easyui-textbox" data-options="required:true,multiline:true" style="width: 250px;height:50px">

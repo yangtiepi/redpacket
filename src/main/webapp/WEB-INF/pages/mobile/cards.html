@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/base.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/main.css">
+  <title>集字兑换</title>
+</head>
+<body>
+<div class="header">
+  <a href="#">
+    <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
+  </a>
+  <h1 class="title">集字兑换</h1>
+</div>
+<div class="body">
+  <div class="top">
+    <div class="row">
+      <div class="col start">
+        <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_change.png">
+      </div>
+      <div class="col end">
+        <img class="img logo" src="${pageContext.request.contextPath}/mobile/img/logo.png">
+      </div>
+    </div>
+  </div>
+  <div class="tips-box">
+    <div class="tips-wrap">
+      <h2>集字兑换说明</h2>
+      <p>说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明</p>
+    </div>
+  </div>
+  <div class="word-box">
+    <ul class="word-group">
+      <li class="word-item">
+        <div>
+          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+        </div>
+        <span class="word">字</span>
+        <span class="number">3</span>
+      </li>
+      <li class="word-item">
+        <div>
+          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+        </div>
+        <span class="word">字</span>
+        <span class="number">3</span>
+      </li>
+      <li class="word-item">
+        <div>
+          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+        </div>
+        <span class="word">字</span>
+        <span class="number">3</span>
+      </li>
+      <li class="word-item">
+        <div>
+          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+        </div>
+        <span class="word">字</span>
+        <span class="number">3</span>
+      </li>
+      <li class="word-item">
+        <div>
+          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+        </div>
+        <span class="word">字</span>
+        <span class="number">3</span>
+      </li>
+      <li class="word-item">
+        <div>
+          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+        </div>
+        <span class="word">字</span>
+        <span class="number">3</span>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-box-yellow">
+    <ul class="btn-group">
+      <li class="btn-yellow">
+        <span>三张兑换</span>
+        <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png">
+      </li>
+      <li class="btn-yellow">
+        <span>五张兑换</span>
+        <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png">
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="footer">
+  <ul>
+    <li class="active">
+      <a href="#" class="first">
+        <span>抽奖中心</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="second">
+        <span>集字兑换</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="three">
+        <span>个人中心</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="shade"></div>
+<div class="popup">
+  <div class="pop-header">
+    <h2>兑换成功</h2>
+  </div>
+  <div class="pop-body">
+    <p>验证码：<span>XOISODAS</span></p>
+  </div>
+  <div class="pop-footer">
+    <p>请现场凭验证码领取奖品</p>
+  </div>
+</div>
+<script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+  $(function () {
+    // footer 切换
+    $('.footer li').on('click',function () {
+      $(this).addClass('active').siblings('li').removeClass('active')
+    })
+    // 关闭弹窗
+    $('.shade').on('click',function () {
+      //关闭弹窗
+      $('.shade').fadeOut()
+      $('.popup').fadeOut()
+    })
+    // 打开弹窗
+    $('.btn-yellow').on('click',function () {
+      $('.shade').fadeIn()
+      $('.popup').fadeIn()
+    })
+  })
+</script>
+</body>
+</html>

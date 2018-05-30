@@ -1,76 +1,109 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!doctype html>
+<html lang="zh-cn">
 <head>
-<title>${ad.title}</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no">
-
-<meta name="description"
-	content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/mobile/lib/weui.min.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/mobile/css/jquery-weui.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/mobile/css/base.css">
-<script
-	src="${pageContext.request.contextPath}/mobile/lib/jquery-2.1.4.js"></script>
-<script src="${pageContext.request.contextPath}/mobile/lib/fastclick.js"></script>
-<script
-	src="${pageContext.request.contextPath}/mobile/js/jquery-weui.js"></script>
-<script type="text/javascript">
-	$(function() {
-		var msg = $("#msg").val();
-		if(msg){
-			alert(msg);
-			return;
-		}
-		
-	
-
-	})
-		function withdraw(){
-			$.ajax({
-			    url:'withdraw',
-			    type:'get',
-			    success:function(data){
-			        if(data.success){
-			        	alert("提现成功！");
-			        }else{
-			        	alert(data.msg);
-			        }
-			    },
-			    error:function(xhr,textStatus){
-			       alert("提现失败！");
-			    }
-			})
-		}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/main.css">
+    <title>个人中心</title>
 </head>
-<body ontouchstart>
-	<input type="hidden" id="msg" value="${msg}">
-	<div >
-		<img src="images/bc.png" style="width: 100%" onclick="withdraw()">
-		<h1 class="demos-title font">账户余额</h1>
-
-		<div class="demos-content-padded mtj118">
-			<div class="box mt10">
-				<div class="center mt40">
-					<img src="images/money.png" style="width: 120px">
-				</div>
-				<div class="money center mb10">￥${user.amount}</div>
-				<a href="" onclick="withdraw()" class="btnscan">转入微信余额</a>
-			</div>
-
-		</div>
-	</div>
-
+<body>
+<div class="header">
+    <a href="#">
+        <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
+    </a>
+    <h1 class="title">个人中心</h1>
+</div>
+<div class="body">
+    <div class="top">
+        <div class="row">
+            <div class="col start">
+                <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_z.png">
+            </div>
+            <div class="col end">
+                <img class="img logo" src="${pageContext.request.contextPath}/mobile/img/logo.png">
+            </div>
+        </div>
+    </div>
+    <div class="avatar-box">
+        <div class="avatar-img">
+            <img src="${pageContext.request.contextPath}/mobile/img/bg_center.png">
+        </div>
+        <div class="nickname-box">
+            <p class="nickname">Allen</p>
+        </div>
+    </div>
+    <div class="describe">
+        <p>累计扫码<span> 10 </span>次</p>
+        <p>累计红包<span> 2.32 </span>元</p>
+    </div>
+    <div class="card-group">
+        <ul>
+            <li class="card1">
+                <a href="#">
+                    <img src="${pageContext.request.contextPath}/mobile/img/icon_center_cj.png">
+                    <p>抽奖记录</p>
+                </a>
+            </li>
+            <li class="card2">
+                <a href="#">
+                    <img src="${pageContext.request.contextPath}/mobile/img/icon_center_card.png">
+                    <p>我的卡片</p>
+                </a>
+            </li>
+            <li class="card3">
+                <a href="#">
+                    <img src="${pageContext.request.contextPath}/mobile/img/icon_center_money.png">
+                    <p>余额</p></a>
+            </li>
+        </ul>
+    </div>
+    <div class="notice">
+        <div class="notice-item">
+            <h2>公告</h2>
+            <p>固定文字固定文字固定文字固定文字固定文字固定文字固定文字</p>
+        </div>
+        <div class="notice-item" style="margin-top: 15px;">
+            <h2>友情提示</h2>
+            <p>固定文字固定文字固定文字固定文字固定文字固定文字固定文字</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <ul>
+        <li class="active">
+            <a href="#" class="first">
+                <span>抽奖中心</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="second">
+                <span>集字兑换</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="three">
+                <span>个人中心</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jq_scroll.js"></script>
+<script>
+    $(function () {
+        // footer 切换
+        $('.footer li').on('click', function () {
+            $(this).addClass('active').siblings('li').removeClass('active')
+        })
+        $("#scrollDiv").Scroll({line: 1, speed: 500, timer: 2000});
+    })
+</script>
 </body>
 </html>

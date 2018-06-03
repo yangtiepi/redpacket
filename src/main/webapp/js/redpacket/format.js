@@ -255,8 +255,8 @@ function formatAdClickLogDetail(v,r,i){
  * @param i
  * @returns {String}
  */
-function formatRedpacketLogDetail(v,r,i){
-	return '<a href="#" onclick=showRedpacketLog('+v+')>查看详情</a>';
+function formatDrawLogDetail(v,r,i){
+	return '<a href="#" onclick=showDrawLog('+v+')>查看详情</a>';
 }
 /**
  * 查看红包领取详情

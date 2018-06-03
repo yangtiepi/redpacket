@@ -43,4 +43,6 @@ public interface IUserCardService{
 	 * 高级查询
 	 */
 	PageResult<UserCard> query(UserCardQuery equ);
+
+    List<UserCard> queryList(UserCardQuery userCardQuery);
 }

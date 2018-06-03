@@ -60,6 +60,6 @@ public interface UserCardMapper{
 	 * @return
 	 */
 	int getTotal(@Param("openid")String openid, @Param("start")Date start, @Param("end")Date end);
-	UserCard getByRedPacketLog(Long id);
+	UserCard getByDrawLog(Long id);
 
 }

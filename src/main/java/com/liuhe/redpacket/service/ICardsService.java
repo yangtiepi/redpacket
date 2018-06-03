@@ -72,12 +72,5 @@ public interface ICardsService{
 	 * @return
 	 */
 	Map<String, Object> cardsInfo(Long cardsId);
-	/**
-	 * 卡片领取
-	 * @param cardsId
-	 * @param openid
-	 * @param nickname 
-	 * @return
-	 */
-	Map<String, Object> cardsComplete(Long cardsId, String openid, String nickname);
+
 }

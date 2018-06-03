@@ -70,4 +70,9 @@ public class UserCardServiceImpl implements IUserCardService{
 		return new PageResult<UserCard>(rows, qu.getPageSize(),
 				qu.getCurrentPage(), total.intValue());
 	}
+
+	@Override
+	public List<UserCard> queryList(UserCardQuery userCardQuery) {
+		return UserCardMapper.query(userCardQuery);
+	}
 }

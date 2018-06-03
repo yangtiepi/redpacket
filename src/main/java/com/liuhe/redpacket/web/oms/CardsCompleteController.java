@@ -79,7 +79,7 @@ public class CardsCompleteController{
 	/**
 	 * 添加
 	 * 
-	 * @param id
+	 * @param CardsComplete
 	 * @return
 	 */
 	@MethodAnnotation(name = "添加", type = ResourceType.集卡兑换)

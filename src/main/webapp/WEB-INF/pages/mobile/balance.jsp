@@ -1,3 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!doctype html>
 <html lang="zh-cn">
 <head>
@@ -11,7 +15,7 @@
 </head>
 <body>
 <div class="header">
-  <a href="#">
+  <a href="#" onclick="history.back();">
     <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
   </a>
   <h1 class="title">余额</h1>
@@ -21,7 +25,7 @@
     <div class="money-wrap">
       <span class="inner">
         <h3>余额</h3>
-        <p>888.88</p>
+        <p>${user.amount}</p>
       </span>
     </div>
   </div>
@@ -36,18 +40,18 @@
 </div>
 <div class="footer">
   <ul>
-    <li class="active">
-      <a href="#" class="first">
+    <li>
+      <a href="${pageContext.request.contextPath}/mobile/drawCenter" class="first">
         <span>抽奖中心</span>
       </a>
     </li>
     <li>
-      <a href="#" class="second">
+      <a href="${pageContext.request.contextPath}/mobile/userCards" class="second">
         <span>集字兑换</span>
       </a>
     </li>
-    <li>
-      <a href="#" class="three">
+    <li class="active">
+      <a href="${pageContext.request.contextPath}/mobile/userInfo" class="three">
         <span>个人中心</span>
       </a>
     </li>

@@ -51,9 +51,8 @@ public interface ICardService{
 	PageResult<Card> query(CardQuery equ);
 	/**
 	 * 用户卡片
-	 * @param cardsId
-	 * @param openid 
+	 * @param openid
 	 * @return
 	 */
-	Map<String, Object> userCard(Long cardsId, String openid);
+	Map<String, Object> userCard(String openid);
 }

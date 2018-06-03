@@ -94,39 +94,11 @@ public class CardServiceImpl implements ICardService{
 
 
 	@Override
-	public Map<String, Object> userCard(Long cardsId,String openid) {
-		List<JSONObject> cards= cardMapper.getUserCard(cardsId, openid);
+	public Map<String, Object> userCard(String openid) {
+		List<JSONObject> cards= cardMapper.getUserCard(openid);
 		Map<String, Object> model = new HashMap<String, Object>();
 		
-		CardQuery qu = new CardQuery();
-		qu.setCardsId(cardsId);
-		List<Card> list = cardMapper.query(qu);
-		
-		boolean isComplete = true;
-		//加入未获取的卡片
-		outer:
-		for (Card card : list) {
-			for (JSONObject json : cards) {
-				if (card.getId().equals(json.getLong("id"))) {
-					break outer;
-				}
-				
-			}
-			isComplete = false;
-			JSONObject json = (JSONObject) JSON.toJSON(card);
-			json.put("cardNum", 0);
-			cards.add(json);
-		}
 		model.put("cards", cards);
-		model.put("cardsId", cardsId);
-		
-		
-		if (isComplete) {
-			JSONObject jsonObject = cards.get(0);
-			model.put("completeNum", jsonObject.get("cardNum"));
-		}else {
-			model.put("completeNum", 0);
-		}
 		return model;
 	}
 }

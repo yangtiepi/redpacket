@@ -16,7 +16,7 @@ import org.apache.commons.lang3.StringUtils;
  * @since 1.0
  */
 
-public class RedpacketLogQuery extends BaseQuery implements Serializable {
+public class DrawLogQuery extends BaseQuery implements Serializable {
 	private static final long serialVersionUID = 3148176768559230877L;
 
 	private java.lang.Long adId;
@@ -77,7 +77,7 @@ public class RedpacketLogQuery extends BaseQuery implements Serializable {
 
 	@Override
 	public String toString() {
-		return "RedpacketLogQuery [adId=" + adId + ", redpacketId="
+		return "DrawLogQuery [adId=" + adId + ", redpacketId="
 				+ redpacketId + ", openid=" + openid + ", adTitle=" + adTitle
 				+ ", beginTime=" + beginTime + ", endTime=" + endTime + "]";
 	}

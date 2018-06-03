@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.liuhe.redpacket.service.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,10 +18,6 @@ import com.liuhe.redpacket.exception.LogicException;
 import com.liuhe.redpacket.mapper.UserMapper;
 import com.liuhe.redpacket.query.PageResult;
 import com.liuhe.redpacket.query.UserQuery;
-import com.liuhe.redpacket.service.ISystemDictionaryItemService;
-import com.liuhe.redpacket.service.IUserService;
-import com.liuhe.redpacket.service.IWithdrawLogService;
-import com.liuhe.redpacket.service.IWxService;
 import com.liuhe.redpacket.utils.ConstUtil;
 import com.liuhe.redpacket.utils.DoubleUtils;
 import com.liuhe.redpacket.utils.IPUtil;
@@ -41,6 +38,8 @@ public class UserServiceImpl implements IUserService {
 	private ISystemDictionaryItemService systemDictionaryItemService;
 	@Autowired
 	private IWithdrawLogService withdrawLogService;
+	@Autowired
+	private IDrawLogService drawLogService;
 
 	@Override
 	public PageResult<User> query(UserQuery qu) {
@@ -209,6 +208,9 @@ public class UserServiceImpl implements IUserService {
 		User user = userMapper.getByWechat(openid);
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("user", user);
+
+		JSONObject json = drawLogService.getSum(openid);
+		model.put("drawLogSum", json);
 		return model;
 	}
 
@@ -277,6 +279,11 @@ public class UserServiceImpl implements IUserService {
 		}else {
 			return new AjaxResult(map.get("msg").toString(), 400);
 		}
+	}
+
+	@Override
+	public User getByWechat(String openid) {
+		return userMapper.getByWechat(openid);
 	}
 
 

@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.liuhe.redpacket.domain.Redpacket;
 import com.liuhe.redpacket.query.PageResult;
 import com.liuhe.redpacket.query.RedpacketQuery;
+import com.liuhe.redpacket.utils.result.AjaxResult;
 
 /**
  * @author 
@@ -56,18 +57,18 @@ public interface IRedpacketService{
 	 */
 	void enable(Long id);
 	/**
-	 * 领取红包页面
-	 * @param adId
+	 * 抽奖
+	 * @param redpacketId
 	 * @param openid
-	 * @param wechat 
 	 * @return
 	 */
-	Map<String, Object> receiveRedpacket(Long redpacketId, String openid, String wechat);
+	AjaxResult draw(Long redpacketId, String openid);
+
+
 	/**
-	 * 确认领取
-	 * @param userCardId
-	 * @param redpacketLogId
-	 * @param openid 
+	 * 抽奖中心
+	 * @param redpacketId
+	 * @return
 	 */
-	JSONObject confirmRedpacket(Long userCardId, Long redpacketLogId, String openid);
+	Map<String,Object> drawInfo(Long redpacketId,String openid);
 }

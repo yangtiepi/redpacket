@@ -53,8 +53,8 @@ public interface CardMapper{
 	 */
 	Long queryTotal(CardQuery equ);
 	/**
-	 * 获取单个
+	 * 获取未兑换的所有卡片
 	 */
-	List<JSONObject> getUserCard(@Param("cardsId")Long cardsId,@Param("openid")String openid);
+	List<JSONObject> getUserCard(@Param("openid")String openid);
 
 }

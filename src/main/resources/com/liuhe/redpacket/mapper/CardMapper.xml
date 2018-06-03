@@ -58,7 +58,7 @@
 	</select>
 
 	<select id="getAll" resultType="Card">
-		select * from t_card
+		select * from t_card where isDel = 0
 	</select>
 
 	<sql id="whereSql">
@@ -101,8 +101,7 @@
 	<select id="getUserCard" resultType="com.alibaba.fastjson.JSONObject">
 		select c.*,count(u.id) cardNum from t_card c
 		left join t_user_card u on c.id = u.cardId
-		where c.cardsId = #{cardsId} and
-		u.openid = #{openid} and c.isDel = 0
+		where u.openid = #{openid} and c.isDel = 0 and u.exchangeTime is null
 		group by c.id
 		order by cardNum
 	</select>

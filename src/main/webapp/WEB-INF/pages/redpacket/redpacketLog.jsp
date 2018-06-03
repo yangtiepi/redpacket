@@ -11,16 +11,16 @@
 		var params = {};//查询条件
 		$(function() {
 			//缓存要用到的组件
-			var redpacketLogDataGrid = $("#redpacketLogDataGrid");//数据表格
-			var redpacketLogDialog = $("#redpacketLogDialog");//录入窗口
-			var redpacketLogForm = $("#redpacketLogForm");//录入表单
-			var redpacketLogQuery = $("#redpacketLogQuery");//录入表单
+			var DrawLogDataGrid = $("#DrawLogDataGrid");//数据表格
+			var DrawLogDialog = $("#DrawLogDialog");//录入窗口
+			var DrawLogForm = $("#DrawLogForm");//录入表单
+			var DrawLogQuery = $("#DrawLogQuery");//录入表单
 
 			//初始化组件
-			redpacketLogDataGrid.datagrid({//初始化数据表格
+			DrawLogDataGrid.datagrid({//初始化数据表格
 				fit : true,
 				border : false,
-				url : 'redpacketLog/queryGroupAd',
+				url : 'drawLog/queryGroupAd',
 				singleSelect : true,
 				fitColumns : true,
 				striped : true,
@@ -28,15 +28,15 @@
 				pagination : true,
 				pageSize : 10,
 				pageList : [ 5, 10, 20, 50 ],
-				toolbar : '#redpacketLog_toolbar'
+				toolbar : '#DrawLog_toolbar'
 			});
 			
-			//创建cmdRedpacketLog管理所有操作函数
-			var cmdRedpacketLog={
+			//创建cmdDrawLog管理所有操作函数
+			var cmdDrawLog={
 				//高级查询
-				redpacketLog_search:function(){
+				DrawLog_search:function(){
 					//把参数封装成一个json对象传到前台
-					 redpacketLogDataGrid.datagrid('load',redpacketLogQuery.serializeJson()); 
+					 DrawLogDataGrid.datagrid('load',DrawLogQuery.serializeJson());
 				}
 			};
 			//对页面上所有按钮做一次统一的监听
@@ -44,15 +44,15 @@
 				//获取data-cmd属性的值
 				var cmd = $(this).data("cmd");//data-key="value"其实就是一个{key:value}类型的数据
 				if (cmd) {
-					cmdRedpacketLog[cmd]();//执行对应的方法
+					cmdDrawLog[cmd]();//执行对应的方法
 				}
 			});
 
 		});
-		function showRedpacketLog(adId) {
-			var redpacketLogDataGrid = $("#redpacketLogDataGrid");
-			var redpacketLogDialog = $("#redpacketLogDialog");
-			var redpacketLogDetailDataGrid = $("#redpacketLogDetailDataGrid");
+		function showDrawLog(adId) {
+			var DrawLogDataGrid = $("#DrawLogDataGrid");
+			var DrawLogDialog = $("#DrawLogDialog");
+			var DrawLogDetailDataGrid = $("#DrawLogDetailDataGrid");
 			if (!params['beginTime']) {
 				params['beginTime'] = '';
 			}
@@ -60,12 +60,12 @@
 				params['endTime'] = '';
 			}
 			// 获取选中行信息
-			var rowData = redpacketLogDataGrid.datagrid("getSelected");
+			var rowData = DrawLogDataGrid.datagrid("getSelected");
 			//初始表格
-			redpacketLogDetailDataGrid.datagrid({
+			DrawLogDetailDataGrid.datagrid({
 				fit : true,
 				border : false,
-				url : 'redpacketLog/queryInfo',
+				url : 'drawLog/queryInfo',
 				queryParams : {
 					adId : adId,
 					beginTime : params["startTime"],
@@ -79,11 +79,11 @@
 				pageSize : 10,
 				pageList : [ 5, 10, 20, 50 ]
 			});
-			redpacketLogDialog.dialog("open");
+			DrawLogDialog.dialog("open");
 		}
 	</script>
 	<!-- 数据表格 -->
-	<table id="redpacketLogDataGrid">
+	<table id="DrawLogDataGrid">
 		<!-- 定义表格的表头  -->
 		<thead>
 			<tr>
@@ -91,28 +91,28 @@
 				<th field="adTitle" width="10" align="center">广告名称</th>
 				<th field="amount" width="10" align="center">红包金额</th>
 				<th field="adId" width="10" align="center"
-					data-options="formatter:formatRedpacketLogDetail">详情</th>
+					data-options="formatter:formatDrawLogDetail">详情</th>
 			</tr>
 		</thead>
 	</table>
 	<!-- 工具条 -->
-	<div id="redpacketLog_toolbar">
+	<div id="DrawLog_toolbar">
 		<div>
-			<form method="post" id="redpacketLogQuery">
+			<form method="post" id="DrawLogQuery">
 				广告主标题<input class="easyui-textbox" name="adTitle" style="width: 150px">
 				领取时间<input class="easyui-datetimebox" name="beginTime" style="width: 150px">-
 				<input class="easyui-datetimebox" name="endTime" style="width: 150px">
 				<a class="easyui-linkbutton" iconCls="icon-search"
-					data-cmd="redpacketLog_search">搜索</a>
+					data-cmd="DrawLog_search">搜索</a>
 			</form>
 		</div>
 	</div>
 	<!-- 点击明细窗口 -->
-	<div id="redpacketLogDialog" class="easyui-dialog"
+	<div id="DrawLogDialog" class="easyui-dialog"
 		style="width: 1200px; height: 600px;"
 		data-options="title:'点击明细',modal:true,iconCls:'icon-edit',closed:true">
 		<!-- 数据表格 -->
-		<table id="redpacketLogDetailDataGrid">
+		<table id="DrawLogDetailDataGrid">
 			<!-- 定义表格的表头  -->
 			<thead>
 				<tr>

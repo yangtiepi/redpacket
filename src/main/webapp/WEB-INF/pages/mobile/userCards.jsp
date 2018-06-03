@@ -1,3 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!doctype html>
 <html lang="zh-cn">
 <head>
@@ -11,7 +15,7 @@
 </head>
 <body>
 <div class="header">
-  <a href="#">
+  <a href="#" onclick="history.back();">
     <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
   </a>
   <h1 class="title">集字兑换</h1>
@@ -35,57 +39,25 @@
   </div>
   <div class="word-box">
     <ul class="word-group">
-      <li class="word-item">
-        <div>
-          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
-        </div>
-        <span class="word">字</span>
-        <span class="number">3</span>
-      </li>
-      <li class="word-item">
-        <div>
-          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
-        </div>
-        <span class="word">字</span>
-        <span class="number">3</span>
-      </li>
-      <li class="word-item">
-        <div>
-          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
-        </div>
-        <span class="word">字</span>
-        <span class="number">3</span>
-      </li>
-      <li class="word-item">
-        <div>
-          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
-        </div>
-        <span class="word">字</span>
-        <span class="number">3</span>
-      </li>
-      <li class="word-item">
-        <div>
-          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
-        </div>
-        <span class="word">字</span>
-        <span class="number">3</span>
-      </li>
-      <li class="word-item">
-        <div>
-          <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
-        </div>
-        <span class="word">字</span>
-        <span class="number">3</span>
-      </li>
+      <c:forEach items="${cards}" var="card">
+
+        <li class="word-item">
+          <div>
+            <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+          </div>
+          <span class="word">${card.name}</span>
+          <span class="number">${card.cardNum}</span>
+        </li>
+      </c:forEach>
     </ul>
   </div>
   <div class="btn-box-yellow">
     <ul class="btn-group">
-      <li class="btn-yellow">
+      <li class="btn-yellow" onclick="exchange(3)">
         <span>三张兑换</span>
         <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png">
       </li>
-      <li class="btn-yellow">
+      <li class="btn-yellow" onclick="exchange(5)">
         <span>五张兑换</span>
         <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png">
       </li>
@@ -94,18 +66,18 @@
 </div>
 <div class="footer">
   <ul>
-    <li class="active">
-      <a href="#" class="first">
+    <li>
+      <a href="${pageContext.request.contextPath}/mobile/drawCenter" class="first">
         <span>抽奖中心</span>
       </a>
     </li>
-    <li>
-      <a href="#" class="second">
+    <li class="active">
+      <a href="${pageContext.request.contextPath}/mobile/userCards" class="second">
         <span>集字兑换</span>
       </a>
     </li>
     <li>
-      <a href="#" class="three">
+      <a href="${pageContext.request.contextPath}/mobile/userInfo" class="three">
         <span>个人中心</span>
       </a>
     </li>
@@ -114,10 +86,10 @@
 <div class="shade"></div>
 <div class="popup">
   <div class="pop-header">
-    <h2>兑换成功</h2>
+    <h2 id="message">兑换成功</h2>
   </div>
   <div class="pop-body">
-    <p>验证码：<span>XOISODAS</span></p>
+    <p>验证码：<span id="code">XOISODAS</span></p>
   </div>
   <div class="pop-footer">
     <p>请现场凭验证码领取奖品</p>
@@ -136,12 +108,33 @@
       $('.shade').fadeOut()
       $('.popup').fadeOut()
     })
-    // 打开弹窗
-    $('.btn-yellow').on('click',function () {
-      $('.shade').fadeIn()
-      $('.popup').fadeIn()
-    })
   })
+
+  function exchange(num){
+      $.ajax({
+          type: "POST",
+          async: false,
+          traditional:true,
+          data: {
+              "num":num
+          },
+          cache:false,
+          dataType: "json",
+          url: "/mobile/exchange",
+          success: function(data){
+              if(data.success){
+                  $("#code").html(data.info.code);
+                  // 打开弹窗
+                  $('.btn-yellow').on('click',function () {
+                      $('.shade').fadeIn()
+                      $('.popup').fadeIn()
+                  })
+              }else{
+                  alert("兑换失败,"+data.message);
+              }
+          }
+      });
+  }
 </script>
 </body>
 </html>

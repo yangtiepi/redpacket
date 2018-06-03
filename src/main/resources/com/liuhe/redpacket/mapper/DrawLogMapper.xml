@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.DrawLogMapper" >
+  <insert id="save" parameterType="DrawLog" useGeneratedKeys="true" keyProperty="id">
+    insert into t_draw_log (
+        	userId ,
+        	redpacketId ,
+        	redpacketName ,
+        	cardId ,
+        	cardName ,
+        	userName ,
+        	openid ,
+        	remark ,
+        	type ,
+        	receiveTime ,
+        	amount 
+        ) VALUES (
+        	#{userId} ,
+        	#{redpacketId} ,
+        	#{redpacketName} ,
+        	#{cardId} ,
+        	#{cardName} ,
+        	#{userName} ,
+        	#{openid} ,
+        	#{remark} ,
+        	#{type} ,
+        	#{receiveTime} ,
+        	#{amount} 
+        )
+  </insert>
+
+	<update id="update" parameterType="DrawLog">
+		update t_draw_log set
+		userId = #{userId} ,
+		redpacketId = #{redpacketId} ,
+		redpacketName = #{redpacketName} ,
+		cardId = #{cardId} ,
+		cardName = #{cardName} ,
+		userName = #{userName} ,
+		openid = #{openid} ,
+		remark = #{remark} ,
+		type = #{type} ,
+		receiveTime = #{receiveTime} ,
+		amount = #{amount}
+		where id=#{id}
+	</update>
+  
+  	<sql id="whereSql">
+		<where>
+			<if test="redpacketId != null and redpacketId != -1">
+				and d.redpacketId = #{redpacketId}
+			</if>
+			<if test="openid != null and openid != ''">
+				and d.openid = #{openid}
+			</if>
+			<if test="beginTime != null and beginTime != ''">
+				and d.receiveTime>=#{beginTime}
+			</if>
+			<if test="endTime != null and endTime != ''">
+				and d.receiveTime &lt; #{endTime}
+			</if>
+		</where>
+	</sql>
+  
+  <select id="query" resultType="DrawLog"  parameterType="BaseQuery">
+		select d.*
+		from t_draw_log d
+		<include refid="whereSql" />
+		order by d.receiveTime desc
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select count(1)
+		from t_draw_log d
+		<include refid="whereSql" />
+	</select>
+	<!-- 抽奖记录-->
+	<select id="findByUser" resultType="DrawLog" >
+		select *
+        from t_draw_log
+		where openid = #{openid} and receiveTime is not null
+	</select>
+    <!-- 抽奖统计-->
+	<select id="getSum" resultType="com.alibaba.fastjson.JSONObject" >
+		select count(id) num,sum(if(type = 1,amount,0)) amount
+        from t_draw_log
+		where openid = #{openid}  and receiveTime is not null
+	</select>
+</mapper>

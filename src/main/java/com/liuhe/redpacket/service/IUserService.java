@@ -92,5 +92,6 @@ public interface IUserService {
 	Map<String, Object> userInfo(String openid);
 	void saveOrUpdateUser(JSONObject jsonObject);
 	AjaxResult withdraw(String openid);
-	
+
+    User getByWechat(String openid);
 }

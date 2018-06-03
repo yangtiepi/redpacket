@@ -61,7 +61,7 @@ public class RedpacketController{
 	/**
 	 * 高级查询+分页
 	 * 
-	 * @param req
+	 * @param qu
 	 * @return
 	 */
 	@MethodAnnotation(name = "查询", type = ResourceType.红包)
@@ -75,7 +75,7 @@ public class RedpacketController{
 	/**
 	 * 添加
 	 * 
-	 * @param id
+	 * @param redpacket
 	 * @return
 	 */
 	@MethodAnnotation(name = "保存", type = ResourceType.红包)

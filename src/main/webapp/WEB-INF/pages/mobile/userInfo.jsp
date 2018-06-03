@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!doctype html>
 <html lang="zh-cn">
@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="header">
-    <a href="#">
+    <a href="#" onclick="history.back();">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
     </a>
     <h1 class="title">个人中心</h1>
@@ -33,34 +33,35 @@
     </div>
     <div class="avatar-box">
         <div class="avatar-img">
-            <img src="${pageContext.request.contextPath}/mobile/img/bg_center.png">
+            <img src="${user.headImage}">
         </div>
         <div class="nickname-box">
-            <p class="nickname">Allen</p>
+            <p class="nickname">${user.username}</p>
         </div>
     </div>
     <div class="describe">
-        <p>累计扫码<span> 10 </span>次</p>
-        <p>累计红包<span> 2.32 </span>元</p>
+        <p>累计扫码<span> ${drawLogSum.num}</span>次</p>
+        <p>累计红包<span> ${drawLogSum.amount} </span>元</p>
     </div>
     <div class="card-group">
         <ul>
             <li class="card1">
-                <a href="#">
+                <a href="${pageContext.request.contextPath}/mobile/drawRecord">
                     <img src="${pageContext.request.contextPath}/mobile/img/icon_center_cj.png">
                     <p>抽奖记录</p>
                 </a>
             </li>
             <li class="card2">
-                <a href="#">
+                <a href="${pageContext.request.contextPath}/mobile/userCards">
                     <img src="${pageContext.request.contextPath}/mobile/img/icon_center_card.png">
                     <p>我的卡片</p>
                 </a>
             </li>
             <li class="card3">
-                <a href="#">
+                <a href="${pageContext.request.contextPath}/mobile/balance">
                     <img src="${pageContext.request.contextPath}/mobile/img/icon_center_money.png">
-                    <p>余额</p></a>
+                    <p>余额</p>
+                </a>
             </li>
         </ul>
     </div>
@@ -77,17 +78,17 @@
 </div>
 <div class="footer">
     <ul>
-        <li class="active">
-            <a href="#" class="first">
+        <li>
+            <a href="${pageContext.request.contextPath}/mobile/drawCenter" class="first">
                 <span>抽奖中心</span>
             </a>
         </li>
         <li>
-            <a href="#" class="second">
+            <a href="${pageContext.request.contextPath}/mobile/userCards" class="second">
                 <span>集字兑换</span>
             </a>
         </li>
-        <li>
+        <li class="active">
             <a href="#" class="three">
                 <span>个人中心</span>
             </a>

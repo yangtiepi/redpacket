@@ -3,189 +3,155 @@ package com.liuhe.redpacket.web.mobile;
 /**
  * 客户相关的接口
  */
-import java.util.HashMap;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
+import com.liuhe.redpacket.domain.DrawLog;
+import com.liuhe.redpacket.service.*;
+import com.liuhe.redpacket.utils.result.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSONObject;
-import com.liuhe.redpacket.exception.LogicException;
-import com.liuhe.redpacket.service.IAdService;
-import com.liuhe.redpacket.service.ICardService;
-import com.liuhe.redpacket.service.ICardsService;
-import com.liuhe.redpacket.service.IHomepageService;
-import com.liuhe.redpacket.service.IRedpacketService;
-import com.liuhe.redpacket.service.IUserService;
-import com.liuhe.redpacket.utils.result.AjaxResult;
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("mobile")
 public class MobileController {
-	@Autowired
-	private IHomepageService homepageService;
-	@Autowired
-	private IAdService adService;
-	@Autowired
-	private ICardsService cardsService;
-	@Autowired
-	private ICardService cardService;
+    @Autowired
+    private ICardService cardService;
 
-	@Autowired
-	private IRedpacketService redpacketService;
-	@Autowired
-	private IUserService userService;
+    @Autowired
+    private IRedpacketService redpacketService;
+    @Autowired
+    private IDrawLogService drawLogService;
+    @Autowired
+    private IUserService userService;
+    @Autowired
+    private ICardsCompleteService cardsCompleteService;
 
-	/**
-	 * 首页
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/homepage")
-	public ModelAndView homepage(@RequestParam("homepageId") Long homepageId,
-			@RequestParam("page") Integer page, HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		Map<String, Object> model = homepageService.mobileIndex(homepageId,
-				page, openid);
-		return new ModelAndView("mobile/homepage", model);
-	}
+    /**
+     * 个人中心
+     *
+     * @return
+     */
+    @RequestMapping("/userInfo")
+    public ModelAndView userInfo(HttpServletRequest request) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        Map<String, Object> model = userService.userInfo(openid);
+        return new ModelAndView("mobile/userInfo", model);
+    }
 
-	/**
-	 * 广告首页
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/ad")
-	public ModelAndView ad(@RequestParam("adId") Long adId,@RequestParam("homepageId") Long homepageId,
-			HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		String nickname = (String) request.getSession()
-				.getAttribute("nickname");
-		Map<String, Object> model = adService.mobileIndex(adId,homepageId, openid,
-				nickname);
-		return new ModelAndView("mobile/ad", model);
-	}
+    /**
+     * 余额
+     *
+     * @return
+     */
+    @RequestMapping("/balance")
+    public ModelAndView balance(HttpServletRequest request) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        Map<String, Object> model = userService.userInfo(openid);
+        return new ModelAndView("mobile/balance", model);
+    }
 
-	/**
-	 * 集卡列表
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/cardsList")
-	public ModelAndView cardsList(HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		Map<String, Object> model = cardsService.mobileCardsList(openid);
-		return new ModelAndView("mobile/cardsList", model);
-	}
+    /**
+     * 我的卡片
+     *
+     * @return
+     */
+    @RequestMapping("/userCards")
+    public ModelAndView userCards(HttpServletRequest request) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        Map<String, Object> model = cardService.userCard(openid);
+        return new ModelAndView("mobile/userCards", model);
+    }
 
-	/**
-	 * 我的卡片
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/userCard")
-	public ModelAndView userCard(@RequestParam("cardsId") Long cardsId,
-			HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		Map<String, Object> model = cardService.userCard(cardsId, openid);
-		return new ModelAndView("mobile/userCard", model);
-	}
+    /**
+     * 抽奖记录
+     *
+     * @return
+     */
+    @RequestMapping("/drawRecord")
+    public ModelAndView drawRecord(
+            HttpServletRequest request) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        List<DrawLog> drawLogList =  drawLogService.findByUser(openid);
+        Map<String, Object> model = userService.userInfo(openid);
+        model.put("drawLogList",drawLogList);
+        return new ModelAndView("mobile/drawRecord", model);
+    }
 
-	/**
-	 * 集卡说明
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/cardsInfo")
-	public ModelAndView cardsInfo(@RequestParam("cardsId") Long cardsId,
-			HttpServletRequest request) {
-		Map<String, Object> model = cardsService.cardsInfo(cardsId);
-		return new ModelAndView("mobile/cardsInfo", model);
-	}
+    /**
+     * 抽奖中心
+     *
+     * @return
+     */
+    @RequestMapping("/drawCenter")
+    public ModelAndView drawCenter(HttpServletRequest request, Long redpacketId) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        Map<String, Object> model = redpacketService.drawInfo(redpacketId, openid);
+        return new ModelAndView("mobile/drawCenter", model);
+    }
 
-	/**
-	 * 领取卡片
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/cardsComplete")
-	public ModelAndView cardsComplete(@RequestParam("cardsId") Long cardsId,
-			HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		String nickname = (String) request.getSession()
-				.getAttribute("nickname");
-		Map<String, Object> model = new HashMap<String, Object>();
-		try {
-			model = cardsService.cardsComplete(cardsId, openid, nickname);
-		} catch (LogicException e) {
-			model.put("msg", e.getMessage());
-		}
-		return new ModelAndView("mobile/cardsComplete", model);
-	}
+    /**
+     * 抽奖
+     *
+     * @return
+     */
+    @RequestMapping("/draw")
+    @ResponseBody
+    public AjaxResult draw(
+            HttpServletRequest request, Long redpacketId) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        return redpacketService.draw(redpacketId, openid);
+    }
 
-	/**
-	 * 领取红包
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/getRedpacket")
-	public ModelAndView getRedpacket(
-			@RequestParam("redpacketId") Long redpacketId,
-			HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		String nickname = (String) request.getSession()
-				.getAttribute("nickname");
-		Map<String, Object> model = redpacketService.receiveRedpacket(redpacketId,
-				openid, nickname);
-		System.out.println(model);
-		return new ModelAndView("mobile/getRedpacket", model);
-	}
+    /**
+     * 抽中结果
+     *
+     * @return
+     */
+    @RequestMapping("/drawResult")
+    public ModelAndView drawResult(
+            HttpServletRequest request, Long redpacketId) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        DrawLog drawLog = drawLogService.get(redpacketId, openid);
+        Map<String, Object> model = new HashMap<>();
+        model.put("drawLog", drawLog);
+        if (drawLog.getType() == 1) {
+            return new ModelAndView("mobile/drawMoney", model);
+        } else if(drawLog.getType() == 2){
+            return new ModelAndView("mobile/drawCard", model);
+        }
+        return new ModelAndView("mobile/drawCard", model);
+    }
 
-	/**
-	 * 领取红包
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/confirmRedpacket")
-	@ResponseBody
-	public AjaxResult confirmRedpacket(
-			@RequestParam("redpacketLogId") Long redpacketLogId,
-			@RequestParam("userCardId") Long userCardId,
-			HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		AjaxResult ar;
-		JSONObject confirmRedpacket = redpacketService.confirmRedpacket(
-				userCardId, redpacketLogId, openid);
-		ar = new AjaxResult(confirmRedpacket);
-		return ar;
-	}
+    /**
+     * 兑换
+     *
+     * @return
+     */
+    @RequestMapping("/exchange")
+    @ResponseBody
+    public AjaxResult exchange(
+            HttpServletRequest request, Integer num) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        return cardsCompleteService.exchange(openid,num);
+    }
 
-	/**
-	 * 账户余额
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/userInfo")
-	public ModelAndView userInfo(HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		Map<String, Object> model = userService.userInfo(openid);
-		return new ModelAndView("mobile/userInfo", model);
-	}
-	/**
-	 * 体现
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/withdraw")
-	@ResponseBody
-	public AjaxResult withdraw(HttpServletRequest request) {
-		String openid = (String) request.getSession().getAttribute("openid");
-		return userService.withdraw(openid);
-	}
+
+    /**
+     * 提现
+     *
+     * @return
+     */
+    @RequestMapping("/withdraw")
+    @ResponseBody
+    public AjaxResult withdraw(HttpServletRequest request) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        return userService.withdraw(openid);
+    }
 }

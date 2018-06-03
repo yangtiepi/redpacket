@@ -78,7 +78,7 @@
 				pagination : true,
 				pageSize : 10,
 				pageList : [ 5, 10, 20, 50 ],
-				toolbar : '#redpacketLog_toolbar'
+				toolbar : '#DrawLog_toolbar'
 			});
 			adClickLogDialog.dialog("open");
 		}

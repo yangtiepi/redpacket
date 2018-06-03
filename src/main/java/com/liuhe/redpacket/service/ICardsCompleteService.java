@@ -11,6 +11,7 @@ import java.util.List;
 import com.liuhe.redpacket.domain.CardsComplete;
 import com.liuhe.redpacket.query.CardsCompleteQuery;
 import com.liuhe.redpacket.query.PageResult;
+import com.liuhe.redpacket.utils.result.AjaxResult;
 
 /**
  * @author 
@@ -48,4 +49,12 @@ public interface ICardsCompleteService{
 	 * @param id
 	 */
 	void receice(Long id);
+
+	/**
+	 * 兑换
+	 * @param openid
+	 * @param num
+	 * @return
+	 */
+	AjaxResult exchange(String openid, Integer num);
 }

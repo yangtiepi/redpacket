@@ -1,3 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!doctype html>
 <html lang="zh-cn">
 <head>
@@ -11,7 +15,7 @@
 </head>
 <body>
 <div class="header">
-  <a href="#">
+  <a href="#" onclick="history.back();">
     <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
   </a>
   <h1 class="title">抽奖结果</h1>
@@ -29,16 +33,16 @@
   </div>
   <div class="word-box">
     <div class="word-wrap">
-      <div class="center">
-        <h2>微信红包</h2>
-        <p>8.8元</p>
-      </div>
+      <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
+      <span>${drawLog.cardName}</span>
     </div>
   </div>
   <div class="btn-wrap">
     <div class="btn-box">
-      <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png" width="100%">
-      <span>领取</span>
+        <a href="${pageContext.request.contextPath}/mobile/userInfo">
+            <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png" width="100%">
+            <span>领取</span>
+        </a>
     </div>
   </div>
 </div>

@@ -8,11 +8,11 @@ package com.liuhe.redpacket.utils;
  */
 public class WeixinContants {
 	// appid 是 第三方用户唯一凭证
-//	public static final String APPID = "wxf7b983b5f3b9c372";
-	public static final String APPID = "wx1b493d862116a3ba";//测试
+	public static final String APPID = "wx1eb07ef94c60422f";
+//	public static final String APPID = "wx1b493d862116a3ba";//测试
 	// secret 是 第三方用户唯一凭证密钥，即appsecret
-//	public static final String APPSECRET = "a911b344b91ed5b29535c7461492296c";
-	public static final String APPSECRET = "931ab10cae6e972d3110b0a983b0d9ed";//测试
+	public static final String APPSECRET = "300ac051f1896c5975f5800ce0982f6e";
+//	public static final String APPSECRET = "931ab10cae6e972d3110b0a983b0d9ed";//测试
 	//获取AccessToken的url
 	public static final String GET_ACCESSTOKEN = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
 	//AccessToken

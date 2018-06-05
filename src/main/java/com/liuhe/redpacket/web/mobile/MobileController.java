@@ -34,6 +34,16 @@ public class MobileController {
     private ICardsCompleteService cardsCompleteService;
 
     /**
+     * 非微信打开页面
+     *
+     * @param
+     */
+    @RequestMapping("wxFllow")
+    public String doWxFllow() {
+        return "mobile/wxFllow";
+    }
+
+    /**
      * 个人中心
      *
      * @return

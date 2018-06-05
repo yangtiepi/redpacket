@@ -236,6 +236,7 @@ public class UserServiceImpl implements IUserService {
 			user.setAmount(0D);
 			user.setHeadImage(headimgurl);
 			user.setOpenid(openid);
+			user.setUsername(nickname);
 			user.setWechat(nickname);
 			user.setStatus(ConstUtil.USER_NORMAL);
 			userMapper.save(user);

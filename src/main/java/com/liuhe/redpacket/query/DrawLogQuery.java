@@ -17,69 +17,71 @@ import org.apache.commons.lang3.StringUtils;
  */
 
 public class DrawLogQuery extends BaseQuery implements Serializable {
-	private static final long serialVersionUID = 3148176768559230877L;
+    private static final long serialVersionUID = 3148176768559230877L;
 
-	private java.lang.Long adId;
-	private java.lang.Long redpacketId;
-	private java.lang.String openid;
-	private String adTitle;
-	private String beginTime;
-	private String endTime;
+    private java.lang.Long cardId;
+    private java.lang.Long redpacketId;
+    private java.lang.String openid;
+    private String userName;
+    private String beginTime;
+    private String endTime;
+    private Integer type;
 
-	public java.lang.Long getAdId() {
-		return adId;
-	}
+    public Long getCardId() {
+        return cardId;
+    }
 
-	public void setAdId(java.lang.Long adId) {
-		this.adId = adId;
-	}
+    public void setCardId(Long cardId) {
+        this.cardId = cardId;
+    }
 
-	public String getBeginTime() {
-		return beginTime;
-	}
+    public String getBeginTime() {
+        return beginTime;
+    }
 
-	public void setBeginTime(String beginTime) {
-		this.beginTime = StringUtils.isBlank(beginTime) ? null : beginTime;
-	}
+    public void setBeginTime(String beginTime) {
+        this.beginTime = StringUtils.isBlank(beginTime) ? null : beginTime;
+    }
 
-	public String getEndTime() {
-		return endTime;
-	}
+    public String getEndTime() {
+        return endTime;
+    }
 
-	public void setEndTime(String endTime) {
-		this.endTime = StringUtils.isBlank(endTime) ? null : endTime;
-	}
+    public void setEndTime(String endTime) {
+        this.endTime = StringUtils.isBlank(endTime) ? null : endTime;
+    }
 
-	public String getAdTitle() {
-		return adTitle;
-	}
 
-	public void setAdTitle(String adTitle) {
-		this.adTitle = adTitle;
-	}
-	
+    public String getUserName() {
+        return userName;
+    }
 
-	public java.lang.Long getRedpacketId() {
-		return redpacketId;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public void setRedpacketId(java.lang.Long redpacketId) {
-		this.redpacketId = redpacketId;
-	}
+    public java.lang.Long getRedpacketId() {
+        return redpacketId;
+    }
 
-	public java.lang.String getOpenid() {
-		return openid;
-	}
+    public void setRedpacketId(java.lang.Long redpacketId) {
+        this.redpacketId = redpacketId;
+    }
 
-	public void setOpenid(java.lang.String openid) {
-		this.openid = openid;
-	}
+    public java.lang.String getOpenid() {
+        return openid;
+    }
 
-	@Override
-	public String toString() {
-		return "DrawLogQuery [adId=" + adId + ", redpacketId="
-				+ redpacketId + ", openid=" + openid + ", adTitle=" + adTitle
-				+ ", beginTime=" + beginTime + ", endTime=" + endTime + "]";
-	}
+    public void setOpenid(java.lang.String openid) {
+        this.openid = openid;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
 }

@@ -46,6 +46,12 @@
 			<!-- 拦截器的全类名 -->
 			<bean class="com.liuhe.redpacket.web.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<!-- 设置拦截器，拦截的（地址）规则 -->
+			<mvc:mapping path="/mobile/**" />
+			<!-- 拦截器的全类名 -->
+			<bean class="com.liuhe.redpacket.web.interceptor.WxInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 

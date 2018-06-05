@@ -47,11 +47,20 @@
   
   	<sql id="whereSql">
 		<where>
+			<if test="userName != null and userName != -1">
+				and d.userName likeconcat('%',#{userName},'%')
+			</if>
 			<if test="redpacketId != null and redpacketId != -1">
 				and d.redpacketId = #{redpacketId}
 			</if>
 			<if test="openid != null and openid != ''">
 				and d.openid = #{openid}
+			</if>
+			<if test="cardId != null and cardId != ''">
+				and d.cardId = #{cardId}
+			</if>
+			<if test="type != null">
+				and d.type = #{type}
 			</if>
 			<if test="beginTime != null and beginTime != ''">
 				and d.receiveTime>=#{beginTime}

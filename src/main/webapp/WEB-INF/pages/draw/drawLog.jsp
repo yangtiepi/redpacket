@@ -12,15 +12,16 @@
 		$(function() {
 			//缓存要用到的组件
 			var DrawLogDataGrid = $("#DrawLogDataGrid");//数据表格
-			var DrawLogDialog = $("#DrawLogDialog");//录入窗口
-			var DrawLogForm = $("#DrawLogForm");//录入表单
 			var DrawLogQuery = $("#DrawLogQuery");//录入表单
 
 			//初始化组件
 			DrawLogDataGrid.datagrid({//初始化数据表格
 				fit : true,
 				border : false,
-				url : 'drawLog/queryGroupAd',
+				url : 'drawLog/query',
+                queryParams : {
+                    type : 1
+                },
 				singleSelect : true,
 				fitColumns : true,
 				striped : true,
@@ -49,38 +50,6 @@
 			});
 
 		});
-		function showDrawLog(adId) {
-			var DrawLogDataGrid = $("#DrawLogDataGrid");
-			var DrawLogDialog = $("#DrawLogDialog");
-			var DrawLogDetailDataGrid = $("#DrawLogDetailDataGrid");
-			if (!params['beginTime']) {
-				params['beginTime'] = '';
-			}
-			if (!params['endTime']) {
-				params['endTime'] = '';
-			}
-			// 获取选中行信息
-			var rowData = DrawLogDataGrid.datagrid("getSelected");
-			//初始表格
-			DrawLogDetailDataGrid.datagrid({
-				fit : true,
-				border : false,
-				url : 'drawLog/queryInfo',
-				queryParams : {
-					adId : adId,
-					beginTime : params["startTime"],
-					endTime : params["endTime"]
-				},
-				fitColumns : true,
-				striped : true,
-				nowrap : false,
-				rownumbers : true,
-				pagination : true,
-				pageSize : 10,
-				pageList : [ 5, 10, 20, 50 ]
-			});
-			DrawLogDialog.dialog("open");
-		}
 	</script>
 	<!-- 数据表格 -->
 	<table id="DrawLogDataGrid">
@@ -88,10 +57,11 @@
 		<thead>
 			<tr>
 				<!-- field：指定需要显示列对应JSON数据属性 -->
-				<th field="adTitle" width="10" align="center">广告名称</th>
+				<th field="userName" width="10" align="center">微信名称</th>
+				<th field="openid" width="10" align="center">用户ID</th>
 				<th field="amount" width="10" align="center">红包金额</th>
 				<th field="adId" width="10" align="center"
-					data-options="formatter:formatDrawLogDetail">详情</th>
+					data-options="formatter:formatDateTime">领取时间</th>
 			</tr>
 		</thead>
 	</table>
@@ -99,33 +69,13 @@
 	<div id="DrawLog_toolbar">
 		<div>
 			<form method="post" id="DrawLogQuery">
-				广告主标题<input class="easyui-textbox" name="adTitle" style="width: 150px">
+				微信名称<input class="easyui-textbox" name="userName" style="width: 150px">
 				领取时间<input class="easyui-datetimebox" name="beginTime" style="width: 150px">-
 				<input class="easyui-datetimebox" name="endTime" style="width: 150px">
 				<a class="easyui-linkbutton" iconCls="icon-search"
 					data-cmd="DrawLog_search">搜索</a>
 			</form>
 		</div>
-	</div>
-	<!-- 点击明细窗口 -->
-	<div id="DrawLogDialog" class="easyui-dialog"
-		style="width: 1200px; height: 600px;"
-		data-options="title:'点击明细',modal:true,iconCls:'icon-edit',closed:true">
-		<!-- 数据表格 -->
-		<table id="DrawLogDetailDataGrid">
-			<!-- 定义表格的表头  -->
-			<thead>
-				<tr>
-					<th field="adTitle" width="10" align="center">广告名称</th>
-					<th field="redpacketName" width="10" align="center">红包名称</th>
-					<th field=openid width="10" align="center">用户id</th>
-					<th field="wechat" width="10" align="center">微信名</th>
-					<th field="amount" width="10" align="center">领取金额</th>
-					<th field="receiveTime" width="20" align="center"
-						data-options="formatter:formatDateTime">领取时间</th>
-				</tr>
-			</thead>
-		</table>
 	</div>
 </body>
 </html>

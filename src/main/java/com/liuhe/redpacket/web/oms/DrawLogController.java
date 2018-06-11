@@ -52,6 +52,7 @@ public class DrawLogController{
 	@RequestMapping("/query")
 	@ResponseBody
 	private PageResult<DrawLog> query(DrawLogQuery qu) {
+		qu.setType(1);
 		PageResult<DrawLog> list = DrawLogService.query(qu);
 		return list;
 	}

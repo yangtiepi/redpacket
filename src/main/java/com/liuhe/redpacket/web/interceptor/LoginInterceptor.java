@@ -105,6 +105,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		}
 
 		if (employee == null && !LOGIN_PATH.equals(request.getRequestURI())) {
+			System.out.println("拦截的资源"+request.getRequestURI()+"====================================");
 			response.sendRedirect("/index.jsp");
 			return false;
 		}

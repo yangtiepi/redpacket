@@ -105,12 +105,17 @@
     // 关闭弹窗
     $('.shade').on('click',function () {
       //关闭弹窗
-      $('.shade').fadeOut()
-      $('.popup').fadeOut()
+      $('.shade').fadeOut();
+      $('.popup').fadeOut();
+      window.location.reload();
     })
   })
 
+  var isClick =false;
   function exchange(num){
+      if(isClick){
+          return;
+      }
       $.ajax({
           type: "POST",
           async: false,
@@ -123,12 +128,11 @@
           url: "/mobile/exchange",
           success: function(data){
               if(data.success){
-                  $("#code").html(data.info.code);
+                  $("#code").html(data.data.code);
                   // 打开弹窗
-                  $('.btn-yellow').on('click',function () {
-                      $('.shade').fadeIn()
-                      $('.popup').fadeIn()
-                  })
+                  $('.shade').fadeIn();
+                  $('.popup').fadeIn();
+                  isClick = true;
               }else{
                   alert("兑换失败,"+data.message);
               }

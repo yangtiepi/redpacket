@@ -167,7 +167,7 @@ $(function(){
 				<!-- field：指定需要显示列对应JSON数据属性 -->
 				<th field="name" width="10" align="center">名称</th>
 				<%--<th field="cards" width="10" align="center" data-options="formatter:formatName">主卡</th>--%>
-				<th field="image" width="10" align="center" data-options="formatter:formatImg">图片</th>
+				<%--<th field="image" width="10" align="center" data-options="formatter:formatImg">图片</th>--%>
 				<th field="ratio" width="10" align="center">出现概率（%）</th>
 			</tr>
 		</thead>
@@ -205,10 +205,10 @@ $(function(){
 				<%--选择主卡：--%>
 				<%--<select id="cardsCombobox" name="cardsId" style="width: 150px"> </select>--%>
 			<%--</div>	--%>
-			<div style="margin-top: 10px;margin-left: 35px" >
-	 			卡片图片：
-	 			<input class="easyui-filebox" name="img" style="width: 150px" >
-			</div>
+			<%--<div style="margin-top: 10px;margin-left: 35px" >--%>
+	 			<%--卡片图片：--%>
+	 			<%--<input class="easyui-filebox" name="img" style="width: 150px" >--%>
+			<%--</div>--%>
 			</form>
 		</div>
 	<!-- 录入窗口按钮 -->

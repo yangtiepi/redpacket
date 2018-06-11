@@ -146,7 +146,7 @@
 	<!-- 网页版权 (南) -->
 	<div data-options="region:'south',border:false"
 		style="height: auto; text-align: center;">
-		广州寻宝互动传媒有限责任公司</br> © 2015-2025 briberymoney.empcode.cn 版权所有
+		尚宏云木业</br> © 2015-2025 版权所有
 	</div>
 </body>
 

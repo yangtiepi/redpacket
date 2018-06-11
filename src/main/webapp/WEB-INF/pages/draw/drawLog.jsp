@@ -60,7 +60,7 @@
 				<th field="userName" width="10" align="center">微信名称</th>
 				<th field="openid" width="10" align="center">用户ID</th>
 				<th field="amount" width="10" align="center">红包金额</th>
-				<th field="adId" width="10" align="center"
+				<th field="receiveTime" width="10" align="center"
 					data-options="formatter:formatDateTime">领取时间</th>
 			</tr>
 		</thead>

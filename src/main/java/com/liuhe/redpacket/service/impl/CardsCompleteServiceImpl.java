@@ -113,9 +113,12 @@ public class CardsCompleteServiceImpl implements ICardsCompleteService{
 		}
 
 		Date date = new Date();
-		for (UserCard userCard : userCards) {
+        for (int i = 0; i < num; i++) {
+            UserCard userCard = userCards.get(i);
 			userCard.setExchangeTime(date);
-		}
+			userCardService.update(userCard);
+			System.out.println("===========更新时间================="+userCard.getReceiveTime());
+        }
 
 		String randomCode = RandomUtil.randomCode(6);
 		CardsComplete cardsComplete = new CardsComplete();

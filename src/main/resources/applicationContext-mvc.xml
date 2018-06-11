@@ -29,6 +29,7 @@
 			<!-- 不拦截登录和静态资源 -->
 			<mvc:exclude-mapping path="/css/**" />
 			<mvc:exclude-mapping path="/**/*.txt" />
+			<mvc:exclude-mapping path="/**/*.ico" />
 			<mvc:exclude-mapping path="/easyui/**" />
 			<mvc:exclude-mapping path="/errorPage/**" />
 			<mvc:exclude-mapping path="/fonts/**" />

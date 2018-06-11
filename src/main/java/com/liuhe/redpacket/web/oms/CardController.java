@@ -65,7 +65,7 @@ public class CardController {
 	/**
 	 * 高级查询+分页
 	 * 
-	 * @param req
+	 * @param qu
 	 * @return
 	 */
 	@MethodAnnotation(name = "查询", type = ResourceType.卡片)
@@ -79,7 +79,7 @@ public class CardController {
 	/**
 	 * 添加
 	 * 
-	 * @param id
+	 * @param img
 	 * @return
 	 * @throws IOException 
 	 */

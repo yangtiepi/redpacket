@@ -2,101 +2,98 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<!doctype html>
-<html lang="zh-cn">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>焦点轮播图3D旋转木马特效动画切换jQuery插件</title>
+    <meta name="keywords" content="焦点,轮播图,3D,旋转木马,特效动画切换,jQuery插件"/>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/base.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/main.css">
-    <title>抽奖记录</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/mobile/css/new.css" type="text/css" media="screen">
+
 </head>
+
 <body>
+
 <div class="header">
-    <a href="#" onclick="history.back();">
+    <a href="#">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
     </a>
-    <h1 class="title">抽奖中心</h1>
+    <h1 class="title">奖励记录</h1>
 </div>
 <div class="body">
-    <div class="top">
-        <div class="row">
-            <div class="col start">
-                <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_z.png">
-            </div>
-            <div class="col end">
-                <img class="img logo" src="${pageContext.request.contextPath}/mobile/img/logo.png">
+    <div class="logo" style="text-align: center;margin-top: 15px;margin-bottom: 30px;">
+        <img src="${pageContext.request.contextPath}/mobile/img/logo.png" width="150" alt="">
+    </div>
+    <div class="result">
+        <h2 class="text-center" style="font-size: 17px;font-weight:bold;color: #ffffff;letter-spacing: 1px;">你购买的是</h2>
+        <p class="text-center" style="margin-top: 10px;font-weight:bold;font-size: 20px;color: #f8bc0c;letter-spacing: 3px;">正品正品正品</p>
+    </div>
+    <!--轮播历史区域-->
+    <div class="history" style="margin-top: 24px;">
+        <p class="text-center" style="color: #fff;font-size: 14px;">奖励记录</p>
+        <div class="slide">
+            <div id="scrollDiv">
+                <ul class="scroll-group">
+                    <c:forEach var="drawLog" items="${drawLogs}">
+                        <li class="scroll-list">
+                            <div class="text-center colorYellow">
+                                    ${drawLog.userName}
+                                    <fmt:formatDate value="${drawLog.receiveTime}" var="receiveTime" pattern="HH:mm:ss"/>
+                                    在${receiveTime}
+                                    抽中了${drawLog.remark}
+                            </div>
+                        </li>
+                    </c:forEach>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="bonus">
-        <input type="hidden" id="redpacketId" value="${redpacketId}">
-        <div id="luck"><!-- luck -->
-            <table>
-                <tr>
-                    <td class="luck-unit luck-unit-0">
-                        <span>${card0.name}</span>
-                        <input type="hidden" id="${card0.id}" value="0">
-                    </td>
-                    <td class="luck-unit luck-unit-1">
-                        <span>${card1.name}</span>
-                        <input type="hidden" id="${card1.id}" value="1">
-                    </td>
-                    <td class="luck-unit luck-unit-special luck-unit-2">
-                        <span>红包<br/>${amount}</span>
-                        <input type="hidden" id="-1" value="2">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="luck-unit  luck-unit-7">
-                        <span>${card2.name}</span>
-                        <input type="hidden" id="${card2.id}" value="7">
-                    </td>
-                    <td class="cjBtn" id="btn">
-                        <span>
-                          <img src="${pageContext.request.contextPath}/mobile/img/qtbtn_one.png" alt="">
-                        </span>
-                    </td>
-                    <td class="luck-unit luck-unit-3">
-                        <span>${card3.name}</span>
-                        <input type="hidden" id="${card3.id}" value="3">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="luck-unit luck-unit-6">
-                        <span>${card4.name}</span>
-                        <input type="hidden" id="${card4.id}" value="6">
-                    </td>
-                    <td class="luck-unit luck-unit-5">
-                        <span>${card5.name}</span>
-                        <input type="hidden" id="${card5.id}" value="5">
-                    </td>
-                    <td class="luck-unit luck-unit-4">
-                        <span>${card6.name}</span>
-                        <input type="hidden" id="${card6.id}" value="4">
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <div class="slide">
-        <div id="scrollDiv">
-            <ul class="scroll-group">
-                <c:forEach var="drawLog" items="${drawLogs}">
-                    <li class="scroll-list">
-                        <div class="name">${drawLog.userName}</div>
-                        <div class="content">
-                            <p>抽到<span>"${drawLog.remark}"</span></p>
-                        </div>
-                        <div class="time">
-                            <fmt:formatDate value="${drawLog.receiveTime}" var="receiveTime" pattern="HH:mm:ss"/>
-                                ${receiveTime}
-                        </div>
-                    </li>
-                </c:forEach>
-            </ul>
+    <div class="row-bot">
+        <div class="center-shadow">
+            <div class="carousel-container">
+                <div id="carousel">
+                    <div class="carousel-feature">
+                        <a target="_blank">
+                            <div class="front">
+                                <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/bg_bg.png">
+                            </div>
+                            <div class="back" style="display: none;">
+                                <p style="text-align: center;font-size: 18px;color: #f8bc0c;">谢谢惠顾</p>
+                                <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/hot_bg_big.png" style="position: absolute;left: 0;top:0;right: 0;bottom: 0;z-index: -1">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-feature">
+                        <a target="_blank">
+                            <div class="front">
+                                <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/bg_bg.png">
+                            </div>
+                            <div class="back" style="display: none;">
+                                <p style="text-align: center;font-size: 18px;color: #f8bc0c;">谢谢惠顾</p>
+                                <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/hot_bg_big.png" style="position: absolute;left: 0;top:0;right: 0;bottom: 0;z-index: -1">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-feature">
+                        <a target="_blank">
+                            <div class="front">
+                                <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/bg_bg.png">
+                            </div>
+                            <div class="back" style="display: none;">
+                                <p style="text-align: center;font-size: 18px;color: #f8bc0c;">谢谢惠顾</p>
+                                <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/hot_bg_big.png" style="position: absolute;left: 0;top:0;right: 0;bottom: 0;z-index: -1">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -119,123 +116,65 @@
         </li>
     </ul>
 </div>
+
 <script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jq_scroll.js"></script>
-<script>
-    $(function () {
-        // footer 切换
-        $('.footer li').on('click', function () {
-            $(this).addClass('active').siblings('li').removeClass('active')
-        })
-        $("#scrollDiv").Scroll({line: 1, speed: 500, timer: 2000});
-        var luck = {
-            index: 0,	//当前转动到哪个位置，起点位置
-            count: 0,	//总共有多少个位置
-            timer: 0,	//setTimeout的ID，用clearTimeout清除
-            speed: 20,	//初始转动速度
-            times: 0,	//转动次数
-            cycle: 50,	//转动基本次数：即至少需要转动多少次再进入抽奖环节
-            prize: -1,	//中奖位置
-            init: function (id) {
-                if ($("#" + id).find(".luck-unit").length > 0) {
-                    $luck = $("#" + id);
-                    $units = $luck.find(".luck-unit");
-                    this.obj = $luck;
-                    this.count = $units.length;
-                    $luck.find(".luck-unit-" + this.index).addClass("active");
+<script src="${pageContext.request.contextPath}/mobile/js/jquery.featureCarousel.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var hasClicked = false
+    $("#scrollDiv").Scroll({line: 1, speed: 500, timer: 2000});
+    $(document).ready(function () {
+        $("#carousel").featureCarousel({
+            autoPlay: false,
+            trackerIndividual: false,
+            trackerSummation: false,
+            topPadding: 20,
+            smallFeatureWidth: .9,
+            smallFeatureHeight: .9,
+            sidePadding: 0,
+            smallFeatureOffset: 40,
+            clickedCenter: function (item) {
+                if(hasClicked){
+                    return alert('你已经抽过奖了')
+                }else{
+                    hasClicked = true
                 }
-                ;
-            },
-            roll: function () {
-                var index = this.index;
-                var count = this.count;
-                var luck = this.obj;
-                $(luck).find(".luck-unit-" + index).removeClass("active");
-                index += 1;
-                if (index > count - 1) {
-                    index = 0;
-                }
-                ;
-                $(luck).find(".luck-unit-" + index).addClass("active");
-                this.index = index;
-                return false;
-            },
-            stop: function (index) {
-                this.prize = index;
-                return false;
+                // drawResult(item);
+                item.find("p").text("0.25元");
+                item.find('.front').hide();
+                var imageWidth = item.width();
+                var height = item.height();
+                console.log(imageWidth,height);
+                item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
             }
-        };
-
-        function roll() {
-            luck.times += 1;
-            luck.roll();
-            if (luck.times > luck.cycle + 10 && luck.prize == luck.index) {
-                clearTimeout(luck.timer);
-                luck.prize = -1;
-                luck.times = 0;
-                click = false;
-            } else {
-                if (luck.times < luck.cycle) {
-                    luck.speed -= 10;
-                } else if (luck.times == luck.cycle) {
-                    var winner = "${winner}";
-                    var index = $("#"+winner).val();
-                    luck.prize = index;//最终中奖位置
-                    setTimeout(drawResult, 3000);
-                } else {
-                    if (luck.times > luck.cycle + 10 && ((luck.prize == 0 && luck.index == 7) || luck.prize == luck.index + 1)) {
-                        luck.speed += 110;
-                    } else {
-                        luck.speed += 20;
-                    }
+        });
+    });
+    function drawResult(item){
+        var redpacketId = $("#redpacketId").val();
+        $.ajax({
+            type: "POST",
+            async: false,
+            traditional:true,
+            data: {
+                "redpacketId":redpacketId
+            },
+            cache:false,
+            dataType: "json",
+            url: "/mobile/draw",
+            success: function(data){
+                if(data.success){
+                    item.find("p").text("0.25元");
+                    item.find('.front').hide();
+                    var imageWidth = item.width();
+                    var height = item.height();
+                    console.log(imageWidth,height);
+                    item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
+                }else{
+                    return alert("抽奖失败,请稍后重试！");
                 }
-                if (luck.speed < 40) {
-                    luck.speed = 40;
-                }
-                ;
-
-                luck.timer = setTimeout(roll, luck.speed);
             }
-            return false;
-        }
-
-        function drawResult(){
-            var redpacketId = $("#redpacketId").val();
-            $.ajax({
-                type: "POST",
-                async: false,
-                traditional:true,
-                data: {
-                    "redpacketId":redpacketId
-                },
-                cache:false,
-                dataType: "json",
-                url: "/mobile/draw",
-                success: function(data){
-                    if(data.success){
-                        window.location.href="/mobile/drawResult?redpacketId="+redpacketId;
-                    }else{
-                        alert("抽奖失败");
-                    }
-                }
-            });
-        }
-
-        var click = false;
-        window.onload = function () {
-            luck.init('luck');
-            $("#btn").click(function () {
-                if (click) {
-                    return false;
-                }else {
-                    luck.speed = 100;
-                    roll();
-                    click = true;
-                    return false;
-                }
-            });
-        };
-    })
+        });
+    }
 </script>
 </body>
 </html>

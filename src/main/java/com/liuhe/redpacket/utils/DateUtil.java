@@ -1,5 +1,8 @@
 package com.liuhe.redpacket.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -9,6 +12,26 @@ public class DateUtil {
 	public static SimpleDateFormat sdf = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss");
 
+	public static java.util.Date parse(String dateString,String dateFormat) {
+		return parse(dateString, dateFormat,java.util.Date.class);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static <T extends java.util.Date> T parse(String dateString,String dateFormat,Class<T> targetResultType) {
+		if(StringUtils.isEmpty(dateString))
+			return null;
+		DateFormat df = new SimpleDateFormat(dateFormat);
+		try {
+			long time = df.parse(dateString).getTime();
+			java.util.Date t = targetResultType.getConstructor(long.class).newInstance(time);
+			return (T)t;
+		} catch (ParseException e) {
+			String errorInfo = "cannot use dateformat:"+dateFormat+" parse datestring:"+dateString;
+			throw new IllegalArgumentException(errorInfo,e);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("error targetResultType:"+targetResultType.getName(),e);
+		}
+	}
 	/**
 	 * 获取距离当前多少天的日期
 	 * 

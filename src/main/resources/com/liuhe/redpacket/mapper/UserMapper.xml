@@ -5,8 +5,8 @@
 	
 	
 	<insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
-	 	insert into t_user(username,password,amount,headImage,wechat,openid,remark)
-		values(#{username},#{password},#{amount},#{headImage},#{wechat},#{openid},#{remark}) 
+	 	insert into t_user(username,password,amount,headImage,wechat,openid,remark,drawNum)
+		values(#{username},#{password},#{amount},#{headImage},#{wechat},#{openid},#{remark},#{drawNum})
 	</insert>
 	
 	<select id="get" resultType="User" parameterType="long">
@@ -21,8 +21,9 @@
 			amount=#{amount},
 			headImage=#{headImage},
 			status=#{status},
-			remark=#{remark}
- 			where id=#{id} 
+			remark=#{remark},
+			drawNum=#{drawNum}
+ 			where id=#{id}
 	</update>
 	<update id="updateWechat" parameterType="User">
 		update t_user set 
@@ -56,7 +57,7 @@
 	<sql id="whereSql">
 		<where>
 			<if test="username!=null and username!=''">
-				u.username like concat('%',#{username},'%')
+				and u.username like concat('%',#{username},'%')
 			</if>
 			<if test="status!=null and status!=-99">
 				and u.status=#{status}

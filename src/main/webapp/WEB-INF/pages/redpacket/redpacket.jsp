@@ -121,8 +121,13 @@ $(function(){
 		}, 
 
 		//刷新
-		redpacket_refresh:function(){
+        redpacket_import:function(){
 			redpacketDataGrid.datagrid("reload");
+		},
+		//刷新
+        redpacket_downloadTemplet:function(){
+            // 发送AJAX请求，修改ID对应数据状态
+            $.get("/redpacket/downloadTemplet");
 		}
 
 	};
@@ -132,7 +137,7 @@ $(function(){
 		var cmd = $(this).data("cmd");
 		console.debug(cmd);
 		if (cmd) {
-			cmdRedpacket[cmd]();//执行对应的方法
+			cmdRedpacket[cmd]();//执行对应的方法·
 		}
 	});
 });
@@ -188,7 +193,8 @@ function enableRedpacket(id){
 				<a class="easyui-linkbutton" iconCls="icon-add" data-cmd="redpacket_create">添加</a>
 				<a class="easyui-linkbutton" iconCls="icon-edit" data-cmd="redpacket_edit">编辑</a>
 				<a class="easyui-linkbutton" iconCls="icon-remove" data-cmd="redpacket_del">删除</a>
-			<a class="easyui-linkbutton" iconCls="icon-reload"  data-cmd="redpacket_refresh">刷新</a>
+			<a class="easyui-linkbutton" iconCls="icon-reload"  data-cmd="redpacket_import">导入</a>
+			<a class="easyui-linkbutton" iconCls="icon-reload"  data-cmd="redpacket_downloadTemplet">导出模板</a>
 		 	</form>
 		 </div> 
 	</div>

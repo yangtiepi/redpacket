@@ -188,9 +188,8 @@ body{
     letter-spacing: 1px;
 }
 .slide{
-    background: rgba(0,0,0,.4);
     padding: 10px 12px;
-    height:210px;
+    height:60px;
     overflow: hidden;
 }
 .scroll-group{
@@ -198,17 +197,8 @@ body{
 }
 
 .scroll-group .scroll-list{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
+    justify-content: center;
     align-items: center;
     font-size: 16px;
 }
@@ -639,3 +629,6 @@ body .luck-unit-special span{
     color: #c72220;
     margin-top: 26px;
 }
+
+
+

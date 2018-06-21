@@ -6,6 +6,9 @@
 
 package com.liuhe.redpacket.web.oms;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,11 @@ import com.liuhe.redpacket.service.IRedpacketService;
 import com.liuhe.redpacket.system.MethodAnnotation;
 import com.liuhe.redpacket.system.MethodAnnotation.ResourceType;
 import com.liuhe.redpacket.utils.result.AjaxResult;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import static com.liuhe.redpacket.utils.UserContext.getResponse;
 
 /**
  * @author 
@@ -151,4 +159,35 @@ public class RedpacketController{
 		return ar;
 	}
 
+
+	/**
+	 * 下载批量导入模板
+	 *
+	 * @param request
+	 * @param response
+	 *
+	 * @throws Exception
+	 */
+	@RequestMapping("/downloadTemplet")
+	public void downloadTemplet(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String path = request.getSession().getServletContext().getRealPath("");
+		String code = request.getParameter("code");
+
+		File file = new File(path + File.separator + "template" + File.separator + "bacth_redpacket.csv");
+		if (file.exists()) {
+			response.setContentType("application/csv;charset=GBK");
+			response.setHeader("Content-Disposition", "attachment; filename=bacth_redpacket.csv");
+			OutputStream out = response.getOutputStream();
+			FileInputStream in = new FileInputStream(file);
+			int len = 0;
+			byte[] b = new byte[1024];
+			while ((len = in.read(b)) != -1) {
+				out.write(b, 0, len);
+			}
+			out.flush();
+			out.close();
+			in.close();
+		}
+
+	}
 }

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.RedpacketLogMapper" >
+  <insert id="save" parameterType="RedpacketLog" useGeneratedKeys="true" keyProperty="id">
+    insert into t_redpacket_log (
+        	userId ,
+        	qrCodeId ,
+        	redpacketId ,
+        	redpacketName ,
+        	userName ,
+        	openid ,
+        	wechat ,
+        	receiveTime ,
+        	amount 
+        ) VALUES (
+        	#{userId} ,
+        	#{qrCodeId} ,
+        	#{redpacketId} ,
+        	#{redpacketName} ,
+        	#{userName} ,
+        	#{openid} ,
+        	#{wechat} ,
+        	#{receiveTime} ,
+        	#{amount} 
+        )
+  </insert>
+  
+  <update id="update" parameterType="RedpacketLog">
+  	update t_redpacket_log set 
+		userId = #{userId} ,
+        qrCodeId = #{qrCodeId} ,
+        redpacketId = #{redpacketId} ,
+        redpacketName = #{redpacketName} ,
+        userName = #{userName} ,
+        openid = #{openid} ,
+        wechat = #{wechat} ,
+        receiveTime = #{receiveTime} ,
+        amount = #{amount} 
+  	where id=#{id} 
+  </update>
+  
+  <delete id="delete" parameterType="long" >
+    delete from t_redpacket_log
+    where id = #{id}
+  </delete>
+  
+     <select id="get" resultType="RedpacketLog" parameterType="long">
+   	 select * from t_redpacket_log
+   	 where id = #{id}
+  </select>
+  
+  <select id="getAll" resultType="RedpacketLog" >
+   	 select * from t_redpacket_log 
+  </select>
+  
+  	<sql id="whereSql">
+		<where>
+			<if test="redpacketId != null and redpacketId != -1">
+				and r.redpacketId = #{redpacketId}
+			</if>
+			<if test="openid != null and openid != ''">
+				and r.openid = #{openid}
+			</if>
+			<if test="qrCodeId != null and qrCodeId != -1">
+				and r.qrCodeId = #{qrCodeId}
+			</if>
+			and r.receiveTime is not null
+			<if test="beginTime != null and beginTime != ''">
+				and r.receiveTime>=#{beginTime}
+			</if>
+			<if test="endTime != null and endTime != ''">
+				and r.receiveTime &lt; #{endTime}
+			</if>
+		</where>
+	</sql>
+  
+  <select id="query" resultType="RedpacketLog"  parameterType="BaseQuery">
+		select r.*
+		from t_redpacket_log r
+		left join t_ad a on r.qrCodeId = a.id
+		<include refid="whereSql" />
+		order by r.receiveTime desc
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select count(1)
+		(select count(1)
+		from t_redpacket_log r 
+		left join t_ad a on r.qrCodeId = a.id
+		<include refid="whereSql" />) c
+	</select>
+	
+</mapper>

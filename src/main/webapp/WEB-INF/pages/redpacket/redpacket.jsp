@@ -31,13 +31,7 @@ $(function(){
 		toolbar:'#redpacket_toolbar'
 	});
 	
-	cardsCombobox.combobox({
-	   url:'cards/list',
-       valueField:'id',
-       textField:'name',
-       prompt:'卡集',
-    });
-	
+
 	
 	
 	//创建cmdType管理所有操作函数
@@ -179,10 +173,10 @@ function enableRedpacket(id){
 			<tr>
 				<!-- field：指定需要显示列对应JSON数据属性 -->
 				<th field="name" width="20" align="center">名称</th>
-				<th field="info" width="50" align="center">说明</th>
+				<th field="min" width="50" align="center">金额</th>
 				<th field="ratio" width="20" align="center" >出现概率（%）</th>
-				<th field="qrcode" width="10" align="center" data-options="formatter:formatImg">二维码</th>
-				<th field="status" width="10" align="center" data-options="formatter:formatRedpacketStatus">状态</th>
+				<%--<th field="qrcode" width="10" align="center" data-options="formatter:formatImg">二维码</th>--%>
+				<%--<th field="status" width="10" align="center" data-options="formatter:formatRedpacketStatus">状态</th>--%>
 			</tr>
 		</thead>
 	</table>
@@ -193,8 +187,6 @@ function enableRedpacket(id){
 				<a class="easyui-linkbutton" iconCls="icon-add" data-cmd="redpacket_create">添加</a>
 				<a class="easyui-linkbutton" iconCls="icon-edit" data-cmd="redpacket_edit">编辑</a>
 				<a class="easyui-linkbutton" iconCls="icon-remove" data-cmd="redpacket_del">删除</a>
-			<a class="easyui-linkbutton" iconCls="icon-reload"  data-cmd="redpacket_import">导入</a>
-			<a class="easyui-linkbutton" iconCls="icon-reload"  data-cmd="redpacket_downloadTemplet">导出模板</a>
 		 	</form>
 		 </div> 
 	</div>
@@ -210,21 +202,21 @@ function enableRedpacket(id){
 	 				<input  name="name"  class="easyui-textbox" data-options="required:true" style="width: 250px">
 				</div>		
 				<div style="margin-top: 20px;margin-left: 35px" >
-	 				最小金额：
+	 				红包金额：
 	 				<input  name="min"  class="easyui-numberbox" data-options="required:true,min:0.01,precision:2" style="width: 250px;">
 				</div>	
-				<div style="margin-top: 20px;margin-left: 35px" >
-	 				最大金额：
-	 				<input  name="max"  class="easyui-numberbox" data-options="required:true,min:0.01,precision:2" style="width: 250px;">
-				</div>
+				<%--<div style="margin-top: 20px;margin-left: 35px" >--%>
+	 				<%--最大金额：--%>
+	 				<%--<input  name="max"  class="easyui-numberbox" data-options="required:true,min:0.01,precision:2" style="width: 250px;">--%>
+				<%--</div>--%>
 				<div style="margin-top: 20px;margin-left: 35px" >
 					出现概率：
 					<input  name="ratio" id="ratio"  class="easyui-numberbox" data-options="required:true,max:100,min:0.01,precision:2" style="width: 250px">
 				</div>
-				<div style="margin-top: 20px;margin-left: 35px" >
-	 				红包说明：
-	 				<input  name="info"  class="easyui-textbox" data-options="required:true,multiline:true" style="width: 250px;height:50px">
-				</div>	
+				<%--<div style="margin-top: 20px;margin-left: 35px" >--%>
+	 				<%--红包说明：--%>
+	 				<%--<input  name="info"  class="easyui-textbox" data-options="required:true,multiline:true" style="width: 250px;height:50px">--%>
+				<%--</div>	--%>
 			</form>
 		</div>
 	<!-- 录入窗口按钮 -->

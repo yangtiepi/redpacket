@@ -9,9 +9,9 @@ package com.liuhe.redpacket.service;
 import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
-import com.liuhe.redpacket.domain.AdClickLog;
-import com.liuhe.redpacket.query.AdClickLogQuery;
+import com.liuhe.redpacket.domain.RedpacketLog;
 import com.liuhe.redpacket.query.PageResult;
+import com.liuhe.redpacket.query.RedpacketLogQuery;
 
 /**
  * @author 
@@ -19,15 +19,15 @@ import com.liuhe.redpacket.query.PageResult;
  * @since 1.0
  */
 
-public interface IAdClickLogService{
+public interface IRedpacketLogService{
 	/**
 	 * 保存账户
 	 */
-	void save(AdClickLog entity);
+	void save(RedpacketLog entity);
 	/**
 	 * 更新账户信息
 	 */
-	void update(AdClickLog entity);
+	void update(RedpacketLog entity);
 	/**
 	 * 删除账户
 	 */
@@ -35,14 +35,13 @@ public interface IAdClickLogService{
 	/**
 	 * 获取单个
 	 */
-	AdClickLog get(Long id);
+	RedpacketLog get(Long id);
 	/**
 	 * 查询所有
 	 */
-	List<AdClickLog> getAll();
+	List<RedpacketLog> getAll();
 	/**
 	 * 高级查询
 	 */
-	PageResult<AdClickLog> query(AdClickLogQuery equ);
-	PageResult<JSONObject> queryGroupAd(AdClickLogQuery qu);
+	PageResult<RedpacketLog> query(RedpacketLogQuery equ);
 }

@@ -35,6 +35,7 @@ public class DrawLog implements Serializable {
     private String remark;
     private Integer type;//0未抽奖1现金2卡片3未中奖
     private Double amount;
+    private Long qrCodeId;
 
     private Date receiveTime;
 
@@ -132,6 +133,14 @@ public class DrawLog implements Serializable {
 
     public void setReceiveTime(Date receiveTime) {
         this.receiveTime = receiveTime;
+    }
+
+    public Long getQrCodeId() {
+        return qrCodeId;
+    }
+
+    public void setQrCodeId(Long qrCodeId) {
+        this.qrCodeId = qrCodeId;
     }
 }
 

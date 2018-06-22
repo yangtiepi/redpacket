@@ -10,8 +10,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.liuhe.redpacket.domain.DrawLog;
 import com.liuhe.redpacket.query.DrawLogQuery;
 import com.liuhe.redpacket.query.PageResult;
+import com.liuhe.redpacket.utils.result.AjaxResult;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 
@@ -34,4 +36,23 @@ public interface IDrawLogService{
 	List<DrawLog> findByUser(String openid);
 
 	JSONObject getSum(String openid);
+
+
+	/**
+	 * 抽奖
+	 * @param code
+	 * @param openid
+	 * @return
+	 */
+	AjaxResult draw(String code,
+					String openid);
+
+
+	/**
+	 * 抽奖中心
+	 * @return
+	 */
+	Map<String,Object> drawInfo(String openid);
+
+
 }

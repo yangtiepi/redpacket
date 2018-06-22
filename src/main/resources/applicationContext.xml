@@ -193,6 +193,11 @@
 				<value>classpath:system.properties</value>
 			</array>
 		</property>
-	</bean> 
-	
+	</bean>
+
+
+	<bean id="idWorker" class="com.liuhe.redpacket.utils.IdWorker">
+		<property name="workerId" value="${workerId}" />
+		<property name="datacenterId" value="${datacenterId}" />
+	</bean>
 </beans>

@@ -11,25 +11,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.liuhe.redpacket.domain.Card;
-import com.liuhe.redpacket.domain.User;
-import com.liuhe.redpacket.domain.UserCard;
+import com.liuhe.redpacket.domain.*;
 import com.liuhe.redpacket.exception.LogicException;
 import com.liuhe.redpacket.query.CardQuery;
 import com.liuhe.redpacket.query.UserCardQuery;
-import com.liuhe.redpacket.service.IUserCardService;
-import com.liuhe.redpacket.service.IUserService;
+import com.liuhe.redpacket.service.*;
 import com.liuhe.redpacket.utils.RandomUtil;
 import com.liuhe.redpacket.utils.result.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.liuhe.redpacket.domain.CardsComplete;
 import com.liuhe.redpacket.mapper.CardsCompleteMapper;
 import com.liuhe.redpacket.query.CardsCompleteQuery;
 import com.liuhe.redpacket.query.PageResult;
-import com.liuhe.redpacket.service.ICardsCompleteService;
 import com.liuhe.redpacket.utils.ConstUtil;
 
 /**
@@ -48,6 +43,10 @@ public class CardsCompleteServiceImpl implements ICardsCompleteService{
 	private IUserService userService;
 	@Autowired
 	private IUserCardService userCardService;
+	@Autowired
+	private ICardLogService cardLogService;
+	@Autowired
+	private ICardService cardService;
 
 	
 	@Override
@@ -117,7 +116,22 @@ public class CardsCompleteServiceImpl implements ICardsCompleteService{
             UserCard userCard = userCards.get(i);
 			userCard.setExchangeTime(date);
 			userCardService.update(userCard);
+			Card card = cardService.get(userCard.getCardId());
 			System.out.println("===========更新时间================="+userCard.getReceiveTime());
+
+
+			CardLog cardLog = new CardLog();
+			cardLog.setCardId(userCard.getCardId());
+			if(card != null){
+				cardLog.setCardName(card.getName());
+			}
+			cardLog.setOpenid(openid);
+			cardLog.setQrCodeId(userCard.getId());
+			cardLog.setReceiveTime(date);
+			cardLog.setType(1);
+			cardLog.setUserId(user.getId());
+			cardLog.setUserName(user.getUsername());
+			cardLogService.save(cardLog);
         }
 
 		String randomCode = RandomUtil.randomCode(6);

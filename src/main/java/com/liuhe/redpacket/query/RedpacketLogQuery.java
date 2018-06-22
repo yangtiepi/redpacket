@@ -16,22 +16,22 @@ import org.apache.commons.lang3.StringUtils;
  * @since 1.0
  */
 
-public class AdClickLogQuery extends BaseQuery implements Serializable {
+public class RedpacketLogQuery extends BaseQuery implements Serializable {
 	private static final long serialVersionUID = 3148176768559230877L;
 
-	private java.lang.Long adId;
-	private java.lang.Long homepageId;
+	private java.lang.Long qrCodeId;
+	private java.lang.Long redpacketId;
 	private java.lang.String openid;
 	private String adTitle;
 	private String beginTime;
 	private String endTime;
 
-	public java.lang.Long getAdId() {
-		return adId;
+	public java.lang.Long getQrCodeId() {
+		return qrCodeId;
 	}
 
-	public void setAdId(java.lang.Long adId) {
-		this.adId = adId;
+	public void setQrCodeId(java.lang.Long qrCodeId) {
+		this.qrCodeId = qrCodeId;
 	}
 
 	public String getBeginTime() {
@@ -57,6 +57,15 @@ public class AdClickLogQuery extends BaseQuery implements Serializable {
 	public void setAdTitle(String adTitle) {
 		this.adTitle = adTitle;
 	}
+	
+
+	public java.lang.Long getRedpacketId() {
+		return redpacketId;
+	}
+
+	public void setRedpacketId(java.lang.Long redpacketId) {
+		this.redpacketId = redpacketId;
+	}
 
 	public java.lang.String getOpenid() {
 		return openid;
@@ -66,18 +75,10 @@ public class AdClickLogQuery extends BaseQuery implements Serializable {
 		this.openid = openid;
 	}
 
-	public java.lang.Long getHomepageId() {
-		return homepageId;
-	}
-
-	public void setHomepageId(java.lang.Long homepageId) {
-		this.homepageId = homepageId;
-	}
-
 	@Override
 	public String toString() {
-		return "AdClickLogQuery [adId=" + adId + ", homepageId=" + homepageId
-				+ ", openid=" + openid + ", adTitle=" + adTitle
+		return "RedpacketLogQuery [QrCodeId=" + qrCodeId + ", redpacketId="
+				+ redpacketId + ", openid=" + openid + ", adTitle=" + adTitle
 				+ ", beginTime=" + beginTime + ", endTime=" + endTime + "]";
 	}
 

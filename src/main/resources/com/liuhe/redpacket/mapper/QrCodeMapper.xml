@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuhe.redpacket.mapper.QrCodeMapper">
+	<insert id="save" parameterType="QrCode" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into t_qr_code (
+		code ,
+		url ,
+		isUsed ,
+		usedTime ,
+		isDel ,
+		delTime
+		) VALUES (
+		#{code} ,
+		#{url} ,
+		#{isUsed} ,
+		#{usedTime} ,
+		#{isDel} ,
+		#{delTime}
+		)
+	</insert>
+
+	<update id="update" parameterType="QrCode">
+		update t_qr_code set
+		code = #{code} ,
+		<if test="isUsed != null">
+			isUsed = #{isUsed} ,
+		</if>
+		<if test="usedTime != null">
+			usedTime = #{usedTime} ,
+		</if>
+		<if test="isDel != null">
+			isDel = #{isDel} ,
+		</if>
+		<if test="delTime != null">
+			delTime = #{delTime} ,
+		</if>
+		url = #{url}
+		where id=#{id}
+	</update>
+
+	<delete id="delete" parameterType="long">
+		delete from t_qr_code
+		where id = #{id}
+	</delete>
+
+
+	<select id="getAll" resultType="QrCode">
+		select * from t_qr_code where isDel = 0;
+	</select>
+
+	<select id="get" resultType="QrCode" parameterType="long">
+		select * from t_qr_code
+		where id = #{id}
+	</select>
+	<select id="getByCode" resultType="QrCode" parameterType="java.lang.String">
+		select * from t_qr_code
+		where code = #{code}
+	</select>
+
+	<sql id="whereSql">
+		<where>
+			<if test="isUsed != null and isUsed != -1">
+				and isUsed = #{isUsed}
+			</if>
+			<if test="beginTime != null and beginTime != ''">
+				and usedTime>=#{beginTime}
+			</if>
+			<if test="endTime != null and endTime != ''">
+				and usedTime &lt; #{endTime}
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultType="QrCode" parameterType="BaseQuery">
+		select *
+		from t_qr_code
+		<include refid="whereSql" />
+		<if test="pageSize!=-1">
+			limit #{start},#{pageSize}
+		</if>
+	</select>
+	<!-- 获取总记录数 -->
+	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
+		select
+		count(1)
+		from t_qr_code
+		<include refid="whereSql" />
+	</select>
+</mapper>

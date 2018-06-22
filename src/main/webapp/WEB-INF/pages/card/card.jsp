@@ -179,10 +179,10 @@ $(function(){
 				<a class="easyui-linkbutton" iconCls="icon-add" data-cmd="card_create">添加</a>
 				<a class="easyui-linkbutton" iconCls="icon-edit" data-cmd="card_edit">编辑</a>
 				<a class="easyui-linkbutton" iconCls="icon-remove" data-cmd="card_del">删除</a>
-				卡片名称:<input class="easyui-textbox" name="name" style="width: 150px">
+				<%--卡片名称:<input class="easyui-textbox" name="name" style="width: 150px">--%>
 				<%--主卡名称:<input class="easyui-textbox" name="cardsName" style="width: 150px">--%>
-				<a class="easyui-linkbutton" iconCls="icon-search"
-					data-cmd="card_search">搜索</a>
+				<%--<a class="easyui-linkbutton" iconCls="icon-search"--%>
+					<%--data-cmd="card_search">搜索</a>--%>
 		 	</form>
 		 </div> 
 	</div>

@@ -51,7 +51,9 @@ public class MobileController {
     @RequestMapping("/userInfo")
     public ModelAndView userInfo(HttpServletRequest request) {
         String openid = (String) request.getSession().getAttribute("openid");
+        String code = (String) request.getSession().getAttribute("code");
         Map<String, Object> model = userService.userInfo(openid);
+        model.put("code",code);
         return new ModelAndView("mobile/userInfo", model);
     }
 
@@ -100,9 +102,9 @@ public class MobileController {
      * @return
      */
     @RequestMapping("/drawCenter")
-    public ModelAndView drawCenter(HttpServletRequest request, Long redpacketId) {
+    public ModelAndView drawCenter(HttpServletRequest request, String code) {
         String openid = (String) request.getSession().getAttribute("openid");
-        Map<String, Object> model = redpacketService.drawInfo(redpacketId, openid);
+        Map<String, Object> model = drawLogService.drawInfo(openid);
         return new ModelAndView("mobile/drawCenter", model);
     }
 
@@ -114,9 +116,9 @@ public class MobileController {
     @RequestMapping("/draw")
     @ResponseBody
     public AjaxResult draw(
-            HttpServletRequest request, Long redpacketId) {
+            HttpServletRequest request, String code) {
         String openid = (String) request.getSession().getAttribute("openid");
-        return redpacketService.draw(redpacketId, openid);
+        return drawLogService.draw(code, openid);
     }
 
     /**

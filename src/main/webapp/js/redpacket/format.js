@@ -3,6 +3,9 @@
  * 时间格式化
  */
 var format = function(time, format) {
+	if(!time){
+		return '';
+	}
 	var t = new Date(time);
 	var tf = function(i) {
 		return (i < 10 ? '0' : '') + i;
@@ -112,6 +115,16 @@ function formatCardsStatus(v,r,i){
 	return v ? '<a href="#" onclick=disableCards('+r.id+')>使用中</a>' : '<a href="#" onclick=enableCards('+r.id+')>已停用</a>';
 }
 /**
+ * 二维码状态
+ * @param v
+ * @param r
+ * @param i
+ * @returns
+ */
+function formatQrCodeStatus(v,r,i){
+    return v ? "<font color='green'>已使用</font>" : "<font color='red'>未使用</font>";
+}
+/**
  * 红包状态
  * @param v
  * @param r
@@ -121,16 +134,7 @@ function formatCardsStatus(v,r,i){
 function formatRedpacketStatus(v,r,i){
 	return v ? '<a href="#" onclick=disableRedpacket('+r.id+')>使用中</a>' : '<a href="#" onclick=enableRedpacket('+r.id+')>已停用</a>';
 }
-/**
- * 首页状态
- * @param v
- * @param r
- * @param i
- * @returns
- */
-function formatHomepageStatus(v,r,i){
-	return v ? '<a href="#" onclick=disableHomepage('+r.id+')>使用中</a>' : '<a href="#" onclick=enableHomepage('+r.id+')>已停用</a>';
-}
+
 /**
  * 集卡兑换状态
  * @param v
@@ -208,84 +212,5 @@ function formatTitle(v,r,i){
  */
 function formatException(v,r,i){
 	return '<a href="#" onclick=showException('+v+')>查看异常</a>';
-}
-/**
- * 限制周期
- * @param v
- * @param r
- * @param i
- * @returns {String}
- */
-function formatPeriodDay(v,r,i){
-	    switch (v) {
-		case 1:
-			return "1天";
-		case 3:
-			return "3天";
-		case 7:
-			return "7天";
-		case 30:
-			return "1个月";
-		case 90:
-			return "3个月";
-		case 180:
-			return "半年";
-		case 365:
-			return "一年";
-		case -1:
-			return "不限制";
-		default:
-			return "不限制";
-		}
-}
-/**
- * 查看广告点击详情
- * @param v
- * @param r
- * @param i
- * @returns {String}
- */
-function formatAdClickLogDetail(v,r,i){
-	return '<a href="#" onclick=showAdClickLog('+v+')>查看详情</a>';
-}
-/**
- * 查看红包领取详情
- * @param v
- * @param r
- * @param i
- * @returns {String}
- */
-function formatDrawLogDetail(v,r,i){
-	return '<a href="#" onclick=showDrawLog('+v+')>查看详情</a>';
-}
-/**
- * 查看红包领取详情
- * @param v
- * @param r
- * @param i
- * @returns {String}
- */
-function formatRedpacketUrl(v,r,i){
-	return window.document.location.href.replace('main','') + 'mobile/getRedpacket?redpacketId='+v;
-}
-/**
- * 首页名字
- * @param v
- * @param r
- * @param i
- * @returns {String}
- */
-function formatHomepagesTitle(v,r,i){
-	var homepage = "";
-	if(v){
-		for(var i=0;i < v.length;i++){
-			homepage += v[i].title;
-			homepage += ",";
-		}
-	}
-	if(homepage){
-		return homepage.substring(0, homepage.length - 1);
-	}
-	return homepage;
 }
 

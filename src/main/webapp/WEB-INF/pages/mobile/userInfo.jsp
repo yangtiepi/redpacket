@@ -14,6 +14,7 @@
     <title>个人中心</title>
 </head>
 <body>
+<input type="hidden" id="code" value="${code}">
 <div class="header">
     <a href="#" onclick="history.back();">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
@@ -104,6 +105,17 @@
             $(this).addClass('active').siblings('li').removeClass('active')
         })
         $("#scrollDiv").Scroll({line: 1, speed: 500, timer: 2000});
+
+        if(!window.localStorage){
+            alert("当前浏览器版本过低！");
+            return false;
+        }else{
+            var storage=window.localStorage;
+            var code = $("#code").val();
+            if(code){
+                storage["code"]=code;
+            }
+        }
     })
 </script>
 </body>

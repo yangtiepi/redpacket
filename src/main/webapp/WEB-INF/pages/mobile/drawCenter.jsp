@@ -121,7 +121,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jq_scroll.js"></script>
 <script src="${pageContext.request.contextPath}/mobile/js/jquery.featureCarousel.js" type="text/javascript"></script>
 <script type="text/javascript">
-    var hasClicked = false
+    var hasClicked = false;
+    var code;
     $("#scrollDiv").Scroll({line: 1, speed: 500, timer: 2000});
     $(document).ready(function () {
         $("#carousel").featureCarousel({
@@ -148,22 +149,40 @@
                 item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
             }
         });
+
+        if(!window.localStorage){
+            alert("当前浏览器版本过低！");
+            return false;
+        }else{
+            var storage=window.localStorage;
+            code = storage.code;
+        }
     });
     function drawResult(item){
-        var redpacketId = $("#redpacketId").val();
+        if(!code){
+            return alert('你没有抽奖次数！');
+        }
         $.ajax({
             type: "POST",
             async: false,
             traditional:true,
             data: {
-                "redpacketId":redpacketId
+                "code":code
             },
             cache:false,
             dataType: "json",
             url: "/mobile/draw",
             success: function(data){
                 if(data.success){
-                    item.find("p").text("0.25元");
+                    var info = data.info;
+                    if(info.type == 1){
+                        item.find("p").text(info.amount+"元");
+                    }else if(info.type == 2){
+                        item.find("p").text(info.name);
+                    }else{
+                        item.find("p").text("谢谢惠顾");
+                    }
+
                     item.find('.front').hide();
                     var imageWidth = item.width();
                     var height = item.height();

@@ -13,7 +13,8 @@
         	remark ,
         	type ,
         	receiveTime ,
-        	amount 
+        	amount ,
+        	qrCodeId
         ) VALUES (
         	#{userId} ,
         	#{redpacketId} ,
@@ -25,7 +26,8 @@
         	#{remark} ,
         	#{type} ,
         	#{receiveTime} ,
-        	#{amount} 
+        	#{amount} ,
+        	#{qrCodeId}
         )
   </insert>
 
@@ -41,7 +43,8 @@
 		remark = #{remark} ,
 		type = #{type} ,
 		receiveTime = #{receiveTime} ,
-		amount = #{amount}
+		amount = #{amount},
+		qrCodeId = #{qrCodeId}
 		where id=#{id}
 	</update>
   
@@ -58,6 +61,9 @@
 			</if>
 			<if test="cardId != null and cardId != -1">
 				and d.cardId = #{cardId}
+			</if>
+			<if test="qrCodeId != null and qrCodeId != -1">
+				and d.qrCodeId = #{qrCodeId}
 			</if>
 			<if test="type != null">
 				and d.type = #{type}

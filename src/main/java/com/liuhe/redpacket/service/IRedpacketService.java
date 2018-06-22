@@ -9,7 +9,6 @@ package com.liuhe.redpacket.service;
 import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONObject;
 import com.liuhe.redpacket.domain.Redpacket;
 import com.liuhe.redpacket.query.PageResult;
 import com.liuhe.redpacket.query.RedpacketQuery;
@@ -56,19 +55,4 @@ public interface IRedpacketService{
 	 * @param id
 	 */
 	void enable(Long id);
-	/**
-	 * 抽奖
-	 * @param redpacketId
-	 * @param openid
-	 * @return
-	 */
-	AjaxResult draw(Long redpacketId, String openid);
-
-
-	/**
-	 * 抽奖中心
-	 * @param redpacketId
-	 * @return
-	 */
-	Map<String,Object> drawInfo(Long redpacketId,String openid);
 }

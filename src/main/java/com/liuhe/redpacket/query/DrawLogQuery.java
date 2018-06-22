@@ -19,13 +19,14 @@ import org.apache.commons.lang3.StringUtils;
 public class DrawLogQuery extends BaseQuery implements Serializable {
     private static final long serialVersionUID = 3148176768559230877L;
 
-    private java.lang.Long cardId;
-    private java.lang.Long redpacketId;
-    private java.lang.String openid;
+    private Long cardId;
+    private Long redpacketId;
+    private String openid;
     private String userName;
     private String beginTime;
     private String endTime;
     private Integer type;
+    private Long qrCodeId;
 
     public Long getCardId() {
         return cardId;
@@ -84,4 +85,11 @@ public class DrawLogQuery extends BaseQuery implements Serializable {
         this.type = type;
     }
 
+    public Long getQrCodeId() {
+        return qrCodeId;
+    }
+
+    public void setQrCodeId(Long qrCodeId) {
+        this.qrCodeId = qrCodeId;
+    }
 }

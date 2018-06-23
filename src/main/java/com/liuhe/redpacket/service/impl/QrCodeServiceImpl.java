@@ -20,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author 
@@ -33,8 +34,8 @@ public class QrCodeServiceImpl implements IQrCodeService {
 
 	@Autowired
 	private QrCodeMapper qrCodeMapper;
-	@Autowired
-	private IdWorker idWorker;
+//	@Autowired
+//	private IdWorker idWorker;
 	@Value("#{prop.baseUrl}")
 	private String baseUrl;
 	
@@ -43,7 +44,7 @@ public class QrCodeServiceImpl implements IQrCodeService {
 	public QrCode save(QrCode qrCode) {
 		qrCode.setIsDel(0);
 		qrCode.setIsUsed(0);
-		qrCode.setCode(idWorker.nextIdStr());
+		qrCode.setCode(UUID.randomUUID().toString());
 		qrCodeMapper.save(qrCode);
 
 		String url = baseUrl + "mobile/drawCenter?code="

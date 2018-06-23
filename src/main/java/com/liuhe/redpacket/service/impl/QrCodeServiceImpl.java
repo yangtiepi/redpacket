@@ -44,7 +44,7 @@ public class QrCodeServiceImpl implements IQrCodeService {
 	public QrCode save(QrCode qrCode) {
 		qrCode.setIsDel(0);
 		qrCode.setIsUsed(0);
-		qrCode.setCode(UUID.randomUUID().toString());
+		qrCode.setCode(UUID.randomUUID().toString().replace("-",""));
 		qrCodeMapper.save(qrCode);
 
 		String url = baseUrl + "mobile/drawCenter?code="

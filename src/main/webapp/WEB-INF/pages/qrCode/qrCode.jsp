@@ -147,7 +147,7 @@ $(function(){
 
 
 	<!-- 录入窗口 -->
-	<div id="qrCodeDialog" class="easyui-dialog" style="width: 400px;height: 340px;"
+	<div id="qrCodeDialog" class="easyui-dialog" style="width: 400px;height: 140px;"
 	data-options="title:'生成二维码',modal:true,iconCls:'icon-edit',buttons:'#qrCode_bs',closed:true">
 			<form id="qrCodeForm" method="post" enctype="multipart/form-data">
 				<div style="margin-top: 20px;margin-left: 35px" >

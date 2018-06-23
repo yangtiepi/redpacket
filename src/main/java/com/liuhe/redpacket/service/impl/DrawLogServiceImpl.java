@@ -200,6 +200,10 @@ public class DrawLogServiceImpl implements IDrawLogService {
             redpacketLogMapper.save(redpacketLog);
         }
 
+        qrCode.setIsUsed(1);
+        qrCode.setUsedTime(date);
+        qrCodeMapper.update(qrCode);
+
         return new AjaxResult(info);
     }
 

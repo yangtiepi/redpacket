@@ -199,7 +199,7 @@ $(function(){
 			</div>	
 			<div style="margin-top: 20px;margin-left: 35px" >
 	 			出现概率：
-	 			<input  name="ratio" id="ratio"  class="easyui-numberbox" data-options="required:true,max:100,min:0.01,precision:2" style="width: 150px">
+	 			<input  name="ratio" id="ratio"  class="easyui-numberbox" data-options="required:true,max:100,min:0.0001,precision:4" style="width: 150px">
 			</div>	
 			<%--<div style="margin-top: 15px;margin-left: 35px" >--%>
 				<%--选择主卡：--%>

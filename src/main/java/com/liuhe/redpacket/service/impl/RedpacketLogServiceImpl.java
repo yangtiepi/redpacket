@@ -72,4 +72,9 @@ public class RedpacketLogServiceImpl implements IRedpacketLogService{
 				qu.getCurrentPage(), total.intValue());
 	}
 
+	@Override
+	public Double queryTotalAmount(RedpacketLogQuery qu) {
+		return RedpacketLogMapper.queryTotalAmount(qu);
+	}
+
 }

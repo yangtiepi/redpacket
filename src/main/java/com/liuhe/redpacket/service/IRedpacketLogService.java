@@ -44,4 +44,11 @@ public interface IRedpacketLogService{
 	 * 高级查询
 	 */
 	PageResult<RedpacketLog> query(RedpacketLogQuery equ);
+
+	/**
+	 * 查询总金额
+	 * @param qu
+	 * @return
+	 */
+    Double queryTotalAmount(RedpacketLogQuery qu);
 }

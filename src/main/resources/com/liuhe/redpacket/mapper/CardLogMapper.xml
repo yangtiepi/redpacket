@@ -80,7 +80,7 @@
   <select id="query" resultType="CardLog"  parameterType="BaseQuery">
 		select r.*
 		from t_card_log r
-		left join t_ad a on r.qrCodeId = a.id
+		left join t_qr_code a on r.qrCodeId = a.id
 		<include refid="whereSql" />
 		order by r.receiveTime desc
 		<if test="pageSize!=-1">
@@ -90,10 +90,10 @@
 	
 	<!-- 获取总记录数 -->
 	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
-		select count(1)
+		select count(1) from
 		(select count(1)
 		from t_card_log r 
-		left join t_ad a on r.qrCodeId = a.id
+		left join t_qr_code a on r.qrCodeId = a.id
 		<include refid="whereSql" />) c
 	</select>
 </mapper>

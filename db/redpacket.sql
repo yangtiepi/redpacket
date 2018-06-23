@@ -16,10 +16,10 @@ Date: 2018-01-04 00:26:48
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for t_ad
+-- Table structure for t_qr_code
 -- ----------------------------
-DROP TABLE IF EXISTS `t_ad`;
-CREATE TABLE `t_ad` (
+DROP TABLE IF EXISTS `t_qr_code`;
+CREATE TABLE `t_qr_code` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `title` varchar(6) NOT NULL,
   `smallImg` varchar(255) NOT NULL,
@@ -44,35 +44,35 @@ CREATE TABLE `t_ad` (
 ) ENGINE=InnoDB AUTO_INCREMENT=456 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of t_ad
+-- Records of t_qr_code
 -- ----------------------------
-INSERT INTO `t_ad` VALUES ('435', '测试1234', 'images/ad/smallImg/f20467e6-912a-4059-a38c-e4bbbdf59ba9.jpg', 'images/ad/image/a40de346-4e8b-4df8-90cb-25dac21d2cc4.jpg', '啊深大大声大声道', '打过多份工的', 'https://www.baidu.com', '1', '4', '10', '1', null, null, '2017-12-15 10:55:56', '1', '1', '2017-12-18 13:52:20', null, null, '76');
-INSERT INTO `t_ad` VALUES ('436', '测试2', 'images/ad/smallImg/c6dc5bd0-6619-416c-9060-65d54be0fad8.jpg', 'images/ad/image/d3323d36-af8d-4c52-98b6-61e3bec35683.jpg', '奥迪三大德', '电饭锅对方的都是发生', 'https://www.baidu.com', '2', '2', '2', '1', null, null, '2017-12-15 10:56:27', '1', '1', '2017-12-18 13:52:23', null, null, '76');
-INSERT INTO `t_ad` VALUES ('437', '测试3', 'images/ad/smallImg/1c2bb60d-ee12-4678-9548-45a27fdccc37.jpg', 'images/ad/image/32faf882-75cb-499f-9425-93ff0588eecd.jpg', '发生的发生', '士大夫所发生的非', 'https://www.baidu.com', '3', '1', '10', '1', null, null, '2017-12-15 10:57:01', '1', '1', '2017-12-18 13:52:25', null, null, '76');
-INSERT INTO `t_ad` VALUES ('438', '测试4', 'images/ad/smallImg/69dddf58-d1b9-40ed-8587-92798e8f17a6.jpg', 'images/ad/image/0d36c28a-fbd3-4787-bec0-e35764500a03.jpg', '打上大大', '梵蒂冈的股份大概', 'https://www.baidu.com', '4', '1', '1', '1', null, null, '2017-12-15 10:57:35', '1', '1', '2017-12-18 13:52:31', null, null, '76');
-INSERT INTO `t_ad` VALUES ('439', '测试5', 'images/ad/smallImg/35e0fbdd-e14c-452d-a56e-863f290e0e67.jpg', 'images/ad/image/a99389ce-4e06-4904-946f-1a9c108aea3c.jpg', '三分大赛冯绍峰但是', '华国锋和法国韩国法国合法合规', 'https://www.baidu.com', '5', '0', '10', '1', null, null, '2017-12-15 11:01:30', '1', '1', '2017-12-18 13:52:34', null, null, '76');
-INSERT INTO `t_ad` VALUES ('440', '测试6', 'images/ad/smallImg/8d7ed927-b036-40bb-8655-fd3dc00369fd.jpg', 'images/ad/image/24403f4c-0b23-4c2b-9e25-3a7e991bcdb3.jpg', '大使大多数', '安放多少福斯粉丝', 'https://www.baidu.com', '6', '0', '10', '1', null, null, '2017-12-15 11:04:48', '1', '1', '2017-12-18 13:52:36', null, null, '76');
-INSERT INTO `t_ad` VALUES ('441', '测试7', 'images/ad/smallImg/4d724b98-35da-435f-abc9-5e1687566334.jpg', 'images/ad/image/f675871a-b73b-445f-85ca-6145cfbfb240.jpg', '敌方人数大大撒旦', '按时打算打双打', 'https://www.baidu.com', '7', '0', '10', '1', null, null, '2017-12-15 11:06:49', '1', '1', '2017-12-18 13:52:39', null, null, '76');
-INSERT INTO `t_ad` VALUES ('442', '测试8', 'images/ad/smallImg/429e1e49-e23a-4603-9ba2-d7488daa1063.jpg', 'images/ad/image/2aa9750a-bc3d-4e99-982e-deb0360b5261.jpg', '史蒂芬孙方式发生', '根风电杆的高度', 'https://www.baidu.com', '8', '1', '10', '1', null, null, '2017-12-15 11:10:27', '1', '1', '2017-12-18 13:52:42', null, null, '76');
-INSERT INTO `t_ad` VALUES ('443', '测试9', 'images/ad/smallImg/bf7d5fce-1d57-4db2-98cd-0ec9133b51db.jpg', 'images/ad/image/7eff3043-4454-4f5a-8f79-4a0fb5feaa91.jpg', '水豆腐酸豆腐是', '士大夫方式发生发生大幅', 'https://www.baidu.com', '9', '1', '10', '1', null, null, '2017-12-15 11:13:06', '1', '1', '2017-12-18 13:52:46', null, null, '76');
-INSERT INTO `t_ad` VALUES ('444', '测试10', 'images/ad/smallImg/658b2e9b-e65a-4ad1-9844-c61612cda395.jpg', 'images/ad/image/611df48d-a522-4c57-83da-388582de10c7.jpg', '爱大善大德', '电饭锅地方规定法国德国', 'https://www.baidu.com', '10', '1', '10', '1', null, null, '2017-12-15 11:14:12', '1', '1', '2017-12-18 13:52:49', null, null, '76');
-INSERT INTO `t_ad` VALUES ('445', '测试1', 'images/ad/smallImg/d07492cc-9795-404a-8dde-61637d2b7327.jpg', 'images/ad/image/14bc67f8-b7a5-4f5b-a397-b68c43337a89.jpg', '的方式的方式冯绍峰', '发生的发生放松放松对方身份的身份', 'https://www.baidu.com', '1', '1', '1', '1', null, null, '2017-12-18 14:01:58', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('446', '测试2', 'images/ad/smallImg/7dd85e00-4c9c-4e77-bf06-b71b7b72967a.jpg', 'images/ad/image/da30415d-8a11-42f6-aee7-8193767d78e3.jpg', '佛挡杀佛双方是否卫生等方法十分的', '法国队古典风格丹甫股份的观点风格热热反倒是v', 'https://www.baidu.com', '2', '1', '2', '1', null, null, '2017-12-18 14:03:14', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('447', '测试3', 'images/ad/smallImg/9d30499f-7604-40fb-96a5-caff3f4c3f4c.jpg', 'images/ad/image/9b2011df-ed6f-4432-a362-5112a88eba56.jpg', '士大夫所发生的反反复复方式是随时随地', ' 大幅度丰富的辅导费v从vv此次vv从v从v厄尔 ', 'https://www.baidu.com', '3', '1', '2', '1', null, null, '2017-12-18 14:04:53', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('448', '测试4', 'images/ad/smallImg/05dc89be-5818-44b3-8dc2-273beb887db6.jpg', 'images/ad/image/274031b4-4901-425d-a020-87c4be95d637.jpg', '三分大赛放松放松东方闪电发生过的观点房v想打谁答案', '很快将会更好国画家股份计划规划计划将', 'https://www.baidu.com', '4', '1', '2', '1', null, null, '2017-12-18 14:05:49', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('449', '测试5', 'images/ad/smallImg/ce5c2abe-7ad5-4e95-aa21-6670e50b0498.jpg', 'images/ad/image/d8f4d449-724d-418c-9261-2c34d265b6e3.jpg', '淡粉色仍然非常成熟撒啊上的丰富更高的', '共分为问问问我说的是上的的地方方法', 'https://www.baidu.com', '5', '1', '2', '1', null, null, '2017-12-18 14:07:13', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('450', '测试6', 'images/ad/smallImg/06779afb-f7bb-4277-a260-b0a981fca50c.jpg', 'images/ad/image/7e78a4c4-ef27-40d6-968b-c9261ee89d5a.jpg', '豆腐坊虫儿飞过程v北国风光复古风vvvvv', '大幅度辅导费大学城v机会就很健康骄傲了空间里看见了', 'https://www.baidu.com', '6', '1', '2', '1', null, null, '2017-12-18 14:08:14', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('451', '测试7', 'images/ad/smallImg/45dc1419-547d-4e19-8bb3-fb28c112cfb4.jpg', 'images/ad/image/6a3d41e2-316c-4aab-a883-cb2eff0a5897.jpg', '宝贵的是否乳房大叔大婶大师傅的说法是', '似懂非懂是否丰富人人人人人人人人人人', 'https://www.baidu.com', '7', '1', '2', '1', null, null, '2017-12-18 14:09:14', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('452', '测试8', 'images/ad/smallImg/82b7a621-fa90-4e57-9df4-2d680dcd71aa.jpg', 'images/ad/image/b7238d0f-b560-4919-bace-628686e83982.jpg', '吊死扶伤东方人更丰富给v处处长成长学习 ', '但是反反复复反反复复的官方发广告广告', 'https://www.baidu.com', '8', '1', '2', '1', null, null, '2017-12-18 14:10:19', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('453', '测试9', 'images/ad/smallImg/963a14e2-70f2-495b-8695-f1df417d9f0d.jpg', 'images/ad/image/66b08044-3093-4ce7-b7e6-3a2e581be448.jpg', '防守打法史蒂芬孙孚日股份个人股人工费v呈现出v向', '的方式反反复复反反复复人声鼎沸地方v从', 'https://www.baidu.com', '9', '1', '2', '1', null, null, '2017-12-18 14:11:21', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('454', '测试10', 'images/ad/smallImg/e5cbdc12-987c-43f0-a8d2-a2bff119de6c.jpg', 'images/ad/image/bfa77a3f-1d2a-424b-bfca-d689f0b0c3ba.jpg', '贵妇狗太丰富非v呈现出v天天 ', '梵蒂冈的风格梵蒂冈如果反对的各个风格', 'https://www.baidu.com', '10', '1', '2', '1', null, null, '2017-12-18 14:12:32', '1', '0', null, null, null, '78');
-INSERT INTO `t_ad` VALUES ('455', '测试11', 'images/ad/smallImg/7304601c-a669-42c7-9433-e7853e6fd22e.jpg', 'images/ad/image/385a3ee5-96e1-4a1c-ac8d-d6d8dba08c99.jpg', '史蒂芬孙的方式发生的方式对方是否让', '所发生的发生的方式方式反对分身乏术的', 'https://www.baidu.com', '11', '0', '2', '1', null, null, '2017-12-18 14:13:23', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('435', '测试1234', 'images/ad/smallImg/f20467e6-912a-4059-a38c-e4bbbdf59ba9.jpg', 'images/ad/image/a40de346-4e8b-4df8-90cb-25dac21d2cc4.jpg', '啊深大大声大声道', '打过多份工的', 'https://www.baidu.com', '1', '4', '10', '1', null, null, '2017-12-15 10:55:56', '1', '1', '2017-12-18 13:52:20', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('436', '测试2', 'images/ad/smallImg/c6dc5bd0-6619-416c-9060-65d54be0fad8.jpg', 'images/ad/image/d3323d36-af8d-4c52-98b6-61e3bec35683.jpg', '奥迪三大德', '电饭锅对方的都是发生', 'https://www.baidu.com', '2', '2', '2', '1', null, null, '2017-12-15 10:56:27', '1', '1', '2017-12-18 13:52:23', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('437', '测试3', 'images/ad/smallImg/1c2bb60d-ee12-4678-9548-45a27fdccc37.jpg', 'images/ad/image/32faf882-75cb-499f-9425-93ff0588eecd.jpg', '发生的发生', '士大夫所发生的非', 'https://www.baidu.com', '3', '1', '10', '1', null, null, '2017-12-15 10:57:01', '1', '1', '2017-12-18 13:52:25', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('438', '测试4', 'images/ad/smallImg/69dddf58-d1b9-40ed-8587-92798e8f17a6.jpg', 'images/ad/image/0d36c28a-fbd3-4787-bec0-e35764500a03.jpg', '打上大大', '梵蒂冈的股份大概', 'https://www.baidu.com', '4', '1', '1', '1', null, null, '2017-12-15 10:57:35', '1', '1', '2017-12-18 13:52:31', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('439', '测试5', 'images/ad/smallImg/35e0fbdd-e14c-452d-a56e-863f290e0e67.jpg', 'images/ad/image/a99389ce-4e06-4904-946f-1a9c108aea3c.jpg', '三分大赛冯绍峰但是', '华国锋和法国韩国法国合法合规', 'https://www.baidu.com', '5', '0', '10', '1', null, null, '2017-12-15 11:01:30', '1', '1', '2017-12-18 13:52:34', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('440', '测试6', 'images/ad/smallImg/8d7ed927-b036-40bb-8655-fd3dc00369fd.jpg', 'images/ad/image/24403f4c-0b23-4c2b-9e25-3a7e991bcdb3.jpg', '大使大多数', '安放多少福斯粉丝', 'https://www.baidu.com', '6', '0', '10', '1', null, null, '2017-12-15 11:04:48', '1', '1', '2017-12-18 13:52:36', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('441', '测试7', 'images/ad/smallImg/4d724b98-35da-435f-abc9-5e1687566334.jpg', 'images/ad/image/f675871a-b73b-445f-85ca-6145cfbfb240.jpg', '敌方人数大大撒旦', '按时打算打双打', 'https://www.baidu.com', '7', '0', '10', '1', null, null, '2017-12-15 11:06:49', '1', '1', '2017-12-18 13:52:39', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('442', '测试8', 'images/ad/smallImg/429e1e49-e23a-4603-9ba2-d7488daa1063.jpg', 'images/ad/image/2aa9750a-bc3d-4e99-982e-deb0360b5261.jpg', '史蒂芬孙方式发生', '根风电杆的高度', 'https://www.baidu.com', '8', '1', '10', '1', null, null, '2017-12-15 11:10:27', '1', '1', '2017-12-18 13:52:42', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('443', '测试9', 'images/ad/smallImg/bf7d5fce-1d57-4db2-98cd-0ec9133b51db.jpg', 'images/ad/image/7eff3043-4454-4f5a-8f79-4a0fb5feaa91.jpg', '水豆腐酸豆腐是', '士大夫方式发生发生大幅', 'https://www.baidu.com', '9', '1', '10', '1', null, null, '2017-12-15 11:13:06', '1', '1', '2017-12-18 13:52:46', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('444', '测试10', 'images/ad/smallImg/658b2e9b-e65a-4ad1-9844-c61612cda395.jpg', 'images/ad/image/611df48d-a522-4c57-83da-388582de10c7.jpg', '爱大善大德', '电饭锅地方规定法国德国', 'https://www.baidu.com', '10', '1', '10', '1', null, null, '2017-12-15 11:14:12', '1', '1', '2017-12-18 13:52:49', null, null, '76');
+INSERT INTO `t_qr_code` VALUES ('445', '测试1', 'images/ad/smallImg/d07492cc-9795-404a-8dde-61637d2b7327.jpg', 'images/ad/image/14bc67f8-b7a5-4f5b-a397-b68c43337a89.jpg', '的方式的方式冯绍峰', '发生的发生放松放松对方身份的身份', 'https://www.baidu.com', '1', '1', '1', '1', null, null, '2017-12-18 14:01:58', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('446', '测试2', 'images/ad/smallImg/7dd85e00-4c9c-4e77-bf06-b71b7b72967a.jpg', 'images/ad/image/da30415d-8a11-42f6-aee7-8193767d78e3.jpg', '佛挡杀佛双方是否卫生等方法十分的', '法国队古典风格丹甫股份的观点风格热热反倒是v', 'https://www.baidu.com', '2', '1', '2', '1', null, null, '2017-12-18 14:03:14', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('447', '测试3', 'images/ad/smallImg/9d30499f-7604-40fb-96a5-caff3f4c3f4c.jpg', 'images/ad/image/9b2011df-ed6f-4432-a362-5112a88eba56.jpg', '士大夫所发生的反反复复方式是随时随地', ' 大幅度丰富的辅导费v从vv此次vv从v从v厄尔 ', 'https://www.baidu.com', '3', '1', '2', '1', null, null, '2017-12-18 14:04:53', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('448', '测试4', 'images/ad/smallImg/05dc89be-5818-44b3-8dc2-273beb887db6.jpg', 'images/ad/image/274031b4-4901-425d-a020-87c4be95d637.jpg', '三分大赛放松放松东方闪电发生过的观点房v想打谁答案', '很快将会更好国画家股份计划规划计划将', 'https://www.baidu.com', '4', '1', '2', '1', null, null, '2017-12-18 14:05:49', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('449', '测试5', 'images/ad/smallImg/ce5c2abe-7ad5-4e95-aa21-6670e50b0498.jpg', 'images/ad/image/d8f4d449-724d-418c-9261-2c34d265b6e3.jpg', '淡粉色仍然非常成熟撒啊上的丰富更高的', '共分为问问问我说的是上的的地方方法', 'https://www.baidu.com', '5', '1', '2', '1', null, null, '2017-12-18 14:07:13', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('450', '测试6', 'images/ad/smallImg/06779afb-f7bb-4277-a260-b0a981fca50c.jpg', 'images/ad/image/7e78a4c4-ef27-40d6-968b-c9261ee89d5a.jpg', '豆腐坊虫儿飞过程v北国风光复古风vvvvv', '大幅度辅导费大学城v机会就很健康骄傲了空间里看见了', 'https://www.baidu.com', '6', '1', '2', '1', null, null, '2017-12-18 14:08:14', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('451', '测试7', 'images/ad/smallImg/45dc1419-547d-4e19-8bb3-fb28c112cfb4.jpg', 'images/ad/image/6a3d41e2-316c-4aab-a883-cb2eff0a5897.jpg', '宝贵的是否乳房大叔大婶大师傅的说法是', '似懂非懂是否丰富人人人人人人人人人人', 'https://www.baidu.com', '7', '1', '2', '1', null, null, '2017-12-18 14:09:14', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('452', '测试8', 'images/ad/smallImg/82b7a621-fa90-4e57-9df4-2d680dcd71aa.jpg', 'images/ad/image/b7238d0f-b560-4919-bace-628686e83982.jpg', '吊死扶伤东方人更丰富给v处处长成长学习 ', '但是反反复复反反复复的官方发广告广告', 'https://www.baidu.com', '8', '1', '2', '1', null, null, '2017-12-18 14:10:19', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('453', '测试9', 'images/ad/smallImg/963a14e2-70f2-495b-8695-f1df417d9f0d.jpg', 'images/ad/image/66b08044-3093-4ce7-b7e6-3a2e581be448.jpg', '防守打法史蒂芬孙孚日股份个人股人工费v呈现出v向', '的方式反反复复反反复复人声鼎沸地方v从', 'https://www.baidu.com', '9', '1', '2', '1', null, null, '2017-12-18 14:11:21', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('454', '测试10', 'images/ad/smallImg/e5cbdc12-987c-43f0-a8d2-a2bff119de6c.jpg', 'images/ad/image/bfa77a3f-1d2a-424b-bfca-d689f0b0c3ba.jpg', '贵妇狗太丰富非v呈现出v天天 ', '梵蒂冈的风格梵蒂冈如果反对的各个风格', 'https://www.baidu.com', '10', '1', '2', '1', null, null, '2017-12-18 14:12:32', '1', '0', null, null, null, '78');
+INSERT INTO `t_qr_code` VALUES ('455', '测试11', 'images/ad/smallImg/7304601c-a669-42c7-9433-e7853e6fd22e.jpg', 'images/ad/image/385a3ee5-96e1-4a1c-ac8d-d6d8dba08c99.jpg', '史蒂芬孙的方式发生的方式对方是否让', '所发生的发生的方式方式反对分身乏术的', 'https://www.baidu.com', '11', '0', '2', '1', null, null, '2017-12-18 14:13:23', '1', '0', null, null, null, '78');
 
 -- ----------------------------
--- Table structure for t_ad_click_log
+-- Table structure for t_qr_code_click_log
 -- ----------------------------
-DROP TABLE IF EXISTS `t_ad_click_log`;
-CREATE TABLE `t_ad_click_log` (
+DROP TABLE IF EXISTS `t_qr_code_click_log`;
+CREATE TABLE `t_qr_code_click_log` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `userId` bigint(20) DEFAULT NULL,
   `clickTime` datetime NOT NULL,
@@ -86,58 +86,58 @@ CREATE TABLE `t_ad_click_log` (
 ) ENGINE=InnoDB AUTO_INCREMENT=559 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of t_ad_click_log
+-- Records of t_qr_code_click_log
 -- ----------------------------
-INSERT INTO `t_ad_click_log` VALUES ('548', null, '2017-12-18 00:57:47', '测试1234', null, 'o4HNe0v3J5sGFBDYRoZOJimRzqPE', '杨宇飞', '435', '364');
-INSERT INTO `t_ad_click_log` VALUES ('549', null, '2017-12-18 14:16:40', '测试1', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '445', '366');
-INSERT INTO `t_ad_click_log` VALUES ('550', null, '2017-12-18 14:16:49', '测试2', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '446', '366');
-INSERT INTO `t_ad_click_log` VALUES ('551', null, '2017-12-18 14:17:18', '测试3', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '447', '366');
-INSERT INTO `t_ad_click_log` VALUES ('552', null, '2017-12-18 14:17:26', '测试4', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '448', '366');
-INSERT INTO `t_ad_click_log` VALUES ('553', null, '2017-12-18 14:17:35', '测试5', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '449', '366');
-INSERT INTO `t_ad_click_log` VALUES ('554', null, '2017-12-18 14:17:43', '测试6', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '450', '366');
-INSERT INTO `t_ad_click_log` VALUES ('555', null, '2017-12-18 14:17:50', '测试7', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '451', '366');
-INSERT INTO `t_ad_click_log` VALUES ('556', null, '2017-12-18 14:18:08', '测试8', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '452', '366');
-INSERT INTO `t_ad_click_log` VALUES ('557', null, '2017-12-18 14:18:13', '测试9', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '453', '366');
-INSERT INTO `t_ad_click_log` VALUES ('558', null, '2017-12-18 14:18:24', '测试10', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '454', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('548', null, '2017-12-18 00:57:47', '测试1234', null, 'o4HNe0v3J5sGFBDYRoZOJimRzqPE', '杨宇飞', '435', '364');
+INSERT INTO `t_qr_code_click_log` VALUES ('549', null, '2017-12-18 14:16:40', '测试1', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '445', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('550', null, '2017-12-18 14:16:49', '测试2', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '446', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('551', null, '2017-12-18 14:17:18', '测试3', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '447', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('552', null, '2017-12-18 14:17:26', '测试4', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '448', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('553', null, '2017-12-18 14:17:35', '测试5', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '449', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('554', null, '2017-12-18 14:17:43', '测试6', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '450', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('555', null, '2017-12-18 14:17:50', '测试7', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '451', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('556', null, '2017-12-18 14:18:08', '测试8', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '452', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('557', null, '2017-12-18 14:18:13', '测试9', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '453', '366');
+INSERT INTO `t_qr_code_click_log` VALUES ('558', null, '2017-12-18 14:18:24', '测试10', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '454', '366');
 
 -- ----------------------------
--- Table structure for t_ad_homepage
+-- Table structure for t_qr_code_homepage
 -- ----------------------------
-DROP TABLE IF EXISTS `t_ad_homepage`;
-CREATE TABLE `t_ad_homepage` (
+DROP TABLE IF EXISTS `t_qr_code_homepage`;
+CREATE TABLE `t_qr_code_homepage` (
   `adId` bigint(20) NOT NULL,
   `homepageId` bigint(20) NOT NULL,
   PRIMARY KEY (`adId`,`homepageId`),
   KEY `permission_id` (`homepageId`),
-  CONSTRAINT `t_ad_homepage_ibfk_1` FOREIGN KEY (`adId`) REFERENCES `t_ad` (`id`),
-  CONSTRAINT `t_ad_homepage_ibfk_2` FOREIGN KEY (`homepageId`) REFERENCES `t_homepage` (`id`)
+  CONSTRAINT `t_qr_code_homepage_ibfk_1` FOREIGN KEY (`adId`) REFERENCES `t_qr_code` (`id`),
+  CONSTRAINT `t_qr_code_homepage_ibfk_2` FOREIGN KEY (`homepageId`) REFERENCES `t_homepage` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of t_ad_homepage
+-- Records of t_qr_code_homepage
 -- ----------------------------
-INSERT INTO `t_ad_homepage` VALUES ('435', '364');
-INSERT INTO `t_ad_homepage` VALUES ('435', '365');
-INSERT INTO `t_ad_homepage` VALUES ('436', '365');
-INSERT INTO `t_ad_homepage` VALUES ('437', '365');
-INSERT INTO `t_ad_homepage` VALUES ('438', '365');
-INSERT INTO `t_ad_homepage` VALUES ('439', '365');
-INSERT INTO `t_ad_homepage` VALUES ('440', '365');
-INSERT INTO `t_ad_homepage` VALUES ('441', '365');
-INSERT INTO `t_ad_homepage` VALUES ('442', '365');
-INSERT INTO `t_ad_homepage` VALUES ('443', '365');
-INSERT INTO `t_ad_homepage` VALUES ('444', '365');
-INSERT INTO `t_ad_homepage` VALUES ('445', '366');
-INSERT INTO `t_ad_homepage` VALUES ('446', '366');
-INSERT INTO `t_ad_homepage` VALUES ('447', '366');
-INSERT INTO `t_ad_homepage` VALUES ('448', '366');
-INSERT INTO `t_ad_homepage` VALUES ('449', '366');
-INSERT INTO `t_ad_homepage` VALUES ('450', '366');
-INSERT INTO `t_ad_homepage` VALUES ('451', '366');
-INSERT INTO `t_ad_homepage` VALUES ('452', '366');
-INSERT INTO `t_ad_homepage` VALUES ('453', '366');
-INSERT INTO `t_ad_homepage` VALUES ('454', '366');
-INSERT INTO `t_ad_homepage` VALUES ('455', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('435', '364');
+INSERT INTO `t_qr_code_homepage` VALUES ('435', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('436', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('437', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('438', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('439', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('440', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('441', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('442', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('443', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('444', '365');
+INSERT INTO `t_qr_code_homepage` VALUES ('445', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('446', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('447', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('448', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('449', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('450', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('451', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('452', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('453', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('454', '366');
+INSERT INTO `t_qr_code_homepage` VALUES ('455', '366');
 
 -- ----------------------------
 -- Table structure for t_card

@@ -37,7 +37,6 @@ public class DrawLogController{
 	 * 主页
 	 * @return
 	 */
-	@MethodAnnotation(name = "主页", type = ResourceType.红包统计)
 	@RequestMapping("/index")
 	private String DrawLog() {
 		return "draw/drawLog";
@@ -48,11 +47,9 @@ public class DrawLogController{
 	 * @param qu
 	 * @return
 	 */
-	@MethodAnnotation(name = "统计查询", type = ResourceType.红包统计)
 	@RequestMapping("/query")
 	@ResponseBody
 	private PageResult<DrawLog> query(DrawLogQuery qu) {
-		qu.setType(1);
 		PageResult<DrawLog> list = DrawLogService.query(qu);
 		return list;
 	}

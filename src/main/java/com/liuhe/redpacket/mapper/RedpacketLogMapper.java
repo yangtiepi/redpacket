@@ -51,19 +51,6 @@ public interface RedpacketLogMapper{
 	 * 高级查询
 	 */
 	Long queryTotal(RedpacketLogQuery equ);
-	/**
-	 * 红包统计
-	 * @param qu
-	 * @return
-	 */
-	Long queryGroupAdTotal(RedpacketLogQuery qu);
-	List<JSONObject> queryGroupAd(RedpacketLogQuery qu);
-	/**
-	 * 红包明细
-	 * @param qu
-	 * @return
-	 */
-	Long queryInfoTotal(RedpacketLogQuery qu);
-	List<JSONObject> queryInfo(RedpacketLogQuery qu);
 
+    Double queryTotalAmount(RedpacketLogQuery qu);
 }

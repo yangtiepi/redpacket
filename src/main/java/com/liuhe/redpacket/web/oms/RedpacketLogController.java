@@ -6,6 +6,9 @@
 
 package com.liuhe.redpacket.web.oms;
 
+import com.liuhe.redpacket.domain.DrawLog;
+import com.liuhe.redpacket.domain.RedpacketLog;
+import com.liuhe.redpacket.query.DrawLogQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,5 +43,28 @@ public class RedpacketLogController{
 	@RequestMapping("/index")
 	private String RedpacketLog() {
 		return "redpacket/redpacketLog";
+	}
+
+	/**
+	 * 高级查询+分页
+	 *
+	 * @param qu
+	 * @return
+	 */
+	@RequestMapping("/query")
+	@ResponseBody
+	private PageResult<RedpacketLog> query(RedpacketLogQuery qu) {
+		PageResult<RedpacketLog> list = redpacketLogService.query(qu);
+		return list;
+	}/**
+	 * 高级查询+分页
+	 *
+	 * @param qu
+	 * @return
+	 */
+	@RequestMapping("/queryTotalAmount")
+	@ResponseBody
+	private Double queryTotalAmount(RedpacketLogQuery qu) {
+		return redpacketLogService.queryTotalAmount(qu);
 	}
 }

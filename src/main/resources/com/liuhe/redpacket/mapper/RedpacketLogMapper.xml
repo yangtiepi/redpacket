@@ -64,7 +64,6 @@
 			<if test="qrCodeId != null and qrCodeId != -1">
 				and r.qrCodeId = #{qrCodeId}
 			</if>
-			and r.receiveTime is not null
 			<if test="beginTime != null and beginTime != ''">
 				and r.receiveTime>=#{beginTime}
 			</if>
@@ -77,21 +76,27 @@
   <select id="query" resultType="RedpacketLog"  parameterType="BaseQuery">
 		select r.*
 		from t_redpacket_log r
-		left join t_ad a on r.qrCodeId = a.id
+		left join t_qr_code a on r.qrCodeId = a.id
 		<include refid="whereSql" />
 		order by r.receiveTime desc
 		<if test="pageSize!=-1">
 			limit #{start},#{pageSize}
 		</if>
 	</select>
-	
+
 	<!-- 获取总记录数 -->
 	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
-		select count(1)
+		select count(1) from
 		(select count(1)
-		from t_redpacket_log r 
-		left join t_ad a on r.qrCodeId = a.id
+		from t_redpacket_log r
+		left join t_qr_code a on r.qrCodeId = a.id
 		<include refid="whereSql" />) c
 	</select>
-	
+    <select id="queryTotalAmount" resultType="double"  parameterType="BaseQuery">
+		select sum(r.amount)
+		from t_redpacket_log r
+		left join t_qr_code a on r.qrCodeId = a.id
+		<include refid="whereSql" />
+	</select>
+
 </mapper>

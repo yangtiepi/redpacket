@@ -79,6 +79,7 @@
 		<if test="pageSize!=-1">
 			limit #{start},#{pageSize}
 		</if>
+		order by id desc
 	</select>
 	<!-- 获取总记录数 -->
 	<select id="queryTotal" resultType="long" parameterType="BaseQuery">

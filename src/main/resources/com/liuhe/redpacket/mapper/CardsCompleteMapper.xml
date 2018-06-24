@@ -87,4 +87,11 @@
 		from t_cards_complete a 
 		<include refid="whereSql" />
 	</select>
+
+	<!-- 抽奖记录-->
+	<select id="findByUser" resultType="CardsCompleteMap" >
+		select *
+		from t_cards_complete
+		where openid = #{openid} and receiveTime is not null
+	</select>
 </mapper>

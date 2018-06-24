@@ -4,6 +4,7 @@ package com.liuhe.redpacket.web.mobile;
  * 客户相关的接口
  */
 
+import com.liuhe.redpacket.domain.CardsComplete;
 import com.liuhe.redpacket.domain.DrawLog;
 import com.liuhe.redpacket.service.*;
 import com.liuhe.redpacket.utils.result.AjaxResult;
@@ -105,9 +106,9 @@ public class MobileController {
     public ModelAndView exchangeRecord(
             HttpServletRequest request) {
         String openid = (String) request.getSession().getAttribute("openid");
-        List<DrawLog> drawLogList =  drawLogService.findByUser(openid);
+        List<CardsComplete> cardsCompleteList =  cardsCompleteService.findByUser(openid);
         Map<String, Object> model = userService.userInfo(openid);
-        model.put("drawLogList",drawLogList);
+        model.put("cardsCompleteList",cardsCompleteList);
         return new ModelAndView("mobile/drawRecord", model);
     }
 

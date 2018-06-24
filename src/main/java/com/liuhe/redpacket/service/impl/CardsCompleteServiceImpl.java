@@ -152,4 +152,9 @@ public class CardsCompleteServiceImpl implements ICardsCompleteService{
 
 		return new AjaxResult(cardsComplete);
 	}
+
+	@Override
+	public List<CardsComplete> findByUser(String openid) {
+		return cardsCompleteMapper.findByUser(openid);
+	}
 }

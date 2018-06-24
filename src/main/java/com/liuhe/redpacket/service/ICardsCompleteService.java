@@ -57,4 +57,11 @@ public interface ICardsCompleteService{
 	 * @return
 	 */
 	AjaxResult exchange(String openid, Long cardsId);
+
+	/**
+	 * 兑换记录
+	 * @param openid
+	 * @return
+	 */
+    List<CardsComplete> findByUser(String openid);
 }

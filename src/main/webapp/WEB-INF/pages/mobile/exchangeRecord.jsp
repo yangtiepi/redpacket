@@ -63,7 +63,7 @@
         <li class="scroll-list">
           <div class="name">${cardsComplete.userName}</div>
           <div class="content">
-            <p>兑换了<span>"${drawLog.remark}"</span></p>
+            <p>兑换了<span>"${cardsComplete.cardsName}"</span></p>
           </div>
           <div class="time">
             <fmt:formatDate value="${drawLog.receiveTime}" var="receiveTime" pattern="HH:mm:ss"/>

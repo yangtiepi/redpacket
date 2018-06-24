@@ -51,4 +51,5 @@ public interface CardsCompleteMapper{
 	 */
 	Long queryTotal(CardsCompleteQuery equ);
 
+    List<CardsComplete> findByUser(String openid);
 }

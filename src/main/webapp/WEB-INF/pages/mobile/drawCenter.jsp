@@ -122,7 +122,7 @@
 <script src="${pageContext.request.contextPath}/mobile/js/jquery.featureCarousel.js" type="text/javascript"></script>
 <script type="text/javascript">
     var hasClicked = false;
-    var code;
+    var qrCode;
     $("#scrollDiv").Scroll({line: 1, speed: 500, timer: 2000});
     $(document).ready(function () {
         $("#carousel").featureCarousel({
@@ -155,11 +155,11 @@
             return false;
         }else{
             var storage=window.localStorage;
-            code = storage.code;
+            qrCode = storage.qrCode;
         }
     });
     function drawResult(item){
-        if(!code){
+        if(!qrCode){
             return alert('你没有抽奖次数！');
         }
         $.ajax({
@@ -167,7 +167,7 @@
             async: false,
             traditional:true,
             data: {
-                "code":code
+                "qrCode":qrCode
             },
             cache:false,
             dataType: "json",

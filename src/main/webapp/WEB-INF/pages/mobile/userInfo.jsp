@@ -14,7 +14,7 @@
     <title>个人中心</title>
 </head>
 <body>
-<input type="hidden" id="code" value="${code}">
+<input type="hidden" id="qrCode" value="${qrCode}">
 <div class="header">
     <a href="#" onclick="history.back();">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
@@ -111,9 +111,9 @@
             return false;
         }else{
             var storage=window.localStorage;
-            var code = $("#code").val();
-            if(code){
-                storage["code"]=code;
+            var qrCode = $("#qrCode").val();
+            if(qrCode){
+                storage.qrCode=qrCode;
             }
         }
     })

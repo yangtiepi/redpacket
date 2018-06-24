@@ -49,10 +49,10 @@ public class MobileController {
      * @return
      */
     @RequestMapping("/userInfo")
-    public ModelAndView userInfo(HttpServletRequest request,String code) {
+    public ModelAndView userInfo(HttpServletRequest request,String qrCode) {
         String openid = (String) request.getSession().getAttribute("openid");
         Map<String, Object> model = userService.userInfo(openid);
-        model.put("code",code);
+        model.put("qrCode",qrCode);
         return new ModelAndView("mobile/userInfo", model);
     }
 

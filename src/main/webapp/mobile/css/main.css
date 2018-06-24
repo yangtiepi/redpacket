@@ -371,11 +371,11 @@ body .luck-unit-special span{
     align-items: center;
 }
 .card-group ul li{
-    padding: 15px;
+    padding: 8px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    width: 30%;
-    background: url("../img/bg_center.png") 0 0 no-repeat;
+    width: 23%;
+    background: url("../img/bg_center.png") center center no-repeat;
     background-size: contain;
     display: -webkit-box;
     display: -webkit-flex;
@@ -406,11 +406,11 @@ body .luck-unit-special span{
     flex-direction: column;
 }
 .card-group ul li a img{
-    width: 42px;
+    width: 30px;
     margin-bottom: 6px;
 }
 .card-group ul li a p{
-    font-size: 16px;
+    font-size: 13px;
     color: #fff;
     text-align: center;
 }
@@ -490,8 +490,9 @@ body .luck-unit-special span{
 
 .word-box .word-group .word-item .number{
     position: absolute;
-    right: 0;
+    right: 50%;
     top:0;
+    transform: translateX(35px);
     width: 20px;
     height: 20px;
     background: #fd4242;

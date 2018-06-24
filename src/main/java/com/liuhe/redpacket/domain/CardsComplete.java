@@ -26,9 +26,9 @@ public class CardsComplete implements Serializable {
 	private Long id;
 	private Long userId;
 	private Long cardsId;
+	private String cardsName;
 	private String userName;
 	private String openid;
-	private String wechat;
 	private String code;
 	private Integer status;
 	private Date completeTime;
@@ -78,12 +78,12 @@ public class CardsComplete implements Serializable {
 		return this.openid;
 	}
 
-	public void setWechat(String value) {
-		this.wechat = value;
+	public String getCardsName() {
+		return cardsName;
 	}
 
-	public String getWechat() {
-		return this.wechat;
+	public void setCardsName(String cardsName) {
+		this.cardsName = cardsName;
 	}
 
 	public void setCode(String value) {
@@ -126,15 +126,5 @@ public class CardsComplete implements Serializable {
 		this.cards = cards;
 	}
 
-	public String toString() {
-		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
-				.append("Id", getId()).append("UserId", getUserId())
-				.append("CardsId", getCardsId())
-				.append("UserName", getUserName())
-				.append("Openid", getOpenid()).append("Wechat", getWechat())
-				.append("Code", getCode()).append("Status", getStatus())
-				.append("CompleteTime", getCompleteTime())
-				.append("ReceiveTime", getReceiveTime()).toString();
-	}
 
 }

@@ -47,7 +47,7 @@ public class QrCodeServiceImpl implements IQrCodeService {
 		qrCode.setCode(UUID.randomUUID().toString().replace("-",""));
 		qrCodeMapper.save(qrCode);
 
-		String url = baseUrl + "mobile/drawCenter?code="
+		String url = baseUrl + "mobile/userInfo?code="
 				+ qrCode.getCode();
 		String qrcode = MatrixToImageWriter.create(url, "qrcode",
 				400, 400, "jpg", qrCode.getCode() + "");

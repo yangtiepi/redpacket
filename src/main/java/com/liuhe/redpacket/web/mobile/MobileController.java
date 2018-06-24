@@ -49,9 +49,8 @@ public class MobileController {
      * @return
      */
     @RequestMapping("/userInfo")
-    public ModelAndView userInfo(HttpServletRequest request) {
+    public ModelAndView userInfo(HttpServletRequest request,String code) {
         String openid = (String) request.getSession().getAttribute("openid");
-        String code = (String) request.getSession().getAttribute("code");
         Map<String, Object> model = userService.userInfo(openid);
         model.put("code",code);
         return new ModelAndView("mobile/userInfo", model);
@@ -96,13 +95,29 @@ public class MobileController {
         return new ModelAndView("mobile/drawRecord", model);
     }
 
+
+    /**
+     * 兑奖记录
+     *
+     * @return
+     */
+    @RequestMapping("/exchangeRecord")
+    public ModelAndView exchangeRecord(
+            HttpServletRequest request) {
+        String openid = (String) request.getSession().getAttribute("openid");
+        List<DrawLog> drawLogList =  drawLogService.findByUser(openid);
+        Map<String, Object> model = userService.userInfo(openid);
+        model.put("drawLogList",drawLogList);
+        return new ModelAndView("mobile/drawRecord", model);
+    }
+
     /**
      * 抽奖中心
      *
      * @return
      */
     @RequestMapping("/drawCenter")
-    public ModelAndView drawCenter(HttpServletRequest request, String code) {
+    public ModelAndView drawCenter(HttpServletRequest request) {
         String openid = (String) request.getSession().getAttribute("openid");
         Map<String, Object> model = drawLogService.drawInfo(openid);
         return new ModelAndView("mobile/drawCenter", model);
@@ -149,9 +164,9 @@ public class MobileController {
     @RequestMapping("/exchange")
     @ResponseBody
     public AjaxResult exchange(
-            HttpServletRequest request, Integer num) {
+            HttpServletRequest request, Long cardsId) {
         String openid = (String) request.getSession().getAttribute("openid");
-        return cardsCompleteService.exchange(openid,num);
+        return cardsCompleteService.exchange(openid,cardsId);
     }
 
 

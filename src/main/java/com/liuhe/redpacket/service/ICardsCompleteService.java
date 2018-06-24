@@ -53,8 +53,8 @@ public interface ICardsCompleteService{
 	/**
 	 * 兑换
 	 * @param openid
-	 * @param num
+	 * @param cardsId
 	 * @return
 	 */
-	AjaxResult exchange(String openid, Integer num);
+	AjaxResult exchange(String openid, Long cardsId);
 }

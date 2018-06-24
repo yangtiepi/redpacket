@@ -140,13 +140,13 @@
                 }else{
                     hasClicked = true
                 }
-                // drawResult(item);
-                item.find("p").text("0.25元");
-                item.find('.front').hide();
-                var imageWidth = item.width();
-                var height = item.height();
-                console.log(imageWidth,height);
-                item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
+                drawResult(item);
+                // item.find("p").text("0.25元");
+                // item.find('.front').hide();
+                // var imageWidth = item.width();
+                // var height = item.height();
+                // console.log(imageWidth,height);
+                // item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
             }
         });
 

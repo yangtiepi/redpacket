@@ -53,11 +53,11 @@
   </div>
   <div class="btn-box-yellow">
     <ul class="btn-group">
-      <li class="btn-yellow" onclick="exchange(3)">
+      <li class="btn-yellow" onclick="exchange(1)">
         <span>三张兑换</span>
         <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png">
       </li>
-      <li class="btn-yellow" onclick="exchange(5)">
+      <li class="btn-yellow" onclick="exchange(2)">
         <span>五张兑换</span>
         <img src="${pageContext.request.contextPath}/mobile/img/btn_center_bg.png">
       </li>
@@ -112,7 +112,7 @@
   })
 
   var isClick =false;
-  function exchange(num){
+  function exchange(cardsId){
       if(isClick){
           return;
       }
@@ -121,7 +121,7 @@
           async: false,
           traditional:true,
           data: {
-              "num":num
+              "cardsId":cardsId
           },
           cache:false,
           dataType: "json",

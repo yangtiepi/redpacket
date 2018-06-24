@@ -7,13 +7,9 @@
 package com.liuhe.redpacket.service.impl;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.liuhe.redpacket.domain.*;
-import com.liuhe.redpacket.exception.LogicException;
-import com.liuhe.redpacket.query.CardQuery;
 import com.liuhe.redpacket.query.UserCardQuery;
 import com.liuhe.redpacket.service.*;
 import com.liuhe.redpacket.utils.RandomUtil;
@@ -47,6 +43,8 @@ public class CardsCompleteServiceImpl implements ICardsCompleteService{
 	private ICardLogService cardLogService;
 	@Autowired
 	private ICardService cardService;
+	@Autowired
+	private ICardsService cardsService;
 
 	
 	@Override
@@ -100,7 +98,13 @@ public class CardsCompleteServiceImpl implements ICardsCompleteService{
 	}
 
 	@Override
-	public AjaxResult exchange(String openid, Integer num) {
+	public AjaxResult exchange(String openid, Long cardsId) {
+		Cards cards = cardsService.get(cardsId);
+		if (cards == null){
+			return new AjaxResult("要兑换的奖品不存在",-100);
+		}
+		Integer num = cards.getCompleteNum();
+
 		User user = userService.getByWechat(openid);
 
 		UserCardQuery userCardQuery = new UserCardQuery();
@@ -139,8 +143,11 @@ public class CardsCompleteServiceImpl implements ICardsCompleteService{
 		cardsComplete.setCode(randomCode);
 		cardsComplete.setCompleteTime(new Date());
 		cardsComplete.setOpenid(openid);
-		cardsComplete.setWechat(user.getUsername());
+		cardsComplete.setUserId(user.getId());
+		cardsComplete.setUserName(user.getUsername());
 		cardsComplete.setStatus(ConstUtil.CARDS_COMPLETE);
+		cardsComplete.setCardsId(cards.getId());
+		cardsComplete.setCardsName(cards.getInfo());
 		cardsCompleteMapper.save(cardsComplete);
 
 		return new AjaxResult(cardsComplete);

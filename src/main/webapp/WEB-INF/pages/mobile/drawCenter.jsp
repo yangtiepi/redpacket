@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+<input type="hidden" id="qrCode" value="${qrCode}">
 <div class="header">
     <a href="#">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
@@ -155,7 +155,12 @@
             return false;
         }else{
             var storage=window.localStorage;
-            qrCode = storage.qrCode;
+            var qrCode = $("#qrCode").val();
+            if(qrCode){
+                storage.qrCode=qrCode;
+            }else{
+                qrCode = storage.qrCode;
+            }
         }
     });
     function drawResult(item){
@@ -174,7 +179,7 @@
             url: "/mobile/draw",
             success: function(data){
                 if(data.success){
-                    var info = data.info;
+                    var info = data.data;
                     if(info.type == 1){
                         item.find("p").text(info.amount+"元");
                     }else if(info.type == 2){
@@ -189,7 +194,7 @@
                     console.log(imageWidth,height);
                     item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
                 }else{
-                    return alert("抽奖失败,请稍后重试！");
+                    return alert(data.message);
                 }
             }
         });

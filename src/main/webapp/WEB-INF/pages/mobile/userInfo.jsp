@@ -52,6 +52,12 @@
                     <p>抽奖记录</p>
                 </a>
             </li>
+            <li class="card1">
+                <a href="${pageContext.request.contextPath}/mobile/exchangeRecord">
+                    <img src="${pageContext.request.contextPath}/mobile/img/icon_center_cj.png">
+                    <p>兑奖记录</p>
+                </a>
+            </li>
             <li class="card2">
                 <a href="${pageContext.request.contextPath}/mobile/userCards">
                     <img src="${pageContext.request.contextPath}/mobile/img/icon_center_card.png">

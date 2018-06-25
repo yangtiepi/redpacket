@@ -8,6 +8,7 @@ import com.liuhe.redpacket.domain.CardsComplete;
 import com.liuhe.redpacket.domain.DrawLog;
 import com.liuhe.redpacket.service.*;
 import com.liuhe.redpacket.utils.result.AjaxResult;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -120,7 +121,11 @@ public class MobileController {
     @RequestMapping("/drawCenter")
     public ModelAndView drawCenter(HttpServletRequest request) {
         String openid = (String) request.getSession().getAttribute("openid");
+        String qrCode = request.getParameter("qrCode");
         Map<String, Object> model = drawLogService.drawInfo(openid);
+        if (StringUtils.isNotBlank(qrCode)){
+            model.put("qrCode",qrCode);
+        }
         return new ModelAndView("mobile/drawCenter", model);
     }
 
@@ -132,9 +137,9 @@ public class MobileController {
     @RequestMapping("/draw")
     @ResponseBody
     public AjaxResult draw(
-            HttpServletRequest request, String code) {
+            HttpServletRequest request, String qrCode) {
         String openid = (String) request.getSession().getAttribute("openid");
-        return drawLogService.draw(code, openid);
+        return drawLogService.draw(qrCode, openid);
     }
 
     /**

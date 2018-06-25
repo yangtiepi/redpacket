@@ -83,7 +83,7 @@ $(function(){
                         ids.push(item.id);
                     });
 					// 发送AJAX请求，修改ID对应数据状态
-					$.get("/qrCode/delete",{ids:ids},function(data){
+					$.get("/qrCode/delete",{ids:ids.join(",")},function(data){
 						if(data.success){
 							$.messager.alert("温馨提示",data.message,"info",function(){
 								qrCodeDataGrid.datagrid("reload");

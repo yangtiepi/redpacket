@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>抽奖中心</title>
-    <meta name="keywords" content="焦点,轮播图,3D,旋转木马,特效动画切换,jQuery插件"/>
+    <meta name="keywords" content="抽奖中心"/>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">

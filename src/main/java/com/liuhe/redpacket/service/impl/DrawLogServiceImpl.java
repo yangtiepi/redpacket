@@ -118,6 +118,7 @@ public class DrawLogServiceImpl implements IDrawLogService {
             drawModel.setId(card.getId());
             drawModel.setName(card.getName());
             drawModel.setRatio(card.getRatio());
+            drawModel.setType(1);
             drawList.add(drawModel);
         }
         List<Redpacket> redpacketList = redpacketMapper.getAll();
@@ -140,7 +141,8 @@ public class DrawLogServiceImpl implements IDrawLogService {
         drawLog.setOpenid(openid);
         drawLog.setUserName(user.getUsername());
         drawLog.setReceiveTime(date);
-        if (winner.getType() == 0) {
+        drawLog.setQrCodeId(qrCode.getId());
+        if (winner.getType() != null && winner.getType() == 0) {
             drawLog.setRedpacketId(0 - winner.getId());
             drawLog.setRedpacketName(winner.getName());
             drawLog.setAmount(winner.getAmount());
@@ -148,7 +150,7 @@ public class DrawLogServiceImpl implements IDrawLogService {
             drawLog.setType(1);
             info.put("type", 1);
             info.put("amount", winner.getAmount().toString());
-        } else if (winner.getType() == 1) {
+        } else if (winner.getType() != null && winner.getType() == 1) {
             drawLog.setCardId(winner.getId());
             drawLog.setCardName(winner.getName());
             drawLog.setRemark(winner.getName());

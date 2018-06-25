@@ -79,21 +79,21 @@ public class CardController {
 	/**
 	 * 添加
 	 * 
-	 * @param img
+	 * @param card
 	 * @return
 	 * @throws IOException 
 	 */
 	@MethodAnnotation(name = "添加", type = ResourceType.卡片)
 	@RequestMapping("/save")
 	@ResponseBody
-	private AjaxResult save(@RequestParam("img") MultipartFile img,Card card) throws IOException {
+	private AjaxResult save(Card card) throws IOException {
 		AjaxResult ar;
 		try {
 			// 判断是新建还是更新
 			if (card != null && card.getId() != null) {
-				cardService.update(img,card);
+				cardService.update(null,card);
 			} else {
-				cardService.save(img,card);
+				cardService.save(null,card);
 			}
 			ar = new AjaxResult();
 		} catch (LogicException e) {

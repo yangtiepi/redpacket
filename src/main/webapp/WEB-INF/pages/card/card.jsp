@@ -69,17 +69,10 @@ $(function(){
 				$.messager.alert("温馨提示","你没有选中任何数据","info");
 				return;
 			}
-			cardsCombobox.combobox({
-			   url:'cards/getOfRatio?cardId='+rowData.id,
-		       valueField:'id',
-		       textField:'name',
-		       prompt:'主卡',
-		       onSelect:updateRatioMax
-			});
+
 			// 4.打开添加对话框
 			cardDialog.dialog("open");
-			// 5.把数据加载到对话框中,回显数据
-			rowData['cardsId']=rowData.cards.id;
+
 			cardForm.form("load",rowData);
 		},
 
@@ -192,7 +185,7 @@ $(function(){
 	<div id="cardDialog" class="easyui-dialog" style="width: 300px;height: 260px;"
 	data-options="title:'编辑广告',modal:true,iconCls:'icon-edit',buttons:'#card_bs',closed:true">
 			<form id="cardForm" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="id"></input>
+			<input type="hidden" name="id"/>
 			<div style="margin-top: 20px;margin-left: 35px" >
 	 			卡片名称：
 	 			<input  name="name"  class="easyui-textbox" data-options="required:true" style="width: 150px">

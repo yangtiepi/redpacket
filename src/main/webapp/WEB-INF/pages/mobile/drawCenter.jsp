@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>焦点轮播图3D旋转木马特效动画切换jQuery插件</title>
+    <title>抽奖中心</title>
     <meta name="keywords" content="焦点,轮播图,3D,旋转木马,特效动画切换,jQuery插件"/>
     <meta charset="UTF-8">
     <meta name="viewport"

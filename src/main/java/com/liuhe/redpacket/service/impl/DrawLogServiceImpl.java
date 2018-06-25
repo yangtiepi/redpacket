@@ -219,12 +219,14 @@ public class DrawLogServiceImpl implements IDrawLogService {
         for (DrawModel drawModel : drawModels) {
             totalRatio = DoubleUtils.add(totalRatio, drawModel.getRatio());
         }
-        if (DoubleUtils.compare(totalRatio, 100D) != 1) {
-            DrawModel drawModel = new DrawModel();
-            drawModel.setRatio(DoubleUtils.sub(100D, totalRatio));
-            drawModels.add(drawModel);
-            totalRatio = 100D;
-        }
+
+        //谢谢惠顾
+//        if (DoubleUtils.compare(totalRatio, 100D) != 1) {
+//            DrawModel drawModel = new DrawModel();
+//            drawModel.setRatio(DoubleUtils.sub(100D, totalRatio));
+//            drawModels.add(drawModel);
+//            totalRatio = 100D;
+//        }
 
         //产生随机数
         double randomNumber;

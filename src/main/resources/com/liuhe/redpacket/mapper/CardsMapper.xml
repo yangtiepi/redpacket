@@ -92,33 +92,21 @@
 			<if test="isDel == null">
 				and a.isDel = 0
 			</if>
-			<if test="openid != null and openid != ''">
-				and u.openid = #{openid}
-			</if>
+
 		</where>
 	</sql>
 
 	<select id="query" resultType="Cards" parameterType="BaseQuery">
 		select a.*
 		from t_cards a
-		left join t_card c on c.cardsId = a.id
-		left
-		join t_user_card u on u.cardId = c.id
-		<include refid="whereSql" />
-		group by a.id
 		<if test="pageSize!=-1">
 			limit #{start},#{pageSize}
 		</if>
 	</select>
 	<!-- 获取总记录数 -->
 	<select id="queryTotal" resultType="long" parameterType="BaseQuery">
-		select count(1) from
-		(select count(1)
+		select count(1)
 		from t_cards a
-		left join t_card c on c.cardsId = a.id
-		left join t_user_card u on u.cardId
-		= c.id
 		<include refid="whereSql" />
-		group by a.id) c
 	</select>
 </mapper>

@@ -158,12 +158,12 @@
             var qrCode = $("#qrCode").val();
             if(qrCode){
                 storage.qrCode=qrCode;
-            }else{
-                qrCode = storage.qrCode;
             }
         }
     });
     function drawResult(item){
+        var storage=window.localStorage;
+        var qrCode = storage.qrCode;
         if(!qrCode){
             return alert('你没有抽奖次数！');
         }

@@ -34,7 +34,9 @@
   <div class="tips-box">
     <div class="tips-wrap">
       <h2>集字兑换说明</h2>
-      <p>说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明</p>
+      <p>集齐“尚弘云板材”五个字后奖励一台iPhone X苹果手机</p>
+      <p>集齐“尚弘云”三个字后奖励888.88元超级大红包</p>
+
     </div>
   </div>
   <div class="word-box">

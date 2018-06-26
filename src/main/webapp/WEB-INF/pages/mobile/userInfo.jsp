@@ -25,7 +25,7 @@
     <div class="top">
         <div class="row">
             <div class="col start">
-                <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_z.png">
+                <img class="img record" src="${pageContext.request.contextPath}/mobile/img/btn_center.png">
             </div>
             <div class="col end">
                 <img class="img logo" src="${pageContext.request.contextPath}/mobile/img/logo.png">
@@ -75,11 +75,13 @@
     <div class="notice">
         <div class="notice-item">
             <h2>公告</h2>
-            <p>固定文字固定文字固定文字固定文字固定文字固定文字固定文字</p>
+            <p>扫码识正品，海量88.8元正品奖励红包正在发放中……</p>
+            <p>IPhone X苹果手机还有888元超级大红包，全都自己兑！</p>
+
         </div>
         <div class="notice-item" style="margin-top: 15px;">
             <h2>友情提示</h2>
-            <p>固定文字固定文字固定文字固定文字固定文字固定文字固定文字</p>
+            <p>扫码识正品，请主动维护您的消费者权益，打击伪劣产品！</p>
         </div>
     </div>
 </div>

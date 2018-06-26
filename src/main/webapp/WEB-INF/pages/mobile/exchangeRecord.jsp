@@ -32,7 +32,7 @@
 </style>
 <body>
 <div class="header">
-  <a href="#">
+  <a href="#" onclick="history.back();">
     <img src="img/back.png" width="24">
   </a>
   <h1 class="title">兑奖记录</h1>
@@ -41,7 +41,7 @@
   <div class="top">
     <div class="row">
       <div class="col start">
-        <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_z.png">
+        <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_exchange.png">
       </div>
       <div class="col end">
         <img class="img logo" src="${pageContext.request.contextPath}/mobile/img/logo.png">
@@ -50,7 +50,7 @@
   </div>
   <div class="avatar-box">
     <div class="avatar-img">
-      <img src="${pageContext.request.contextPath}/mobile/img/bg_center.png">
+      <img src="${user.headImage}">
     </div>
     <div class="nickname-box">
       <p class="nickname">${user.username}</p>
@@ -77,17 +77,17 @@
 </div>
 <div class="footer">
   <ul>
-    <li class="active">
-      <a href="#" class="first">
+    <li>
+      <a href="${pageContext.request.contextPath}/mobile/drawCenter" class="first">
         <span>抽奖中心</span>
       </a>
     </li>
     <li>
-      <a href="#" class="second">
+      <a href="${pageContext.request.contextPath}/mobile/userCards" class="second">
         <span>集字兑换</span>
       </a>
     </li>
-    <li>
+    <li class="active">
       <a href="#" class="three">
         <span>个人中心</span>
       </a>

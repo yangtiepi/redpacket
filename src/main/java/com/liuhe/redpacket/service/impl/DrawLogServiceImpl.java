@@ -103,7 +103,6 @@ public class DrawLogServiceImpl implements IDrawLogService {
     @Override
     public AjaxResult draw(String code,
                            String openid) {
-        Map<String, Object> info = new HashMap<>();
         // 判断二维码是否可用
         QrCode qrCode = qrCodeMapper.getByCode(code);
         if (qrCode == null || qrCode.getIsDel() == 1
@@ -118,7 +117,7 @@ public class DrawLogServiceImpl implements IDrawLogService {
             drawModel.setId(card.getId());
             drawModel.setName(card.getName());
             drawModel.setRatio(card.getRatio());
-            drawModel.setType(1);
+            drawModel.setType(2);
             drawList.add(drawModel);
         }
         List<Redpacket> redpacketList = redpacketMapper.getAll();
@@ -128,13 +127,22 @@ public class DrawLogServiceImpl implements IDrawLogService {
             drawModel.setName(redpacket.getName());
             drawModel.setRatio(redpacket.getRatio());
             drawModel.setAmount(redpacket.getMin());
-            drawModel.setType(0);
+            drawModel.setType(1);
             drawList.add(drawModel);
         }
 
+        List<DrawModel> info = new ArrayList<>();
         DrawModel winner = randomCard(drawList);
-        Date date = new Date();
+        DrawModel winner1 = randomCard(drawList);
+        DrawModel winner2 = randomCard(drawList);
 
+        info.add(winner1);
+        info.add(winner);
+        info.add(winner2);
+
+
+        winner = info.get(1);//第二个为中奖
+        Date date = new Date();
         User user = userMapper.getByWechat(openid);
         DrawLog drawLog = new DrawLog();
         drawLog.setUserId(user.getId());
@@ -148,18 +156,13 @@ public class DrawLogServiceImpl implements IDrawLogService {
             drawLog.setAmount(winner.getAmount());
             drawLog.setRemark(winner.getAmount().toString() + "元");
             drawLog.setType(1);
-            info.put("type", 1);
-            info.put("amount", winner.getAmount().toString());
         } else if (winner.getType() != null && winner.getType() == 1) {
             drawLog.setCardId(winner.getId());
             drawLog.setCardName(winner.getName());
             drawLog.setRemark(winner.getName());
             drawLog.setType(2);
-            info.put("type", 2);
-            info.put("name", winner.getName());
         } else {
             drawLog.setType(3);
-            info.put("type", 3);
         }
         drawLogMapper.save(drawLog);
 
@@ -185,7 +188,7 @@ public class DrawLogServiceImpl implements IDrawLogService {
             cardLog.setUserId(user.getId());
             cardLog.setUserName(user.getUsername());
             cardLogMapper.save(cardLog);
-        } else {
+        } else if(drawLog.getType() == 1){
             user.setAmount(DoubleUtils.add(user.getAmount(),
                     drawLog.getAmount()));
             userMapper.update(user);
@@ -226,6 +229,7 @@ public class DrawLogServiceImpl implements IDrawLogService {
 //        if (DoubleUtils.compare(totalRatio, 100D) != 1) {
 //            DrawModel drawModel = new DrawModel();
 //            drawModel.setRatio(DoubleUtils.sub(100D, totalRatio));
+//            drawModel.setType(3);
 //            drawModels.add(drawModel);
 //            totalRatio = 100D;
 //        }

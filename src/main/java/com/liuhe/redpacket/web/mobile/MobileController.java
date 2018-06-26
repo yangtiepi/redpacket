@@ -110,7 +110,7 @@ public class MobileController {
         List<CardsComplete> cardsCompleteList =  cardsCompleteService.findByUser(openid);
         Map<String, Object> model = userService.userInfo(openid);
         model.put("cardsCompleteList",cardsCompleteList);
-        return new ModelAndView("mobile/drawRecord", model);
+        return new ModelAndView("mobile/exchangeRecord", model);
     }
 
     /**

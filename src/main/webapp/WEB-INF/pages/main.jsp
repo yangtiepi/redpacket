@@ -99,7 +99,7 @@
 				<!-- 				<img alt="" src="${pageContext.request.contextPath}/images/wle.jpg" width="100%"> -->
 				<!-- 				<div style="padding: 30px"></div> -->
 				<!-- 				<h1 style="text-align: center;margin-top: 180px;"><font size="200" style="font-family:  Segoe Script">我们一起来寻宝</font></h1> -->
-								<h1 style="text-align: center;margin-top: 180px;"><font size="200" class="list_case_left">我们一起来寻宝！！</font></h1>
+								<h1 style="text-align: center;margin-top: 180px;"><font size="200" class="list_case_left">常德尚弘云木业有限公司</font></h1>
 				<!-- 				<img width="100%" height="100%" src="images/homepage.png"> -->
 			</div>
 		</div>

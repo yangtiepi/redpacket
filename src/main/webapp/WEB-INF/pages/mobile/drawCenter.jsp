@@ -33,7 +33,7 @@
     </div>
     <div class="result">
         <h2 class="text-center" style="font-size: 17px;font-weight:bold;color: #ffffff;letter-spacing: 1px;">你购买的是</h2>
-        <p class="text-center" style="margin-top: 10px;font-weight:bold;font-size: 20px;color: #f8bc0c;letter-spacing: 3px;">正品正品正品</p>
+        <p class="text-center" style="margin-top: 10px;font-weight:bold;font-size: 20px;color: #f8bc0c;letter-spacing: 3px;">正品尚弘云板材</p>
     </div>
     <!--轮播历史区域-->
     <div class="history" style="margin-top: 24px;">
@@ -179,20 +179,27 @@
             url: "/mobile/draw",
             success: function(data){
                 if(data.success){
-                    var info = data.data;
-                    if(info.type == 1){
-                        item.find("p").text(info.amount+"元");
-                    }else if(info.type == 2){
-                        item.find("p").text(info.name);
-                    }else{
-                        item.find("p").text("谢谢惠顾");
-                    }
+                    var infoList = data.data;
 
-                    item.find('.front').hide();
-                    var imageWidth = item.width();
-                    var height = item.height();
-                    console.log(imageWidth,height);
-                    item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
+                    $("#carousel").children().each(function(index,ele){
+                        console.log("======index======="+index);
+                        var info = infoList[index];
+                        var item = $(ele);
+
+                        if(info.type == 1){
+                            item.find("p").text(info.amount+"元");
+                        }else if(info.type == 2){
+                            item.find("p").text(info.name);
+                        }else{
+                            item.find("p").text("谢谢惠顾");
+                        }
+
+                        item.find('.front').hide();
+                        var imageWidth = item.width();
+                        var height = item.height();
+                        console.log(imageWidth,height);
+                        item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
+                    });
                 }else{
                     return alert(data.message);
                 }

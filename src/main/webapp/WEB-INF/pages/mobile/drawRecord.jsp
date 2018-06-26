@@ -24,7 +24,7 @@
     <div class="top">
       <div class="row">
         <div class="col start">
-          <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_z.png">
+          <img class="img record" src="${pageContext.request.contextPath}/mobile/img/icon_draw.png">
         </div>
         <div class="col end">
           <img class="img logo" src="${pageContext.request.contextPath}/mobile/img/logo.png">

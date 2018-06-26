@@ -60,8 +60,11 @@
 
 	<sql id="whereSql">
 		<where>
-			<if test="isUsed != null and isUsed != -1">
+			<if test="isUsed != null">
 				and isUsed = #{isUsed}
+			</if>
+			<if test="isDel!= null">
+				and isDel = #{isDel}
 			</if>
 			<if test="beginTime != null and beginTime != ''">
 				and usedTime>=#{beginTime}

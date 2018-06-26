@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -65,7 +66,13 @@ public class QrCodeServiceImpl implements IQrCodeService {
 	
 	@Override
 	public void delete(Long id) {
-		qrCodeMapper.delete(id);
+//		qrCodeMapper.delete(id);
+		QrCode qrCode = qrCodeMapper.get(id);
+		if(qrCode != null && qrCode.getIsDel() != 1){
+			qrCode.setIsDel(1);
+			qrCode.setDelTime(new Date());
+			qrCodeMapper.update(qrCode);
+		}
 	}
 	
 	@Override

@@ -136,12 +136,12 @@ public class DrawLogServiceImpl implements IDrawLogService {
         DrawModel winner1 = randomCard(drawList);
         DrawModel winner2 = randomCard(drawList);
 
-        info.add(winner1);
         info.add(winner);
+        info.add(winner1);
         info.add(winner2);
 
 
-        winner = info.get(1);//第二个为中奖
+        winner = info.get(0);//第一个为中奖
         Date date = new Date();
         User user = userMapper.getByWechat(openid);
         DrawLog drawLog = new DrawLog();
@@ -150,13 +150,13 @@ public class DrawLogServiceImpl implements IDrawLogService {
         drawLog.setUserName(user.getUsername());
         drawLog.setReceiveTime(date);
         drawLog.setQrCodeId(qrCode.getId());
-        if (winner.getType() != null && winner.getType() == 0) {
+        if (winner.getType() != null && winner.getType() == 1) {
             drawLog.setRedpacketId(0 - winner.getId());
             drawLog.setRedpacketName(winner.getName());
             drawLog.setAmount(winner.getAmount());
             drawLog.setRemark(winner.getAmount().toString() + "元");
             drawLog.setType(1);
-        } else if (winner.getType() != null && winner.getType() == 1) {
+        } else if (winner.getType() != null && winner.getType() == 2) {
             drawLog.setCardId(winner.getId());
             drawLog.setCardName(winner.getName());
             drawLog.setRemark(winner.getName());

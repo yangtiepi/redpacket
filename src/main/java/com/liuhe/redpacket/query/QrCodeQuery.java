@@ -21,6 +21,7 @@ public class QrCodeQuery extends BaseQuery implements Serializable {
 	private String beginTime;
 	private String endTime;
 	private Integer isUsed;
+	private Integer isDel;
 
 	public String getBeginTime() {
 		return beginTime;
@@ -44,5 +45,13 @@ public class QrCodeQuery extends BaseQuery implements Serializable {
 
 	public void setIsUsed(Integer isUsed) {
 		this.isUsed = isUsed;
+	}
+
+	public Integer getIsDel() {
+		return isDel;
+	}
+
+	public void setIsDel(Integer isDel) {
+		this.isDel = isDel;
 	}
 }

@@ -20,7 +20,7 @@ public class DrawModel implements Serializable {
     private String name;
     private Double amount;
     private Double ratio;
-    private Integer type;//0红包，1字
+    private Integer type;//1红包，2字，3谢谢惠顾
 
     public Long getId() {
         return id;

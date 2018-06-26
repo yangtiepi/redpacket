@@ -60,12 +60,11 @@ public class QrCodeController {
 
     /**
      * 高级查询+分页
-     *
-     * @param qu
+     *     * @param qu
+
      * @return
      */
     @RequestMapping("/query")
-    @ResponseBody
     private PageResult<QrCode> query(QrCodeQuery qu) {
         qu.setIsDel(0);
         PageResult<QrCode> list = qrCodeService.query(qu);
@@ -73,7 +72,7 @@ public class QrCodeController {
     }
 
     /**
-     * 添加
+     * 添加isDel
      *
      * @param num
      * @return

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!doctype html>
-<html lang="zh-cn">
+<html lang="zh-cn" manifest="demo.appcache">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -13,9 +13,20 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/main.css">
   <title>集字兑换</title>
 </head>
-<body>
-<div class="header">
-  <a href="#" onclick="history.back();">
+
+<style>
+  html,body{
+    height: 100%;
+    overflow: hidden;
+  }
+  .body{
+        padding-bottom: 50px;
+    }
+</style>
+<body oncontextmenu="return false" onselectstart="return false">
+  <div style="height: 100%;width: 100%;overflow: auto;">
+    <div class="header">
+  <a href="javascript:back();">
     <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
   </a>
   <h1 class="title">集字兑换</h1>
@@ -36,13 +47,11 @@
       <h2>集字兑换说明</h2>
       <p>集齐“尚弘云板材”五个字后奖励一台iPhone X苹果手机</p>
       <p>集齐“尚弘云”三个字后奖励888.88元超级大红包</p>
-
     </div>
   </div>
   <div class="word-box">
     <ul class="word-group">
       <c:forEach items="${cards}" var="card">
-
         <li class="word-item">
           <div>
             <img src="${pageContext.request.contextPath}/mobile/img/small_bg.png">
@@ -86,17 +95,29 @@
   </ul>
 </div>
 <div class="shade"></div>
-<div class="popup">
+<div class="popup popup1">
   <div class="pop-header">
     <h2 id="message">兑换成功</h2>
   </div>
   <div class="pop-body">
-    <p>验证码：<span id="code">XOISODAS</span></p>
+    <p>验证码：<span id="code">1221</span></p>
   </div>
   <div class="pop-footer">
-    <p>请现场凭验证码领取奖品</p>
+    <p id="result">请现场凭验证码领取奖品</p>
   </div>
 </div>
+
+<!-- 兑换失败 -->
+<div class="popup popup2">
+  <div class="pop-header">
+    <h2 id="message">兑换失败</h2>
+  </div>
+  <div class="pop-body">
+    <p id='reason'></p>
+  </div>
+</div>
+  </div>
+
 <script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
   $(function () {
@@ -133,14 +154,32 @@
                   $("#code").html(data.data.code);
                   // 打开弹窗
                   $('.shade').fadeIn();
-                  $('.popup').fadeIn();
+                  $('.popup1').fadeIn();
                   isClick = true;
               }else{
-                  alert("兑换失败,"+data.message);
+                  $("#reason").html("兑换失败,"+data.message);
+                  $('.shade').fadeIn();
+                  $('.popup2').fadeIn();
+                  // alert("兑换失败,"+data.message);
               }
           }
       });
   }
+  $(function () {
+    var isPageHide = false;
+    window.addEventListener('pageshow', function () {
+        if (isPageHide) {
+            window.location.reload();
+        }
+    });
+    window.addEventListener('pagehide', function () {
+        isPageHide = true;
+    });
+})
+
+    function back(){
+        window.history.back()
+    }
 </script>
 </body>
 </html>

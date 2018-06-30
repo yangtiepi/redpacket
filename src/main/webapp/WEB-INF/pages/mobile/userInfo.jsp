@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!doctype html>
-<html lang="zh-cn">
+<html lang="zh-cn" manifest="demo.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,10 +13,22 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/main.css">
     <title>个人中心</title>
 </head>
-<body>
-<input type="hidden" id="qrCode" value="${qrCode}">
+<style>
+    html,body{
+        height: 100%;
+    }
+</style>
+
+<style>
+    .body{
+        padding-bottom: 50px;
+    }
+</style>
+<body oncontextmenu="return false" onselectstart="return false">
+    <div style="height: 100%;width: 100%;overflow: auto;">
+        <input type="hidden" id="qrCode" value="${qrCode}">
 <div class="header">
-    <a href="#" onclick="history.back();">
+    <a href="javascript:back();">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
     </a>
     <h1 class="title">个人中心</h1>
@@ -104,6 +116,7 @@
         </li>
     </ul>
 </div>
+    </div>
 <script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jq_scroll.js"></script>
 <script>
@@ -125,6 +138,20 @@
             }
         }
     })
+    $(function () {
+    var isPageHide = false;
+    window.addEventListener('pageshow', function () {
+        if (isPageHide) {
+            window.location.reload();
+        }
+    });
+    window.addEventListener('pagehide', function () {
+        isPageHide = true;
+    });
+})
+    function back(){
+        window.history.back()
+    }
 </script>
 </body>
 </html>

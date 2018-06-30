@@ -4,7 +4,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="demo.appcache">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>抽奖中心</title>
@@ -18,25 +18,38 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/mobile/css/new.css" type="text/css" media="screen">
 
 </head>
-
-<body>
+<style>
+    html,body{
+        height: 100%;
+    }
+    .body{
+        padding-bottom: 50px;
+    }
+    img{ 
+        pointer-events: none; 
+    } 
+    .shade{
+        z-index: 10;
+    }
+</style>
+<body oncontextmenu="return false" onselectstart="return false">
 <input type="hidden" id="qrCode" value="${qrCode}">
 <div class="header">
-    <a href="#">
+    <a href="javascript:back();">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
     </a>
     <h1 class="title">奖励记录</h1>
 </div>
 <div class="body">
-    <div class="logo" style="text-align: center;margin-top: 15px;margin-bottom: 30px;">
+    <div class="logo" style="text-align: center;margin-top: 10px;margin-bottom: 15px;">
         <img src="${pageContext.request.contextPath}/mobile/img/logo.png" width="150" alt="">
     </div>
     <div class="result">
         <h2 class="text-center" style="font-size: 17px;font-weight:bold;color: #ffffff;letter-spacing: 1px;">你购买的是</h2>
-        <p class="text-center" style="margin-top: 10px;font-weight:bold;font-size: 20px;color: #f8bc0c;letter-spacing: 3px;">正品尚弘云板材</p>
+        <p class="text-center" style="margin-top: 6px;font-weight:bold;font-size: 20px;color: #f8bc0c;letter-spacing: 3px;">正品尚弘云板材</p>
     </div>
     <!--轮播历史区域-->
-    <div class="history" style="margin-top: 24px;">
+    <div class="history" style="margin-top: 10px;">
         <p class="text-center" style="color: #fff;font-size: 14px;">奖励记录</p>
         <div class="slide">
             <div id="scrollDiv">
@@ -58,9 +71,9 @@
     <div class="row-bot">
         <div class="center-shadow">
             <div class="carousel-container">
-                <div id="carousel">
+                <div id="carousel" style="height: auto;">
                     <div class="carousel-feature">
-                        <a target="_blank">
+                        <a>
                             <div class="front">
                                 <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/bg_bg.png">
                             </div>
@@ -71,7 +84,7 @@
                         </a>
                     </div>
                     <div class="carousel-feature">
-                        <a target="_blank">
+                        <a>
                             <div class="front">
                                 <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/bg_bg.png">
                             </div>
@@ -82,7 +95,7 @@
                         </a>
                     </div>
                     <div class="carousel-feature">
-                        <a target="_blank">
+                        <a>
                             <div class="front">
                                 <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/bg_bg.png">
                             </div>
@@ -117,12 +130,30 @@
     </ul>
 </div>
 
+
+<!-- 兑换失败 -->
+<div class="shade"></div>
+<div class="popup popup2">
+  <div class="pop-header">
+    <h2 id="message">抽奖失败</h2>
+  </div>
+  <div class="pop-body">
+    <p id='reason'></p>
+  </div>
+</div>
+  </div>
+
 <script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jq_scroll.js"></script>
 <script src="${pageContext.request.contextPath}/mobile/js/jquery.featureCarousel.js" type="text/javascript"></script>
 <script type="text/javascript">
     var hasClicked = false;
     var qrCode;
+    $('.shade').on('click',function () {
+      //关闭弹窗
+      $('.shade').fadeOut();
+      $('.popup').fadeOut();
+    })
     $("#scrollDiv").Scroll({line: 1, speed: 500, timer: 2000});
     $(document).ready(function () {
         $("#carousel").featureCarousel({
@@ -136,7 +167,10 @@
             smallFeatureOffset: 40,
             clickedCenter: function (item) {
                 if(hasClicked){
-                    return alert('你已经抽过奖了')
+                    $("#reason").html("你已经抽过奖了");
+                  $('.shade').fadeIn();
+                  $('.popup2').fadeIn();
+                    return false
                 }else{
                     hasClicked = true
                 }
@@ -165,7 +199,10 @@
         var storage=window.localStorage;
         var qrCode = storage.qrCode;
         if(!qrCode){
-            return alert('你没有抽奖次数！');
+            $("#reason").html("你没有抽奖次数！");
+                  $('.shade').fadeIn();
+                  $('.popup2').fadeIn();
+            return false;
         }
         $.ajax({
             type: "POST",
@@ -201,10 +238,27 @@
                         item.find('.back').prop('style',"position: relative;display: flex;align-items: center;justify-content: center").width(imageWidth).height(height);
                     });
                 }else{
-                    return alert(data.message);
+                    $("#reason").html(data.message);
+                  $('.shade').fadeIn();
+                  $('.popup2').fadeIn();
                 }
             }
         });
+    }
+    $(function () {
+    var isPageHide = false;
+    window.addEventListener('pageshow', function () {
+        if (isPageHide) {
+            window.location.reload();
+        }
+    });
+    window.addEventListener('pagehide', function () {
+        isPageHide = true;
+    });
+})
+
+    function back(){
+        window.history.back()
     }
 </script>
 </body>

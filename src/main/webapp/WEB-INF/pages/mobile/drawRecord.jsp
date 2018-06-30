@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!doctype html>
-<html lang="zh-cn">
+<html lang="zh-cn" manifest="demo.appcache">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -13,9 +13,23 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/mobile/css/main.css">
   <title>抽奖记录</title>
 </head>
-<body>
+
+<style>
+    .body{
+        padding-bottom: 50px;
+    }
+    .scroll-group .scroll-list{
+      justify-content: space-between;
+    }
+    .slide{
+    padding: 10px 12px;
+    height: 150px;
+    overflow: hidden;
+}
+</style>
+<body oncontextmenu="return false" onselectstart="return false">
   <div class="header">
-    <a href="#" onclick="history.back();">
+    <a href="javascript:back();">
       <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
     </a>
     <h1 class="title">抽奖记录</h1>
@@ -87,6 +101,21 @@
       })
       $("#scrollDiv").Scroll({line:1,speed:500,timer:2000});
     })
+   $(function () {
+    var isPageHide = false;
+    window.addEventListener('pageshow', function () {
+        if (isPageHide) {
+            window.location.reload();
+        }
+    });
+    window.addEventListener('pagehide', function () {
+        isPageHide = true;
+    });
+}) 
+
+    function back(){
+        window.history.back()
+    }
   </script>
 </body>
 </html>

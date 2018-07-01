@@ -58,6 +58,9 @@
 			<if test="code != null and code != ''">
 				and a.code = #{code}
 			</if>
+			<if test="userName != null and userName != ''">
+				and a.userName like concat('%',#{userName},'%')
+			</if>
 		</where>
 	</sql>
   

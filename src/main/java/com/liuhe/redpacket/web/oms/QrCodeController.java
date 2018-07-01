@@ -65,6 +65,7 @@ public class QrCodeController {
      * @return
      */
     @RequestMapping("/query")
+    @ResponseBody
     private PageResult<QrCode> query(QrCodeQuery qu) {
         qu.setIsDel(0);
         PageResult<QrCode> list = qrCodeService.query(qu);

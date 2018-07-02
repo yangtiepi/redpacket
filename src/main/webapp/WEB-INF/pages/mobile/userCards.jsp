@@ -26,7 +26,7 @@
 <body oncontextmenu="return false" onselectstart="return false">
   <div style="height: 100%;width: 100%;overflow: auto;">
     <div class="header">
-  <a href="javascript:back();">
+  <a href="javascript:;" id="back_btn">
     <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
   </a>
   <h1 class="title">集字兑换</h1>
@@ -118,7 +118,7 @@
 </div>
   </div>
 
-<script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jquery.min.js"></script>
 <script>
   $(function () {
     // footer 切换
@@ -177,9 +177,12 @@
     });
 })
 
-    function back(){
-        window.history.back()
-    }
+    $(function(){
+	if($('#back_btn')){
+	$('#back_btn').attr({'onclick':'history.go(-1)'})
+	}
+
+})
 </script>
 </body>
 </html>

@@ -35,7 +35,7 @@
 <body oncontextmenu="return false" onselectstart="return false">
 <input type="hidden" id="qrCode" value="${qrCode}">
 <div class="header">
-    <a href="javascript:back();">
+    <a href="javascript:;" id="back_btn">
         <img src="${pageContext.request.contextPath}/mobile/img/back.png" width="24">
     </a>
     <h1 class="title">奖励记录</h1>
@@ -81,7 +81,7 @@
                                 <p style="text-align: center;font-size: 18px;color: #f8bc0c;">谢谢惠顾</p>
                                 <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/hot_bg_big.png" style="position: absolute;left: 0;top:0;right: 0;bottom: 0;z-index: -1">
                             </div>
-                        </a>
+                            </a>
                     </div>
                     <div class="carousel-feature">
                         <a>
@@ -92,10 +92,10 @@
                                 <p style="text-align: center;font-size: 18px;color: #f8bc0c;">谢谢惠顾</p>
                                 <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/hot_bg_big.png" style="position: absolute;left: 0;top:0;right: 0;bottom: 0;z-index: -1">
                             </div>
-                        </a>
+                             </a>
                     </div>
                     <div class="carousel-feature">
-                        <a>
+                         <a>
                             <div class="front">
                                 <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/bg_bg.png">
                             </div>
@@ -103,7 +103,7 @@
                                 <p style="text-align: center;font-size: 18px;color: #f8bc0c;">谢谢惠顾</p>
                                 <img class="carousel-image" alt="" src="${pageContext.request.contextPath}/mobile/img/hot_bg_big.png" style="position: absolute;left: 0;top:0;right: 0;bottom: 0;z-index: -1">
                             </div>
-                        </a>
+                            </a>
                     </div>
                 </div>
             </div>
@@ -141,11 +141,10 @@
     <p id='reason'></p>
   </div>
 </div>
-  </div>
-
-<script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jq_scroll.js"></script>
 <script src="${pageContext.request.contextPath}/mobile/js/jquery.featureCarousel.js" type="text/javascript"></script>
+
 <script type="text/javascript">
     var hasClicked = false;
     var qrCode;
@@ -167,10 +166,10 @@
             smallFeatureOffset: 40,
             clickedCenter: function (item) {
                 if(hasClicked){
-                    $("#reason").html("你已经抽过奖了");
+                  $("#reason").html("你已经抽过奖了");
                   $('.shade').fadeIn();
                   $('.popup2').fadeIn();
-                    return false
+                  return false
                 }else{
                     hasClicked = true
                 }
@@ -257,9 +256,12 @@
     });
 })
 
-    function back(){
-        window.history.back()
+    $(function(){
+	if($('#back_btn')){
+    	$('#back_btn').attr({'onclick':'history.go(-1)'})
     }
+})
+
 </script>
 </body>
 </html>

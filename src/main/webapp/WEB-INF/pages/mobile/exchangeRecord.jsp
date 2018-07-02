@@ -38,7 +38,7 @@
 </style>
 <body oncontextmenu="return false" onselectstart="return false">
 <div class="header">
-  <a href="javascript:back();">
+  <a href="javascript:;" id="back_btn">
     <img src="img/back.png" width="24">
   </a>
   <h1 class="title">兑奖记录</h1>
@@ -94,14 +94,14 @@
       </a>
     </li>
     <li class="active">
-      <a href="#" class="three">
+      <a href="${pageContext.request.contextPath}/mobile/userInfo" class="three">
         <span>个人中心</span>
       </a>
     </li>
   </ul>
 </div>
 
-<script rel="script" type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/mobile/js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jq_scroll.js"></script>
 <script>
     $(function () {
@@ -123,9 +123,12 @@
     });
 })
 
-    function back(){
-        window.history.back()
-    }
+    $(function(){
+	if($('#back_btn')){
+	$('#back_btn').attr({'onclick':'history.go(-1)'})
+	}
+
+})
 </script>
 </body>
 </html></html>

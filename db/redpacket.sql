@@ -1,143 +1,19 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : redpacket
-Source Server Version : 50717
-Source Host           : localhost:3306
+Source Server         : 120.77.233.149
+Source Server Version : 50720
+Source Host           : 120.77.233.149:3306
 Source Database       : redpacket
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-01-04 00:26:48
+Date: 2018-07-03 00:19:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for t_qr_code
--- ----------------------------
-DROP TABLE IF EXISTS `t_qr_code`;
-CREATE TABLE `t_qr_code` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `title` varchar(6) NOT NULL,
-  `smallImg` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `content` varchar(255) DEFAULT NULL,
-  `info` varchar(255) DEFAULT NULL,
-  `url` varchar(255) NOT NULL,
-  `sort` int(10) NOT NULL,
-  `clickedNum` int(10) NOT NULL DEFAULT '0',
-  `clickableNum` int(10) NOT NULL,
-  `periodDay` int(255) NOT NULL,
-  `beginTime` datetime DEFAULT NULL,
-  `endTime` datetime DEFAULT NULL,
-  `createTime` datetime DEFAULT NULL,
-  `status` int(255) DEFAULT NULL,
-  `isDel` int(255) DEFAULT NULL,
-  `delTime` datetime DEFAULT NULL,
-  `qrcode` varchar(255) DEFAULT NULL,
-  `homepageId` bigint(20) DEFAULT NULL,
-  `redpacketId` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=456 DEFAULT CHARSET=utf8mb4;
-
--- ----------------------------
--- Records of t_qr_code
--- ----------------------------
-INSERT INTO `t_qr_code` VALUES ('435', '测试1234', 'images/ad/smallImg/f20467e6-912a-4059-a38c-e4bbbdf59ba9.jpg', 'images/ad/image/a40de346-4e8b-4df8-90cb-25dac21d2cc4.jpg', '啊深大大声大声道', '打过多份工的', 'https://www.baidu.com', '1', '4', '10', '1', null, null, '2017-12-15 10:55:56', '1', '1', '2017-12-18 13:52:20', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('436', '测试2', 'images/ad/smallImg/c6dc5bd0-6619-416c-9060-65d54be0fad8.jpg', 'images/ad/image/d3323d36-af8d-4c52-98b6-61e3bec35683.jpg', '奥迪三大德', '电饭锅对方的都是发生', 'https://www.baidu.com', '2', '2', '2', '1', null, null, '2017-12-15 10:56:27', '1', '1', '2017-12-18 13:52:23', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('437', '测试3', 'images/ad/smallImg/1c2bb60d-ee12-4678-9548-45a27fdccc37.jpg', 'images/ad/image/32faf882-75cb-499f-9425-93ff0588eecd.jpg', '发生的发生', '士大夫所发生的非', 'https://www.baidu.com', '3', '1', '10', '1', null, null, '2017-12-15 10:57:01', '1', '1', '2017-12-18 13:52:25', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('438', '测试4', 'images/ad/smallImg/69dddf58-d1b9-40ed-8587-92798e8f17a6.jpg', 'images/ad/image/0d36c28a-fbd3-4787-bec0-e35764500a03.jpg', '打上大大', '梵蒂冈的股份大概', 'https://www.baidu.com', '4', '1', '1', '1', null, null, '2017-12-15 10:57:35', '1', '1', '2017-12-18 13:52:31', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('439', '测试5', 'images/ad/smallImg/35e0fbdd-e14c-452d-a56e-863f290e0e67.jpg', 'images/ad/image/a99389ce-4e06-4904-946f-1a9c108aea3c.jpg', '三分大赛冯绍峰但是', '华国锋和法国韩国法国合法合规', 'https://www.baidu.com', '5', '0', '10', '1', null, null, '2017-12-15 11:01:30', '1', '1', '2017-12-18 13:52:34', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('440', '测试6', 'images/ad/smallImg/8d7ed927-b036-40bb-8655-fd3dc00369fd.jpg', 'images/ad/image/24403f4c-0b23-4c2b-9e25-3a7e991bcdb3.jpg', '大使大多数', '安放多少福斯粉丝', 'https://www.baidu.com', '6', '0', '10', '1', null, null, '2017-12-15 11:04:48', '1', '1', '2017-12-18 13:52:36', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('441', '测试7', 'images/ad/smallImg/4d724b98-35da-435f-abc9-5e1687566334.jpg', 'images/ad/image/f675871a-b73b-445f-85ca-6145cfbfb240.jpg', '敌方人数大大撒旦', '按时打算打双打', 'https://www.baidu.com', '7', '0', '10', '1', null, null, '2017-12-15 11:06:49', '1', '1', '2017-12-18 13:52:39', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('442', '测试8', 'images/ad/smallImg/429e1e49-e23a-4603-9ba2-d7488daa1063.jpg', 'images/ad/image/2aa9750a-bc3d-4e99-982e-deb0360b5261.jpg', '史蒂芬孙方式发生', '根风电杆的高度', 'https://www.baidu.com', '8', '1', '10', '1', null, null, '2017-12-15 11:10:27', '1', '1', '2017-12-18 13:52:42', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('443', '测试9', 'images/ad/smallImg/bf7d5fce-1d57-4db2-98cd-0ec9133b51db.jpg', 'images/ad/image/7eff3043-4454-4f5a-8f79-4a0fb5feaa91.jpg', '水豆腐酸豆腐是', '士大夫方式发生发生大幅', 'https://www.baidu.com', '9', '1', '10', '1', null, null, '2017-12-15 11:13:06', '1', '1', '2017-12-18 13:52:46', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('444', '测试10', 'images/ad/smallImg/658b2e9b-e65a-4ad1-9844-c61612cda395.jpg', 'images/ad/image/611df48d-a522-4c57-83da-388582de10c7.jpg', '爱大善大德', '电饭锅地方规定法国德国', 'https://www.baidu.com', '10', '1', '10', '1', null, null, '2017-12-15 11:14:12', '1', '1', '2017-12-18 13:52:49', null, null, '76');
-INSERT INTO `t_qr_code` VALUES ('445', '测试1', 'images/ad/smallImg/d07492cc-9795-404a-8dde-61637d2b7327.jpg', 'images/ad/image/14bc67f8-b7a5-4f5b-a397-b68c43337a89.jpg', '的方式的方式冯绍峰', '发生的发生放松放松对方身份的身份', 'https://www.baidu.com', '1', '1', '1', '1', null, null, '2017-12-18 14:01:58', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('446', '测试2', 'images/ad/smallImg/7dd85e00-4c9c-4e77-bf06-b71b7b72967a.jpg', 'images/ad/image/da30415d-8a11-42f6-aee7-8193767d78e3.jpg', '佛挡杀佛双方是否卫生等方法十分的', '法国队古典风格丹甫股份的观点风格热热反倒是v', 'https://www.baidu.com', '2', '1', '2', '1', null, null, '2017-12-18 14:03:14', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('447', '测试3', 'images/ad/smallImg/9d30499f-7604-40fb-96a5-caff3f4c3f4c.jpg', 'images/ad/image/9b2011df-ed6f-4432-a362-5112a88eba56.jpg', '士大夫所发生的反反复复方式是随时随地', ' 大幅度丰富的辅导费v从vv此次vv从v从v厄尔 ', 'https://www.baidu.com', '3', '1', '2', '1', null, null, '2017-12-18 14:04:53', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('448', '测试4', 'images/ad/smallImg/05dc89be-5818-44b3-8dc2-273beb887db6.jpg', 'images/ad/image/274031b4-4901-425d-a020-87c4be95d637.jpg', '三分大赛放松放松东方闪电发生过的观点房v想打谁答案', '很快将会更好国画家股份计划规划计划将', 'https://www.baidu.com', '4', '1', '2', '1', null, null, '2017-12-18 14:05:49', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('449', '测试5', 'images/ad/smallImg/ce5c2abe-7ad5-4e95-aa21-6670e50b0498.jpg', 'images/ad/image/d8f4d449-724d-418c-9261-2c34d265b6e3.jpg', '淡粉色仍然非常成熟撒啊上的丰富更高的', '共分为问问问我说的是上的的地方方法', 'https://www.baidu.com', '5', '1', '2', '1', null, null, '2017-12-18 14:07:13', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('450', '测试6', 'images/ad/smallImg/06779afb-f7bb-4277-a260-b0a981fca50c.jpg', 'images/ad/image/7e78a4c4-ef27-40d6-968b-c9261ee89d5a.jpg', '豆腐坊虫儿飞过程v北国风光复古风vvvvv', '大幅度辅导费大学城v机会就很健康骄傲了空间里看见了', 'https://www.baidu.com', '6', '1', '2', '1', null, null, '2017-12-18 14:08:14', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('451', '测试7', 'images/ad/smallImg/45dc1419-547d-4e19-8bb3-fb28c112cfb4.jpg', 'images/ad/image/6a3d41e2-316c-4aab-a883-cb2eff0a5897.jpg', '宝贵的是否乳房大叔大婶大师傅的说法是', '似懂非懂是否丰富人人人人人人人人人人', 'https://www.baidu.com', '7', '1', '2', '1', null, null, '2017-12-18 14:09:14', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('452', '测试8', 'images/ad/smallImg/82b7a621-fa90-4e57-9df4-2d680dcd71aa.jpg', 'images/ad/image/b7238d0f-b560-4919-bace-628686e83982.jpg', '吊死扶伤东方人更丰富给v处处长成长学习 ', '但是反反复复反反复复的官方发广告广告', 'https://www.baidu.com', '8', '1', '2', '1', null, null, '2017-12-18 14:10:19', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('453', '测试9', 'images/ad/smallImg/963a14e2-70f2-495b-8695-f1df417d9f0d.jpg', 'images/ad/image/66b08044-3093-4ce7-b7e6-3a2e581be448.jpg', '防守打法史蒂芬孙孚日股份个人股人工费v呈现出v向', '的方式反反复复反反复复人声鼎沸地方v从', 'https://www.baidu.com', '9', '1', '2', '1', null, null, '2017-12-18 14:11:21', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('454', '测试10', 'images/ad/smallImg/e5cbdc12-987c-43f0-a8d2-a2bff119de6c.jpg', 'images/ad/image/bfa77a3f-1d2a-424b-bfca-d689f0b0c3ba.jpg', '贵妇狗太丰富非v呈现出v天天 ', '梵蒂冈的风格梵蒂冈如果反对的各个风格', 'https://www.baidu.com', '10', '1', '2', '1', null, null, '2017-12-18 14:12:32', '1', '0', null, null, null, '78');
-INSERT INTO `t_qr_code` VALUES ('455', '测试11', 'images/ad/smallImg/7304601c-a669-42c7-9433-e7853e6fd22e.jpg', 'images/ad/image/385a3ee5-96e1-4a1c-ac8d-d6d8dba08c99.jpg', '史蒂芬孙的方式发生的方式对方是否让', '所发生的发生的方式方式反对分身乏术的', 'https://www.baidu.com', '11', '0', '2', '1', null, null, '2017-12-18 14:13:23', '1', '0', null, null, null, '78');
-
--- ----------------------------
--- Table structure for t_qr_code_click_log
--- ----------------------------
-DROP TABLE IF EXISTS `t_qr_code_click_log`;
-CREATE TABLE `t_qr_code_click_log` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `userId` bigint(20) DEFAULT NULL,
-  `clickTime` datetime NOT NULL,
-  `adTitle` varchar(255) DEFAULT NULL,
-  `userName` varchar(255) DEFAULT NULL,
-  `openid` varchar(255) NOT NULL,
-  `wechat` varchar(255) DEFAULT NULL,
-  `adId` bigint(20) NOT NULL,
-  `homepageId` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=559 DEFAULT CHARSET=utf8mb4;
-
--- ----------------------------
--- Records of t_qr_code_click_log
--- ----------------------------
-INSERT INTO `t_qr_code_click_log` VALUES ('548', null, '2017-12-18 00:57:47', '测试1234', null, 'o4HNe0v3J5sGFBDYRoZOJimRzqPE', '杨宇飞', '435', '364');
-INSERT INTO `t_qr_code_click_log` VALUES ('549', null, '2017-12-18 14:16:40', '测试1', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '445', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('550', null, '2017-12-18 14:16:49', '测试2', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '446', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('551', null, '2017-12-18 14:17:18', '测试3', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '447', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('552', null, '2017-12-18 14:17:26', '测试4', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '448', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('553', null, '2017-12-18 14:17:35', '测试5', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '449', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('554', null, '2017-12-18 14:17:43', '测试6', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '450', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('555', null, '2017-12-18 14:17:50', '测试7', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '451', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('556', null, '2017-12-18 14:18:08', '测试8', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '452', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('557', null, '2017-12-18 14:18:13', '测试9', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '453', '366');
-INSERT INTO `t_qr_code_click_log` VALUES ('558', null, '2017-12-18 14:18:24', '测试10', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '454', '366');
-
--- ----------------------------
--- Table structure for t_qr_code_homepage
--- ----------------------------
-DROP TABLE IF EXISTS `t_qr_code_homepage`;
-CREATE TABLE `t_qr_code_homepage` (
-  `adId` bigint(20) NOT NULL,
-  `homepageId` bigint(20) NOT NULL,
-  PRIMARY KEY (`adId`,`homepageId`),
-  KEY `permission_id` (`homepageId`),
-  CONSTRAINT `t_qr_code_homepage_ibfk_1` FOREIGN KEY (`adId`) REFERENCES `t_qr_code` (`id`),
-  CONSTRAINT `t_qr_code_homepage_ibfk_2` FOREIGN KEY (`homepageId`) REFERENCES `t_homepage` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- ----------------------------
--- Records of t_qr_code_homepage
--- ----------------------------
-INSERT INTO `t_qr_code_homepage` VALUES ('435', '364');
-INSERT INTO `t_qr_code_homepage` VALUES ('435', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('436', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('437', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('438', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('439', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('440', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('441', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('442', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('443', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('444', '365');
-INSERT INTO `t_qr_code_homepage` VALUES ('445', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('446', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('447', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('448', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('449', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('450', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('451', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('452', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('453', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('454', '366');
-INSERT INTO `t_qr_code_homepage` VALUES ('455', '366');
 
 -- ----------------------------
 -- Table structure for t_card
@@ -147,26 +23,111 @@ CREATE TABLE `t_card` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `cardsId` bigint(20) NOT NULL,
-  `ratio` decimal(10,2) NOT NULL,
+  `cardsId` bigint(20) DEFAULT NULL,
+  `ratio` decimal(10,4) NOT NULL,
   `isDel` int(2) DEFAULT NULL,
   `delTime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_card
 -- ----------------------------
-INSERT INTO `t_card` VALUES ('139', '测', 'images/cards/9adf4119-fdcb-4e86-bb58-f3ccf26ebb74.jpg', '51', '1.00', '1', '2017-12-18 13:50:49');
-INSERT INTO `t_card` VALUES ('140', '试', 'images/cards/26d2fab0-f4d9-4e43-b714-5bc88723644b.jpg', '51', '99.00', '1', '2017-12-18 13:51:21');
-INSERT INTO `t_card` VALUES ('141', '测', 'images/cards/c12c3358-d454-4f15-aa3d-b6bbb459c96e.jpg', '52', '1.00', '1', '2017-12-18 13:51:25');
-INSERT INTO `t_card` VALUES ('142', '试', 'images/cards/2674792a-4d9d-4d73-80ad-fc5537035173.jpg', '52', '1.00', '1', '2017-12-18 13:51:31');
-INSERT INTO `t_card` VALUES ('143', '集', 'images/cards/046826ea-cc4c-4c5b-9a67-61d6dfcb8c9a.jpg', '52', '88.00', '1', '2017-12-18 13:51:28');
-INSERT INTO `t_card` VALUES ('144', '卡', 'images/cards/cd3e347c-bef0-4897-97f1-c7bcbbd64735.jpg', '52', '10.00', '1', '2017-12-18 13:51:36');
-INSERT INTO `t_card` VALUES ('145', '测', 'images/cards/fab00360-604e-430e-971b-3c4738620ded.jpg', '53', '25.00', '0', null);
-INSERT INTO `t_card` VALUES ('146', '试', 'images/cards/4cc738b8-d561-456e-8482-4f3f68a3cae1.jpg', '53', '25.00', '0', null);
-INSERT INTO `t_card` VALUES ('147', '集', 'images/cards/891014fd-e22d-4b05-8c0d-a489000a64c4.jpg', '53', '25.00', '0', null);
-INSERT INTO `t_card` VALUES ('148', '卡', 'images/cards/dd664efb-26e8-43c7-bda6-db57df373f42.jpg', '53', '25.00', '0', null);
+INSERT INTO `t_card` VALUES ('1', '尚', '', null, '10.0000', '0', null);
+INSERT INTO `t_card` VALUES ('2', '弘', '', null, '0.0002', '0', null);
+INSERT INTO `t_card` VALUES ('3', '云', '', null, '1.0000', '0', null);
+INSERT INTO `t_card` VALUES ('4', '板', '', null, '10.0000', '0', null);
+INSERT INTO `t_card` VALUES ('5', '材', '', null, '0.0001', '0', null);
+
+-- ----------------------------
+-- Table structure for t_card_log
+-- ----------------------------
+DROP TABLE IF EXISTS `t_card_log`;
+CREATE TABLE `t_card_log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `userId` bigint(20) DEFAULT NULL,
+  `qrCodeId` bigint(20) DEFAULT NULL,
+  `cardId` bigint(20) DEFAULT NULL,
+  `cardName` varchar(255) DEFAULT NULL,
+  `userName` varchar(255) DEFAULT NULL,
+  `openid` varchar(255) NOT NULL,
+  `wechat` varchar(255) DEFAULT NULL,
+  `receiveTime` datetime DEFAULT NULL,
+  `type` int(2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_card_log
+-- ----------------------------
+INSERT INTO `t_card_log` VALUES ('1', '14', '63', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:56:04', '0');
+INSERT INTO `t_card_log` VALUES ('2', '14', '67', '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:56:46', '0');
+INSERT INTO `t_card_log` VALUES ('3', '14', '75', '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 10:59:43', '0');
+INSERT INTO `t_card_log` VALUES ('4', '14', '74', '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:01:26', '0');
+INSERT INTO `t_card_log` VALUES ('5', '14', '77', '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:02:50', '0');
+INSERT INTO `t_card_log` VALUES ('6', '14', '78', '1', '尚', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:03:42', '0');
+INSERT INTO `t_card_log` VALUES ('7', '14', '1', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:03:46', '1');
+INSERT INTO `t_card_log` VALUES ('8', '14', '2', '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:03:46', '1');
+INSERT INTO `t_card_log` VALUES ('9', '14', '3', '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:03:46', '1');
+INSERT INTO `t_card_log` VALUES ('10', '14', '81', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:15:29', '0');
+INSERT INTO `t_card_log` VALUES ('11', '14', '84', '1', '尚', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 22:21:45', '0');
+INSERT INTO `t_card_log` VALUES ('12', '14', '84', '1', '尚', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 22:24:21', '0');
+INSERT INTO `t_card_log` VALUES ('13', '14', '84', '-4', '四级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 22:29:54', '0');
+INSERT INTO `t_card_log` VALUES ('14', '15', '95', '-3', '三级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-26 23:43:54', '0');
+INSERT INTO `t_card_log` VALUES ('15', '14', '101', '5', '材', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:15:03', '0');
+INSERT INTO `t_card_log` VALUES ('16', '14', '102', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:16:23', '0');
+INSERT INTO `t_card_log` VALUES ('17', '14', '102', '5', '材', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:17:45', '0');
+INSERT INTO `t_card_log` VALUES ('18', '14', '102', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:18:13', '0');
+INSERT INTO `t_card_log` VALUES ('19', '14', '101', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:19:17', '0');
+INSERT INTO `t_card_log` VALUES ('20', '14', '101', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:24:30', '0');
+INSERT INTO `t_card_log` VALUES ('21', '14', '103', '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:24:50', '0');
+INSERT INTO `t_card_log` VALUES ('22', '15', '111', '5', '材', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-28 10:31:45', '0');
+INSERT INTO `t_card_log` VALUES ('23', '16', '112', '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-28 11:42:03', '0');
+INSERT INTO `t_card_log` VALUES ('24', '20', '113', '5', '材', '千山真木板18873635499', 'oJuS_041xwOyuLVKsYVzgXgboO3Q', null, '2018-06-29 12:13:43', '0');
+INSERT INTO `t_card_log` VALUES ('25', '15', '118', '4', '板', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:28:05', '0');
+INSERT INTO `t_card_log` VALUES ('26', '15', '117', '4', '板', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:29:26', '0');
+INSERT INTO `t_card_log` VALUES ('27', '15', '128', '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:30:11', '0');
+INSERT INTO `t_card_log` VALUES ('28', '15', '11', '-3', null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:30:17', '1');
+INSERT INTO `t_card_log` VALUES ('29', '15', '19', '5', '材', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:30:17', '1');
+INSERT INTO `t_card_log` VALUES ('30', '15', '22', '4', '板', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:30:17', '1');
+INSERT INTO `t_card_log` VALUES ('31', '15', '123', '3', '云', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:32:35', '0');
+INSERT INTO `t_card_log` VALUES ('32', '15', '23', '4', '板', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:33:58', '1');
+INSERT INTO `t_card_log` VALUES ('33', '15', '24', '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:33:58', '1');
+INSERT INTO `t_card_log` VALUES ('34', '15', '25', '3', '云', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 09:33:58', '1');
+INSERT INTO `t_card_log` VALUES ('35', '23', '134', '3', '云', 'MISS WANG YOGA 娇娇', 'oJuS_0x90qs2v7vT3VJuTRv8qi1g', null, '2018-06-30 09:41:48', '0');
+INSERT INTO `t_card_log` VALUES ('36', '16', '136', '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 15:51:46', '0');
+INSERT INTO `t_card_log` VALUES ('37', '16', '135', '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 15:55:37', '0');
+INSERT INTO `t_card_log` VALUES ('38', '16', '133', '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 15:58:00', '0');
+INSERT INTO `t_card_log` VALUES ('39', '16', '131', '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 15:58:38', '0');
+INSERT INTO `t_card_log` VALUES ('40', '15', '132', '3', '云', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 18:12:24', '0');
+INSERT INTO `t_card_log` VALUES ('41', '16', '20', '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 19:58:50', '1');
+INSERT INTO `t_card_log` VALUES ('42', '16', '27', '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 19:58:50', '1');
+INSERT INTO `t_card_log` VALUES ('43', '16', '28', '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 19:58:50', '1');
+INSERT INTO `t_card_log` VALUES ('44', '16', '234', '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 20:10:30', '0');
+INSERT INTO `t_card_log` VALUES ('45', '16', '239', '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 20:10:56', '0');
+INSERT INTO `t_card_log` VALUES ('46', '26', '237', '1', '尚', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, '2018-06-30 20:12:22', '0');
+INSERT INTO `t_card_log` VALUES ('47', '26', '241', '3', '云', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, '2018-06-30 20:12:41', '0');
+INSERT INTO `t_card_log` VALUES ('48', '26', '232', '5', '材', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, '2018-06-30 20:13:37', '0');
+INSERT INTO `t_card_log` VALUES ('49', '26', '34', '1', '尚', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, '2018-06-30 20:13:49', '1');
+INSERT INTO `t_card_log` VALUES ('50', '26', '35', '3', '云', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, '2018-06-30 20:13:49', '1');
+INSERT INTO `t_card_log` VALUES ('51', '26', '36', '5', '材', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, '2018-06-30 20:13:49', '1');
+INSERT INTO `t_card_log` VALUES ('52', '15', '227', '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 21:03:00', '0');
+INSERT INTO `t_card_log` VALUES ('53', '15', '222', '2', '弘', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 21:03:44', '0');
+INSERT INTO `t_card_log` VALUES ('54', '15', '31', '3', '云', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 21:04:03', '1');
+INSERT INTO `t_card_log` VALUES ('55', '15', '37', '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 21:04:03', '1');
+INSERT INTO `t_card_log` VALUES ('56', '15', '38', '2', '弘', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 21:04:03', '1');
+INSERT INTO `t_card_log` VALUES ('57', '16', '29', '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 21:06:42', '1');
+INSERT INTO `t_card_log` VALUES ('58', '16', '30', '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 21:06:42', '1');
+INSERT INTO `t_card_log` VALUES ('59', '16', '32', '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 21:06:42', '1');
+INSERT INTO `t_card_log` VALUES ('60', '27', '289', '3', '云', '流年', 'oJuS_08Qccp5RgldV5eaZyFrmkoI', null, '2018-06-30 22:02:43', '0');
+INSERT INTO `t_card_log` VALUES ('61', '16', '267', '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 23:02:26', '0');
+INSERT INTO `t_card_log` VALUES ('62', '28', '247', '3', '云', '小月', 'oJuS_065AEmVr0VLU68bkuMQko-0', null, '2018-07-01 10:32:07', '0');
+INSERT INTO `t_card_log` VALUES ('63', '16', '328', '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-07-01 11:12:14', '0');
+INSERT INTO `t_card_log` VALUES ('64', '15', '360', '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-07-01 14:33:48', '0');
+INSERT INTO `t_card_log` VALUES ('65', '16', '33', '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-07-02 09:44:44', '1');
+INSERT INTO `t_card_log` VALUES ('66', '16', '40', '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-07-02 09:44:44', '1');
+INSERT INTO `t_card_log` VALUES ('67', '16', '42', '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-07-02 09:44:44', '1');
+INSERT INTO `t_card_log` VALUES ('68', '16', '358', '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-07-02 17:41:54', '0');
 
 -- ----------------------------
 -- Table structure for t_cards
@@ -183,15 +144,15 @@ CREATE TABLE `t_cards` (
   `delTime` datetime DEFAULT NULL,
   `beginTime` datetime DEFAULT NULL,
   `endTime` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+  `completeNum` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`completeNum`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_cards
 -- ----------------------------
-INSERT INTO `t_cards` VALUES ('51', '测试', '发生的负担十分十分十分 ', null, '2017-12-14 20:54:56', '1', '1', '2017-12-18 13:50:43', '2017-12-14 20:54:56', null);
-INSERT INTO `t_cards` VALUES ('52', '测试集卡', '的方式发生的方式的方式的方式的方式发生', null, '2017-12-16 09:30:11', '1', '1', '2017-12-18 13:50:40', '2017-12-16 09:30:11', null);
-INSERT INTO `t_cards` VALUES ('53', '测试集卡', '由B获取指定区域已扫码的投保资料，通过扫码枪更新系统状态，最后输入个人识别码完成系统确认；（扫码后状态更新为“已提取”', null, '2017-12-18 13:53:20', '1', '0', null, null, null);
+INSERT INTO `t_cards` VALUES ('1', '集齐三张卡片奖品', '红包888.88', null, '2017-12-16 09:30:11', '1', '0', null, null, null, '3');
+INSERT INTO `t_cards` VALUES ('2', '集齐五张卡片奖品', '苹果手机', null, '2017-12-18 13:53:20', '1', '0', null, null, null, '5');
 
 -- ----------------------------
 -- Table structure for t_cards_complete
@@ -203,19 +164,137 @@ CREATE TABLE `t_cards_complete` (
   `cardsId` bigint(20) DEFAULT NULL,
   `userName` varchar(255) DEFAULT NULL,
   `openid` varchar(255) NOT NULL,
-  `wechat` varchar(255) DEFAULT NULL,
+  `cardsName` varchar(255) DEFAULT NULL,
   `code` varchar(10) DEFAULT NULL,
   `status` int(10) DEFAULT NULL,
   `completeTime` datetime NOT NULL,
   `receiveTime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_cards_complete
 -- ----------------------------
-INSERT INTO `t_cards_complete` VALUES ('158', null, '53', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '9Q3NdG', '1', '2017-12-18 14:19:46', '2017-12-18 14:22:14');
+INSERT INTO `t_cards_complete` VALUES ('1', '14', '1', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '奖品名称', '2SbwuL', '1', '2018-06-26 11:03:46', '2018-06-26 11:04:14');
+INSERT INTO `t_cards_complete` VALUES ('2', '15', '1', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '红包888.88', 'qWcf2G', '1', '2018-06-30 09:30:17', '2018-06-30 21:04:37');
+INSERT INTO `t_cards_complete` VALUES ('3', '15', '1', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '红包888.88', 'OJb69c', '1', '2018-06-30 09:33:58', '2018-06-30 23:14:16');
+INSERT INTO `t_cards_complete` VALUES ('4', '16', '1', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '红包888.88', 'i3PGlt', '1', '2018-06-30 19:58:50', '2018-06-30 23:14:48');
+INSERT INTO `t_cards_complete` VALUES ('5', '26', '1', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '红包888.88', 'GiyQDZ', '1', '2018-06-30 20:13:49', '2018-06-30 21:16:26');
+INSERT INTO `t_cards_complete` VALUES ('6', '15', '1', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '红包888.88', 'Tkxgvw', '1', '2018-06-30 21:04:03', '2018-06-30 21:04:46');
+INSERT INTO `t_cards_complete` VALUES ('7', '16', '1', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '红包888.88', 'M4cxq6', '1', '2018-06-30 21:06:42', '2018-06-30 23:14:54');
+INSERT INTO `t_cards_complete` VALUES ('8', '16', '1', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '红包888.88', 'XKdjB8', '0', '2018-07-02 09:44:44', null);
+
+-- ----------------------------
+-- Table structure for t_draw_log
+-- ----------------------------
+DROP TABLE IF EXISTS `t_draw_log`;
+CREATE TABLE `t_draw_log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `userId` bigint(20) DEFAULT NULL,
+  `redPacketId` bigint(20) DEFAULT NULL,
+  `redPacketName` varchar(255) DEFAULT NULL,
+  `cardId` bigint(20) DEFAULT NULL,
+  `cardName` varchar(255) DEFAULT NULL,
+  `userName` varchar(255) DEFAULT NULL,
+  `openid` varchar(255) NOT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `type` int(2) NOT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
+  `receiveTime` datetime DEFAULT NULL,
+  `qrCodeId` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=420 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_draw_log
+-- ----------------------------
+INSERT INTO `t_draw_log` VALUES ('333', '14', '5', '撒', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '1.0元', '1', '1.00', '2018-06-25 09:39:47', null);
+INSERT INTO `t_draw_log` VALUES ('334', '14', '2', '测试', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '1.0元', '1', '1.00', '2018-06-25 10:03:15', null);
+INSERT INTO `t_draw_log` VALUES ('335', '14', '5', '五级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '3.88元', '1', '3.88', '2018-06-25 23:37:11', null);
+INSERT INTO `t_draw_log` VALUES ('336', '15', '4', '四级', null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '5.88元', '1', '5.88', '2018-06-25 23:39:40', null);
+INSERT INTO `t_draw_log` VALUES ('337', '15', '5', '五级', null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '3.88元', '1', '3.88', '2018-06-25 23:41:22', null);
+INSERT INTO `t_draw_log` VALUES ('338', '15', '5', '五级', null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '3.88元', '1', '3.88', '2018-06-25 23:41:58', null);
+INSERT INTO `t_draw_log` VALUES ('339', '14', '5', '五级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '3.88元', '1', '3.88', '2018-06-26 00:13:19', null);
+INSERT INTO `t_draw_log` VALUES ('340', '14', '4', '四级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '5.88元', '1', '5.88', '2018-06-26 00:34:52', '68');
+INSERT INTO `t_draw_log` VALUES ('341', '14', '2', '二级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '58.88元', '1', '58.88', '2018-06-26 00:35:23', '67');
+INSERT INTO `t_draw_log` VALUES ('342', '14', '4', '四级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '5.88元', '1', '5.88', '2018-06-26 00:38:59', '66');
+INSERT INTO `t_draw_log` VALUES ('343', '14', '2', '二级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '58.88元', '1', '58.88', '2018-06-26 00:40:54', '66');
+INSERT INTO `t_draw_log` VALUES ('344', '14', '4', '四级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '5.88元', '1', '5.88', '2018-06-26 00:54:25', '59');
+INSERT INTO `t_draw_log` VALUES ('345', '14', '5', '五级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '3.88元', '1', '3.88', '2018-06-26 00:54:35', '68');
+INSERT INTO `t_draw_log` VALUES ('346', '14', '5', '五级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '3.88元', '1', '3.88', '2018-06-26 00:54:42', '65');
+INSERT INTO `t_draw_log` VALUES ('347', '14', '5', '五级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '3.88元', '1', '3.88', '2018-06-26 00:55:54', '64');
+INSERT INTO `t_draw_log` VALUES ('348', '14', null, null, '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '板', '2', null, '2018-06-26 00:56:04', '63');
+INSERT INTO `t_draw_log` VALUES ('349', '14', null, null, '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '云', '2', null, '2018-06-26 00:56:46', '67');
+INSERT INTO `t_draw_log` VALUES ('350', '14', null, null, '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '云', '2', null, '2018-06-26 10:59:43', '75');
+INSERT INTO `t_draw_log` VALUES ('351', '14', null, null, '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '云', '2', null, '2018-06-26 11:01:26', '74');
+INSERT INTO `t_draw_log` VALUES ('352', '14', null, null, '3', '云', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '云', '2', null, '2018-06-26 11:02:50', '77');
+INSERT INTO `t_draw_log` VALUES ('353', '14', '5', '五级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '3.88元', '1', '3.88', '2018-06-26 11:03:12', '76');
+INSERT INTO `t_draw_log` VALUES ('354', '14', null, null, '1', '尚', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '尚', '2', null, '2018-06-26 11:03:42', '78');
+INSERT INTO `t_draw_log` VALUES ('355', '14', '3', '三级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '8.88元', '1', '8.88', '2018-06-26 11:12:43', '80');
+INSERT INTO `t_draw_log` VALUES ('356', '14', null, null, '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '板', '2', null, '2018-06-26 11:15:29', '81');
+INSERT INTO `t_draw_log` VALUES ('357', '14', '4', '四级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '5.88元', '1', '5.88', '2018-06-26 11:31:42', '82');
+INSERT INTO `t_draw_log` VALUES ('358', '14', '5', '五级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '3.88元', '1', '3.88', '2018-06-26 22:19:18', '84');
+INSERT INTO `t_draw_log` VALUES ('359', '14', null, null, '1', '尚', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '尚', '2', null, '2018-06-26 22:21:45', '84');
+INSERT INTO `t_draw_log` VALUES ('360', '14', '2', '二级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '58.88元', '1', '58.88', '2018-06-26 22:22:25', '84');
+INSERT INTO `t_draw_log` VALUES ('361', '14', null, null, '1', '尚', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '尚', '2', null, '2018-06-26 22:24:21', '84');
+INSERT INTO `t_draw_log` VALUES ('363', '14', null, null, null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '3', null, '2018-06-26 22:29:22', '84');
+INSERT INTO `t_draw_log` VALUES ('364', '14', null, null, '-4', '四级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '四级', '2', null, '2018-06-26 22:29:54', '84');
+INSERT INTO `t_draw_log` VALUES ('365', '14', null, null, null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '3', null, '2018-06-26 22:43:30', '84');
+INSERT INTO `t_draw_log` VALUES ('366', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:29:16', '90');
+INSERT INTO `t_draw_log` VALUES ('367', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:29:53', '89');
+INSERT INTO `t_draw_log` VALUES ('368', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:30:11', '88');
+INSERT INTO `t_draw_log` VALUES ('369', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:30:28', '87');
+INSERT INTO `t_draw_log` VALUES ('370', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:31:55', '86');
+INSERT INTO `t_draw_log` VALUES ('371', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:35:48', '100');
+INSERT INTO `t_draw_log` VALUES ('372', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:36:08', '99');
+INSERT INTO `t_draw_log` VALUES ('373', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:36:58', '98');
+INSERT INTO `t_draw_log` VALUES ('374', '15', null, null, null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '3', null, '2018-06-26 23:42:38', '96');
+INSERT INTO `t_draw_log` VALUES ('375', '15', null, null, '-3', '三级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '三级', '2', null, '2018-06-26 23:43:54', '95');
+INSERT INTO `t_draw_log` VALUES ('376', '14', null, null, '5', '材', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '材', '2', null, '2018-06-27 00:15:03', '101');
+INSERT INTO `t_draw_log` VALUES ('377', '14', null, null, '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '板', '2', null, '2018-06-27 00:16:23', '102');
+INSERT INTO `t_draw_log` VALUES ('378', '14', null, null, '5', '材', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '材', '2', null, '2018-06-27 00:17:45', '102');
+INSERT INTO `t_draw_log` VALUES ('379', '14', null, null, '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '板', '2', null, '2018-06-27 00:18:13', '102');
+INSERT INTO `t_draw_log` VALUES ('380', '14', null, null, '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '板', '2', null, '2018-06-27 00:19:17', '101');
+INSERT INTO `t_draw_log` VALUES ('381', '14', '2', '二级', null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '58.88元', '1', '58.88', '2018-06-27 00:20:01', '101');
+INSERT INTO `t_draw_log` VALUES ('382', '14', null, null, '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '板', '2', null, '2018-06-27 00:24:30', '101');
+INSERT INTO `t_draw_log` VALUES ('383', '14', null, null, '4', '板', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '板', '2', null, '2018-06-27 00:24:50', '103');
+INSERT INTO `t_draw_log` VALUES ('384', '15', null, null, '5', '材', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '材', '2', null, '2018-06-28 10:31:45', '111');
+INSERT INTO `t_draw_log` VALUES ('385', '16', null, null, '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '板', '2', null, '2018-06-28 11:42:03', '112');
+INSERT INTO `t_draw_log` VALUES ('386', '20', null, null, '5', '材', '千山真木板18873635499', 'oJuS_041xwOyuLVKsYVzgXgboO3Q', '材', '2', null, '2018-06-29 12:13:43', '113');
+INSERT INTO `t_draw_log` VALUES ('387', '15', null, null, '4', '板', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '板', '2', null, '2018-06-30 09:28:05', '118');
+INSERT INTO `t_draw_log` VALUES ('388', '15', null, null, '4', '板', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '板', '2', null, '2018-06-30 09:29:26', '117');
+INSERT INTO `t_draw_log` VALUES ('389', '15', null, null, '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '尚', '2', null, '2018-06-30 09:30:11', '128');
+INSERT INTO `t_draw_log` VALUES ('390', '15', null, null, '3', '云', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '云', '2', null, '2018-06-30 09:32:35', '123');
+INSERT INTO `t_draw_log` VALUES ('391', '23', null, null, '3', '云', 'MISS WANG YOGA 娇娇', 'oJuS_0x90qs2v7vT3VJuTRv8qi1g', '云', '2', null, '2018-06-30 09:41:48', '134');
+INSERT INTO `t_draw_log` VALUES ('392', '16', null, null, '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '云', '2', null, '2018-06-30 15:51:46', '136');
+INSERT INTO `t_draw_log` VALUES ('393', '16', null, null, '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '云', '2', null, '2018-06-30 15:55:37', '135');
+INSERT INTO `t_draw_log` VALUES ('394', '16', null, null, '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '弘', '2', null, '2018-06-30 15:58:00', '133');
+INSERT INTO `t_draw_log` VALUES ('395', '16', null, null, '3', '云', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '云', '2', null, '2018-06-30 15:58:38', '131');
+INSERT INTO `t_draw_log` VALUES ('396', '15', null, null, '3', '云', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '云', '2', null, '2018-06-30 18:12:24', '132');
+INSERT INTO `t_draw_log` VALUES ('397', '16', '5', '五级', null, null, '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '3.88元', '1', '3.88', '2018-06-30 20:05:38', '139');
+INSERT INTO `t_draw_log` VALUES ('398', '16', '5', '五级', null, null, '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '3.88元', '1', '3.88', '2018-06-30 20:10:11', '233');
+INSERT INTO `t_draw_log` VALUES ('399', '16', null, null, '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '弘', '2', null, '2018-06-30 20:10:30', '234');
+INSERT INTO `t_draw_log` VALUES ('400', '16', '5', '五级', null, null, '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '3.88元', '1', '3.88', '2018-06-30 20:10:43', '236');
+INSERT INTO `t_draw_log` VALUES ('401', '16', null, null, '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '板', '2', null, '2018-06-30 20:10:56', '239');
+INSERT INTO `t_draw_log` VALUES ('402', '26', null, null, '1', '尚', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '尚', '2', null, '2018-06-30 20:12:22', '237');
+INSERT INTO `t_draw_log` VALUES ('403', '26', null, null, '3', '云', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '云', '2', null, '2018-06-30 20:12:41', '241');
+INSERT INTO `t_draw_log` VALUES ('404', '26', '5', '五级', null, null, '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '3.88元', '1', '3.88', '2018-06-30 20:12:56', '240');
+INSERT INTO `t_draw_log` VALUES ('405', '26', null, null, '5', '材', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '材', '2', null, '2018-06-30 20:13:37', '232');
+INSERT INTO `t_draw_log` VALUES ('406', '15', '5', '五级', null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '3.88元', '1', '3.88', '2018-06-30 21:01:19', '238');
+INSERT INTO `t_draw_log` VALUES ('407', '15', '5', '五级', null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '3.88元', '1', '3.88', '2018-06-30 21:02:02', '235');
+INSERT INTO `t_draw_log` VALUES ('408', '15', null, null, '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '尚', '2', null, '2018-06-30 21:03:00', '227');
+INSERT INTO `t_draw_log` VALUES ('409', '15', null, null, '2', '弘', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '弘', '2', null, '2018-06-30 21:03:44', '222');
+INSERT INTO `t_draw_log` VALUES ('410', '16', '2', '二级', null, null, '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '58.88元', '1', '58.88', '2018-06-30 21:06:35', '258');
+INSERT INTO `t_draw_log` VALUES ('411', '27', null, null, '3', '云', '流年', 'oJuS_08Qccp5RgldV5eaZyFrmkoI', '云', '2', null, '2018-06-30 22:02:43', '289');
+INSERT INTO `t_draw_log` VALUES ('412', '16', null, null, '2', '弘', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '弘', '2', null, '2018-06-30 23:02:26', '267');
+INSERT INTO `t_draw_log` VALUES ('413', '16', '5', '五级', null, null, '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '3.88元', '1', '3.88', '2018-07-01 10:28:58', '290');
+INSERT INTO `t_draw_log` VALUES ('414', '28', null, null, '3', '云', '小月', 'oJuS_065AEmVr0VLU68bkuMQko-0', '云', '2', null, '2018-07-01 10:32:07', '247');
+INSERT INTO `t_draw_log` VALUES ('415', '16', null, null, '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '板', '2', null, '2018-07-01 11:12:14', '328');
+INSERT INTO `t_draw_log` VALUES ('416', '15', '2', '二级', null, null, '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '58.88元', '1', '58.88', '2018-07-01 14:32:14', '364');
+INSERT INTO `t_draw_log` VALUES ('417', '15', null, null, '1', '尚', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '尚', '2', null, '2018-07-01 14:33:48', '360');
+INSERT INTO `t_draw_log` VALUES ('418', '14', null, null, null, null, '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '3', null, '2018-07-01 14:48:26', '363');
+INSERT INTO `t_draw_log` VALUES ('419', '16', null, null, '4', '板', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '板', '2', null, '2018-07-02 17:41:54', '358');
 
 -- ----------------------------
 -- Table structure for t_employee
@@ -291,30 +370,25 @@ CREATE TABLE `t_menu` (
   `iconCls` varchar(191) DEFAULT NULL,
   `intro` varchar(191) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_menu
 -- ----------------------------
-INSERT INTO `t_menu` VALUES ('1', '首页管理', null, null, null, null);
-INSERT INTO `t_menu` VALUES ('2', '广告管理', null, null, null, null);
+INSERT INTO `t_menu` VALUES ('1', '用户管理', null, null, null, null);
+INSERT INTO `t_menu` VALUES ('2', '二维码管理', null, null, null, null);
 INSERT INTO `t_menu` VALUES ('3', '红包管理', null, null, null, null);
-INSERT INTO `t_menu` VALUES ('4', '集卡管理', null, null, null, null);
+INSERT INTO `t_menu` VALUES ('4', '集字管理', null, null, null, null);
 INSERT INTO `t_menu` VALUES ('8', '帐户管理', '', null, null, null);
 INSERT INTO `t_menu` VALUES ('9', '系统管理', null, null, null, null);
-INSERT INTO `t_menu` VALUES ('10', '首页列表', 'homepage/index', '1', null, null);
-INSERT INTO `t_menu` VALUES ('20', '广告主', 'ad/index', '2', null, null);
-INSERT INTO `t_menu` VALUES ('21', '点击记录', 'adClickLog/index', '2', null, null);
+INSERT INTO `t_menu` VALUES ('10', '用户列表', 'user/index', '1', null, null);
+INSERT INTO `t_menu` VALUES ('20', '二维码列表', 'qrCode/index', '2', null, null);
 INSERT INTO `t_menu` VALUES ('30', '红包列表', 'redpacket/index', '3', null, null);
-INSERT INTO `t_menu` VALUES ('31', '红包统计', 'drawLog/index', '3', null, null);
-INSERT INTO `t_menu` VALUES ('40', '集卡列表', 'cards/index', '4', null, null);
-INSERT INTO `t_menu` VALUES ('41', '卡片管理', 'card/index', '4', null, null);
+INSERT INTO `t_menu` VALUES ('31', '红包统计', 'redpacketLog/index', '3', null, null);
+INSERT INTO `t_menu` VALUES ('40', '集字设置', 'cards/index', '4', null, null);
+INSERT INTO `t_menu` VALUES ('41', '字的管理', 'card/index', '4', null, null);
 INSERT INTO `t_menu` VALUES ('42', '兑换列表', 'cardsComplete/index', '4', null, null);
 INSERT INTO `t_menu` VALUES ('83', '修改密码', 'employee/index', '8', null, null);
-INSERT INTO `t_menu` VALUES ('92', '系统参数', 'systemParam/index', '9', null, null);
-INSERT INTO `t_menu` VALUES ('97', '系统日志', 'systemLog/index', '9', null, null);
-INSERT INTO `t_menu` VALUES ('98', '系统异常', 'systemException/index', '9', null, null);
-INSERT INTO `t_menu` VALUES ('99', '系统监控', 'monitoring/index', '9', null, null);
 
 -- ----------------------------
 -- Table structure for t_permission
@@ -327,7 +401,7 @@ CREATE TABLE `t_permission` (
   `resource` varchar(191) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `resource` (`resource`)
-) ENGINE=InnoDB AUTO_INCREMENT=7994 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11588 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_permission
@@ -401,10 +475,10 @@ INSERT INTO `t_permission` VALUES ('317', '查询', '红包', 'com.liuhe.redpack
 INSERT INTO `t_permission` VALUES ('318', '主页', '红包', 'com.liuhe.redpacket.web.oms.RedpacketController:Redpacket');
 INSERT INTO `t_permission` VALUES ('319', '列表', '红包', 'com.liuhe.redpacket.web.oms.RedpacketController:showRedpacket');
 INSERT INTO `t_permission` VALUES ('320', '全部', '红包', 'com.liuhe.redpacket.web.oms.RedpacketController:ALL');
-INSERT INTO `t_permission` VALUES ('321', '统计查询', '红包统计', 'com.liuhe.redpacket.web.oms.DrawLogController:queryGroupAd');
-INSERT INTO `t_permission` VALUES ('322', '统计查询', '红包统计', 'com.liuhe.redpacket.web.oms.DrawLogController:queryInfo');
-INSERT INTO `t_permission` VALUES ('323', '主页', '红包统计', 'com.liuhe.redpacket.web.oms.DrawLogController:DrawLog');
-INSERT INTO `t_permission` VALUES ('324', '全部', '红包统计', 'com.liuhe.redpacket.web.oms.DrawLogController:ALL');
+INSERT INTO `t_permission` VALUES ('321', '统计查询', '红包统计', 'com.liuhe.redpacket.web.oms.RedpacketLogController:queryGroupAd');
+INSERT INTO `t_permission` VALUES ('322', '统计查询', '红包统计', 'com.liuhe.redpacket.web.oms.RedpacketLogController:queryInfo');
+INSERT INTO `t_permission` VALUES ('323', '主页', '红包统计', 'com.liuhe.redpacket.web.oms.RedpacketLogController:RedpacketLog');
+INSERT INTO `t_permission` VALUES ('324', '全部', '红包统计', 'com.liuhe.redpacket.web.oms.RedpacketLogController:ALL');
 INSERT INTO `t_permission` VALUES ('325', '主页', '系统异常', 'com.liuhe.redpacket.web.oms.SystemExceptionController:index');
 INSERT INTO `t_permission` VALUES ('326', '查询', '系统异常', 'com.liuhe.redpacket.web.oms.SystemExceptionController:query');
 INSERT INTO `t_permission` VALUES ('327', '全部', '系统异常', 'com.liuhe.redpacket.web.oms.SystemExceptionController:ALL');
@@ -420,6 +494,106 @@ INSERT INTO `t_permission` VALUES ('336', '全部', '用户卡片', 'com.liuhe.r
 INSERT INTO `t_permission` VALUES ('4681', '列表', '卡集', 'com.liuhe.redpacket.web.oms.CardsController:getOfRatio');
 INSERT INTO `t_permission` VALUES ('5111', '未使用', '广告主', 'com.liuhe.redpacket.web.oms.AdController:listNoUse');
 INSERT INTO `t_permission` VALUES ('6764', '修改密码', '系统账号', 'com.liuhe.redpacket.web.oms.EmployeeController:updatePassword');
+INSERT INTO `t_permission` VALUES ('6853', '主页', '微信用户', 'com.liuhe.redpacket.web.oms.UserController:index');
+INSERT INTO `t_permission` VALUES ('6854', '删除', '微信用户', 'com.liuhe.redpacket.web.oms.UserController:delete');
+INSERT INTO `t_permission` VALUES ('6855', '查询', '微信用户', 'com.liuhe.redpacket.web.oms.UserController:query');
+INSERT INTO `t_permission` VALUES ('6856', '停用', '微信用户', 'com.liuhe.redpacket.web.oms.UserController:leave');
+INSERT INTO `t_permission` VALUES ('6857', '启用', '微信用户', 'com.liuhe.redpacket.web.oms.UserController:up');
+INSERT INTO `t_permission` VALUES ('6858', '全部', '微信用户', 'com.liuhe.redpacket.web.oms.UserController:ALL');
+INSERT INTO `t_permission` VALUES ('9833', '统计查询', '红包统计', 'com.liuhe.redpacket.web.oms.DrawLogController:query');
+INSERT INTO `t_permission` VALUES ('9834', '主页', '红包统计', 'com.liuhe.redpacket.web.oms.DrawLogController:DrawLog');
+INSERT INTO `t_permission` VALUES ('9835', '全部', '红包统计', 'com.liuhe.redpacket.web.oms.DrawLogController:ALL');
+
+-- ----------------------------
+-- Table structure for t_qr_code
+-- ----------------------------
+DROP TABLE IF EXISTS `t_qr_code`;
+CREATE TABLE `t_qr_code` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `code` varchar(50) NOT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `isUsed` int(2) DEFAULT '0',
+  `usedTime` datetime DEFAULT NULL,
+  `isDel` int(2) DEFAULT '0',
+  `delTime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=365 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_qr_code
+-- ----------------------------
+INSERT INTO `t_qr_code` VALUES ('293', '3f7a17873cfe406295d011d197990a1a', 'images/qrcode/3f7a17873cfe406295d011d197990a1a.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('294', '8d922d9aa9e145458c7c27b3a964099a', 'images/qrcode/8d922d9aa9e145458c7c27b3a964099a.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('295', 'e911a40505bd42b186caece7bc7ac1f7', 'images/qrcode/e911a40505bd42b186caece7bc7ac1f7.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('296', '21525155e11b4d75bf3836d39824ead4', 'images/qrcode/21525155e11b4d75bf3836d39824ead4.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('297', 'e7f8f6c670c9432fb75ca2e2aecb3915', 'images/qrcode/e7f8f6c670c9432fb75ca2e2aecb3915.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('298', 'de73651d05354acd9ceede62f6f0b44b', 'images/qrcode/de73651d05354acd9ceede62f6f0b44b.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('299', 'b75526c855aa4fbfa8c3aa44130e7bbb', 'images/qrcode/b75526c855aa4fbfa8c3aa44130e7bbb.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('300', '839d0f32b7c6494084d7f336503286bf', 'images/qrcode/839d0f32b7c6494084d7f336503286bf.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('301', 'a3c6be6eda77410badb862a2d43dbdc3', 'images/qrcode/a3c6be6eda77410badb862a2d43dbdc3.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('302', '305fc3bad96c47d5b0ef419d3705709f', 'images/qrcode/305fc3bad96c47d5b0ef419d3705709f.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('303', '9c2b008d09984e89979ec4633c3066bb', 'images/qrcode/9c2b008d09984e89979ec4633c3066bb.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('304', '8f7fa135f8ae46bb92b5a5daaa6a6ddb', 'images/qrcode/8f7fa135f8ae46bb92b5a5daaa6a6ddb.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('305', 'c3434d565e2e4f3797ce3338fec8242a', 'images/qrcode/c3434d565e2e4f3797ce3338fec8242a.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('306', 'e18589293e2e42ed979bd610d2627226', 'images/qrcode/e18589293e2e42ed979bd610d2627226.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('307', '04e0ad19b74c4709a0797beb9a9ce820', 'images/qrcode/04e0ad19b74c4709a0797beb9a9ce820.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('308', '26ebbb1213cc43708369e3c1e0930204', 'images/qrcode/26ebbb1213cc43708369e3c1e0930204.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('309', 'fb55bb1c8ff642d7b821e6b149c54ce5', 'images/qrcode/fb55bb1c8ff642d7b821e6b149c54ce5.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('310', '15f236c7895e441e9a62c6957f4c20c2', 'images/qrcode/15f236c7895e441e9a62c6957f4c20c2.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('311', '3566b2ac5f0c443e9de8c6fcf603d561', 'images/qrcode/3566b2ac5f0c443e9de8c6fcf603d561.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('312', '5be9c18a4f0d487788b4076800bf07eb', 'images/qrcode/5be9c18a4f0d487788b4076800bf07eb.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('313', '2e7ed1d6d4d3411baeb895df299282af', 'images/qrcode/2e7ed1d6d4d3411baeb895df299282af.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('314', '200b411cf80b44d3a702b569ce77c6ea', 'images/qrcode/200b411cf80b44d3a702b569ce77c6ea.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('315', '0686713080774224a62ff1c97e69b6b9', 'images/qrcode/0686713080774224a62ff1c97e69b6b9.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('316', '65be23a86b184f549caa90c1ad61f90e', 'images/qrcode/65be23a86b184f549caa90c1ad61f90e.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('317', '799d8b78f2964deb90ae758df106b518', 'images/qrcode/799d8b78f2964deb90ae758df106b518.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('318', 'd6e43a0a44d74a528c33d240d5210ee8', 'images/qrcode/d6e43a0a44d74a528c33d240d5210ee8.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('319', 'c2399da6c73b412ba22af838efcbf1ea', 'images/qrcode/c2399da6c73b412ba22af838efcbf1ea.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('320', 'cbdf8b7c23224998935999be10d3c2f1', 'images/qrcode/cbdf8b7c23224998935999be10d3c2f1.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('321', 'dbbdb0637def455d944790761b6b9b81', 'images/qrcode/dbbdb0637def455d944790761b6b9b81.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('322', '2229f7f2cc5a4897ae4c37d6683478dc', 'images/qrcode/2229f7f2cc5a4897ae4c37d6683478dc.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('323', '6a4e9fe17b0e4c8184f212df29f32b21', 'images/qrcode/6a4e9fe17b0e4c8184f212df29f32b21.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('324', '4225d236795c4df79a901671f8bda442', 'images/qrcode/4225d236795c4df79a901671f8bda442.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('325', 'e5521a9c9c114e5d94ef747755982b21', 'images/qrcode/e5521a9c9c114e5d94ef747755982b21.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('326', 'ee112a5446c14473a7f867863cdea5e5', 'images/qrcode/ee112a5446c14473a7f867863cdea5e5.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('327', '14023ae3b12040489a8bac57dd73890d', 'images/qrcode/14023ae3b12040489a8bac57dd73890d.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('328', '2ac216b1287b4ef980e5f3476c4ee7bd', 'images/qrcode/2ac216b1287b4ef980e5f3476c4ee7bd.jpg', '1', '2018-07-01 11:12:14', '0', null);
+INSERT INTO `t_qr_code` VALUES ('329', 'a2e949d254144e1eac1c01d24a136d64', 'images/qrcode/a2e949d254144e1eac1c01d24a136d64.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('330', '95b6a438c25a4c6ea1aa01e21a319c99', 'images/qrcode/95b6a438c25a4c6ea1aa01e21a319c99.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('331', '7b4f6429306e4b6a8b9a703e3e807a91', 'images/qrcode/7b4f6429306e4b6a8b9a703e3e807a91.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('332', '63448f4c2d514a1d96f8516416afa96d', 'images/qrcode/63448f4c2d514a1d96f8516416afa96d.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('333', '290cf20f3d474ab8b0741aacb1449614', 'images/qrcode/290cf20f3d474ab8b0741aacb1449614.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('334', '91bdd866bbc84ea8a3dc3d2294747eaf', 'images/qrcode/91bdd866bbc84ea8a3dc3d2294747eaf.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('335', '3b44febe14754840ba32a01f2827dded', 'images/qrcode/3b44febe14754840ba32a01f2827dded.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('336', '49c223997b8d4fb086e7d134aef3e2c2', 'images/qrcode/49c223997b8d4fb086e7d134aef3e2c2.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('337', '5a15a5e07c104088afc3d60cb18f18f6', 'images/qrcode/5a15a5e07c104088afc3d60cb18f18f6.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('338', 'cc59a7ae91cb480dae653754aa682169', 'images/qrcode/cc59a7ae91cb480dae653754aa682169.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('339', '145112d389c14df0a28722841e8e8983', 'images/qrcode/145112d389c14df0a28722841e8e8983.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('340', '16e15c5681914ba5b057a5f13b75c2fc', 'images/qrcode/16e15c5681914ba5b057a5f13b75c2fc.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('341', '7936fb32c9e5410fba5ca59604ed08ff', 'images/qrcode/7936fb32c9e5410fba5ca59604ed08ff.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('342', 'a16b62f316f5411990c4fc53b8974f59', 'images/qrcode/a16b62f316f5411990c4fc53b8974f59.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('343', '9d5ed5c483f24e58bcbe9fcbf841fbe7', 'images/qrcode/9d5ed5c483f24e58bcbe9fcbf841fbe7.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('344', '64e13de34fa2439a850cffa561266978', 'images/qrcode/64e13de34fa2439a850cffa561266978.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('345', 'c2f57a0923e5453e805e47e142bc5598', 'images/qrcode/c2f57a0923e5453e805e47e142bc5598.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('346', '33dd24ea69f941b7bb6d94414fe99641', 'images/qrcode/33dd24ea69f941b7bb6d94414fe99641.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('347', '105e681909904a5c8e809388587e9ea8', 'images/qrcode/105e681909904a5c8e809388587e9ea8.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('348', '1cefc89a54c14327a3f8510212f87e2e', 'images/qrcode/1cefc89a54c14327a3f8510212f87e2e.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('349', '74121a5b74a44098ad70822fc123595c', 'images/qrcode/74121a5b74a44098ad70822fc123595c.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('350', 'bc57ae1d2a8a4f13a05af985ebf33954', 'images/qrcode/bc57ae1d2a8a4f13a05af985ebf33954.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('351', '327384a2f0fb4fb6b99fa77a5c59dca1', 'images/qrcode/327384a2f0fb4fb6b99fa77a5c59dca1.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('352', 'b6281d4db3f4434db4e1f09de9cf00ed', 'images/qrcode/b6281d4db3f4434db4e1f09de9cf00ed.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('353', '28791a7ccaf54de897573a7875709098', 'images/qrcode/28791a7ccaf54de897573a7875709098.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('354', '3dcd7248ce24466198409cb217753e82', 'images/qrcode/3dcd7248ce24466198409cb217753e82.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('355', '3b04008fae2641c69e640e580dcb09d7', 'images/qrcode/3b04008fae2641c69e640e580dcb09d7.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('356', '2447311a13ec4e3691a5705fccafcbe3', 'images/qrcode/2447311a13ec4e3691a5705fccafcbe3.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('357', 'ef070d27af324b19a1f34e5935715601', 'images/qrcode/ef070d27af324b19a1f34e5935715601.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('358', 'bb21241e8c6d4b8ca5b63952a3799e74', 'images/qrcode/bb21241e8c6d4b8ca5b63952a3799e74.jpg', '1', '2018-07-02 17:41:54', '0', null);
+INSERT INTO `t_qr_code` VALUES ('359', '2ef3056398ee49f4a92f3890767c5d6a', 'images/qrcode/2ef3056398ee49f4a92f3890767c5d6a.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('360', '2a60f87e2181410587c9ae21d4c19a71', 'images/qrcode/2a60f87e2181410587c9ae21d4c19a71.jpg', '1', '2018-07-01 14:33:48', '0', null);
+INSERT INTO `t_qr_code` VALUES ('361', 'e6f228abc44640459e2629a3135bf7c2', 'images/qrcode/e6f228abc44640459e2629a3135bf7c2.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('362', '1d4400d2be5542588720fd74a99d1752', 'images/qrcode/1d4400d2be5542588720fd74a99d1752.jpg', '0', null, '0', null);
+INSERT INTO `t_qr_code` VALUES ('363', '893b04edb4ab4d7a962cc4b5f19eb354', 'images/qrcode/893b04edb4ab4d7a962cc4b5f19eb354.jpg', '1', '2018-07-01 14:48:26', '0', null);
+INSERT INTO `t_qr_code` VALUES ('364', 'aebbd561c0794bfb87e63250421043d0', 'images/qrcode/aebbd561c0794bfb87e63250421043d0.jpg', '1', '2018-07-01 14:32:14', '0', null);
 
 -- ----------------------------
 -- Table structure for t_redpacket
@@ -428,23 +602,26 @@ DROP TABLE IF EXISTS `t_redpacket`;
 CREATE TABLE `t_redpacket` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `info` varchar(255) NOT NULL,
+  `info` varchar(255) DEFAULT NULL,
   `cardsId` bigint(20) DEFAULT NULL,
-  `min` int(10) NOT NULL,
-  `max` int(10) NOT NULL,
+  `min` decimal(10,2) NOT NULL,
+  `max` int(10) DEFAULT NULL,
   `qrcode` varchar(255) DEFAULT NULL,
   `status` int(2) NOT NULL,
   `isDel` int(2) DEFAULT NULL,
   `delTime` datetime DEFAULT NULL,
+  `ratio` decimal(10,4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_redpacket
 -- ----------------------------
-INSERT INTO `t_redpacket` VALUES ('76', '测试红包', '发生的发生的冯绍峰双方都是', '51', '1', '10', 'images/qrcode/redpacket/76.jpg', '1', '1', '2017-12-18 13:52:08');
-INSERT INTO `t_redpacket` VALUES ('77', '测试红包12', '爱仕达大叔大婶的撒大大实打实的', '51', '1', '10', 'images/qrcode/redpacket/77.jpg', '1', '1', '2017-12-18 13:52:12');
-INSERT INTO `t_redpacket` VALUES ('78', '测试红包', '若B发现“已提取”状态的资料有问题，将该类资料通过扫码后放回指定区域，并在系统录入投保人姓名、回退原因；（扫码后状态更新为“问题件回退”）', '53', '1', '10', 'images/qrcode/redpacket/78.jpg', '1', '0', null);
+INSERT INTO `t_redpacket` VALUES ('1', '一级', null, null, '88.88', null, 'images/qrcode/redpacket/81.jpg', '1', '0', null, '0.0200');
+INSERT INTO `t_redpacket` VALUES ('2', '二级', null, null, '58.88', null, 'images/qrcode/redpacket/82.jpg', '1', '0', null, '1.0000');
+INSERT INTO `t_redpacket` VALUES ('3', '三级', null, null, '8.88', null, 'images/qrcode/redpacket/83.jpg', '0', '0', null, '2.0000');
+INSERT INTO `t_redpacket` VALUES ('4', '四级', null, null, '5.88', null, 'images/qrcode/redpacket/84.jpg', '0', '0', null, '5.0000');
+INSERT INTO `t_redpacket` VALUES ('5', '五级', null, null, '3.88', null, 'images/qrcode/redpacket/85.jpg', '0', '0', null, '1.0000');
 
 -- ----------------------------
 -- Table structure for t_redpacket_log
@@ -453,7 +630,7 @@ DROP TABLE IF EXISTS `t_redpacket_log`;
 CREATE TABLE `t_redpacket_log` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `userId` bigint(20) DEFAULT NULL,
-  `adId` bigint(20) DEFAULT NULL,
+  `qrCodeId` bigint(20) DEFAULT NULL,
   `redPacketId` bigint(20) DEFAULT NULL,
   `redPacketName` varchar(255) DEFAULT NULL,
   `userName` varchar(255) DEFAULT NULL,
@@ -462,22 +639,41 @@ CREATE TABLE `t_redpacket_log` (
   `receiveTime` datetime DEFAULT NULL,
   `amount` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=309 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=341 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_redpacket_log
 -- ----------------------------
-INSERT INTO `t_redpacket_log` VALUES ('298', null, '435', '76', '测试红包', null, 'o4HNe0v3J5sGFBDYRoZOJimRzqPE', '杨宇飞', '2017-12-18 01:26:36', '2.50');
-INSERT INTO `t_redpacket_log` VALUES ('299', null, '445', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:18:51', '2.88');
-INSERT INTO `t_redpacket_log` VALUES ('300', null, '446', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:19:07', '7.58');
-INSERT INTO `t_redpacket_log` VALUES ('301', null, '447', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:19:24', '2.57');
-INSERT INTO `t_redpacket_log` VALUES ('302', null, '448', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:19:36', '6.37');
-INSERT INTO `t_redpacket_log` VALUES ('303', null, '449', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:20:24', '4.50');
-INSERT INTO `t_redpacket_log` VALUES ('304', null, '450', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:20:39', '9.14');
-INSERT INTO `t_redpacket_log` VALUES ('305', null, '451', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:20:47', '9.73');
-INSERT INTO `t_redpacket_log` VALUES ('306', null, '452', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:20:57', '5.77');
-INSERT INTO `t_redpacket_log` VALUES ('307', null, '453', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:21:10', '3.79');
-INSERT INTO `t_redpacket_log` VALUES ('308', null, '454', '78', '测试红包', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', '冷忆?', '2017-12-18 14:21:21', '8.20');
+INSERT INTO `t_redpacket_log` VALUES ('311', '14', '51', '5', '撒', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-25 09:39:47', '1.00');
+INSERT INTO `t_redpacket_log` VALUES ('312', '14', '48', '2', '测试', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-25 10:03:15', '1.00');
+INSERT INTO `t_redpacket_log` VALUES ('313', '14', '56', '5', '五级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-25 23:37:11', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('314', '15', '54', '4', '四级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-25 23:39:40', '5.88');
+INSERT INTO `t_redpacket_log` VALUES ('315', '15', '55', '5', '五级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-25 23:41:22', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('316', '15', '53', '5', '五级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-25 23:41:58', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('317', '14', '52', '5', '五级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:13:19', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('318', '14', '68', '4', '四级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:34:52', '5.88');
+INSERT INTO `t_redpacket_log` VALUES ('319', '14', '67', '2', '二级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:35:23', '58.88');
+INSERT INTO `t_redpacket_log` VALUES ('320', '14', '66', '4', '四级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:38:59', '5.88');
+INSERT INTO `t_redpacket_log` VALUES ('321', '14', '66', '2', '二级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:40:54', '58.88');
+INSERT INTO `t_redpacket_log` VALUES ('322', '14', '59', '4', '四级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:54:25', '5.88');
+INSERT INTO `t_redpacket_log` VALUES ('323', '14', '68', '5', '五级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:54:35', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('324', '14', '65', '5', '五级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:54:42', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('325', '14', '64', '5', '五级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 00:55:54', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('326', '14', '76', '5', '五级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:03:12', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('327', '14', '80', '3', '三级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:12:43', '8.88');
+INSERT INTO `t_redpacket_log` VALUES ('328', '14', '82', '4', '四级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 11:31:42', '5.88');
+INSERT INTO `t_redpacket_log` VALUES ('329', '14', '84', '5', '五级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 22:19:18', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('330', '14', '84', '2', '二级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-26 22:22:25', '58.88');
+INSERT INTO `t_redpacket_log` VALUES ('331', '14', '101', '2', '二级', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '2018-06-27 00:20:01', '58.88');
+INSERT INTO `t_redpacket_log` VALUES ('332', '16', '139', '5', '五级', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 20:05:38', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('333', '16', '233', '5', '五级', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 20:10:11', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('334', '16', '236', '5', '五级', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 20:10:43', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('335', '26', '240', '5', '五级', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, '2018-06-30 20:12:56', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('336', '15', '238', '5', '五级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 21:01:19', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('337', '15', '235', '5', '五级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-06-30 21:02:02', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('338', '16', '258', '2', '二级', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-06-30 21:06:35', '58.88');
+INSERT INTO `t_redpacket_log` VALUES ('339', '16', '290', '5', '五级', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '2018-07-01 10:28:58', '3.88');
+INSERT INTO `t_redpacket_log` VALUES ('340', '15', '364', '2', '二级', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '2018-07-01 14:32:14', '58.88');
 
 -- ----------------------------
 -- Table structure for t_resource
@@ -488,19 +684,28 @@ CREATE TABLE `t_resource` (
   `name` varchar(191) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=24166 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35567 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_resource
 -- ----------------------------
 INSERT INTO `t_resource` VALUES ('3338', 'com.liuhe.redpacket.web.mobile.MobileController:ad');
+INSERT INTO `t_resource` VALUES ('24440', 'com.liuhe.redpacket.web.mobile.MobileController:balance');
 INSERT INTO `t_resource` VALUES ('3344', 'com.liuhe.redpacket.web.mobile.MobileController:cardsComplete');
 INSERT INTO `t_resource` VALUES ('3340', 'com.liuhe.redpacket.web.mobile.MobileController:cardsInfo');
 INSERT INTO `t_resource` VALUES ('3343', 'com.liuhe.redpacket.web.mobile.MobileController:cardsList');
 INSERT INTO `t_resource` VALUES ('3345', 'com.liuhe.redpacket.web.mobile.MobileController:confirmRedpacket');
+INSERT INTO `t_resource` VALUES ('28943', 'com.liuhe.redpacket.web.mobile.MobileController:doWxFllow');
+INSERT INTO `t_resource` VALUES ('26078', 'com.liuhe.redpacket.web.mobile.MobileController:draw');
+INSERT INTO `t_resource` VALUES ('24442', 'com.liuhe.redpacket.web.mobile.MobileController:drawCenter');
+INSERT INTO `t_resource` VALUES ('24443', 'com.liuhe.redpacket.web.mobile.MobileController:drawRecord');
+INSERT INTO `t_resource` VALUES ('24444', 'com.liuhe.redpacket.web.mobile.MobileController:drawResult');
+INSERT INTO `t_resource` VALUES ('27376', 'com.liuhe.redpacket.web.mobile.MobileController:exchange');
+INSERT INTO `t_resource` VALUES ('32806', 'com.liuhe.redpacket.web.mobile.MobileController:exchangeRecord');
 INSERT INTO `t_resource` VALUES ('3342', 'com.liuhe.redpacket.web.mobile.MobileController:getRedpacket');
 INSERT INTO `t_resource` VALUES ('3341', 'com.liuhe.redpacket.web.mobile.MobileController:homepage');
 INSERT INTO `t_resource` VALUES ('3339', 'com.liuhe.redpacket.web.mobile.MobileController:userCard');
+INSERT INTO `t_resource` VALUES ('24441', 'com.liuhe.redpacket.web.mobile.MobileController:userCards');
 INSERT INTO `t_resource` VALUES ('3337', 'com.liuhe.redpacket.web.mobile.MobileController:userInfo');
 INSERT INTO `t_resource` VALUES ('23694', 'com.liuhe.redpacket.web.mobile.MobileController:withdraw');
 INSERT INTO `t_resource` VALUES ('3366', 'com.liuhe.redpacket.web.oms.AdClickLogController$$EnhancerBySpringCGLIB$$398f76d:adClickLog');
@@ -1495,6 +1700,9 @@ INSERT INTO `t_resource` VALUES ('17911', 'com.liuhe.redpacket.web.oms.CardsCont
 INSERT INTO `t_resource` VALUES ('9201', 'com.liuhe.redpacket.web.oms.CardsController:query');
 INSERT INTO `t_resource` VALUES ('9197', 'com.liuhe.redpacket.web.oms.CardsController:save');
 INSERT INTO `t_resource` VALUES ('9203', 'com.liuhe.redpacket.web.oms.CardsController:showCards');
+INSERT INTO `t_resource` VALUES ('28335', 'com.liuhe.redpacket.web.oms.DrawLogController:ALL');
+INSERT INTO `t_resource` VALUES ('28334', 'com.liuhe.redpacket.web.oms.DrawLogController:DrawLog');
+INSERT INTO `t_resource` VALUES ('28333', 'com.liuhe.redpacket.web.oms.DrawLogController:query');
 INSERT INTO `t_resource` VALUES ('5281', 'com.liuhe.redpacket.web.oms.EmployeeController$$EnhancerBySpringCGLIB$$9220bd58:addAdvice');
 INSERT INTO `t_resource` VALUES ('5271', 'com.liuhe.redpacket.web.oms.EmployeeController$$EnhancerBySpringCGLIB$$9220bd58:addAdvisor');
 INSERT INTO `t_resource` VALUES ('5264', 'com.liuhe.redpacket.web.oms.EmployeeController$$EnhancerBySpringCGLIB$$9220bd58:CGLIB$BIND_CALLBACKS');
@@ -2284,6 +2492,13 @@ INSERT INTO `t_resource` VALUES ('9224', 'com.liuhe.redpacket.web.oms.Permission
 INSERT INTO `t_resource` VALUES ('9226', 'com.liuhe.redpacket.web.oms.PermissionController:permissionAll');
 INSERT INTO `t_resource` VALUES ('9225', 'com.liuhe.redpacket.web.oms.PermissionController:quert');
 INSERT INTO `t_resource` VALUES ('9222', 'com.liuhe.redpacket.web.oms.PermissionController:save');
+INSERT INTO `t_resource` VALUES ('30774', 'com.liuhe.redpacket.web.oms.QrCodeController:delete');
+INSERT INTO `t_resource` VALUES ('31445', 'com.liuhe.redpacket.web.oms.QrCodeController:download');
+INSERT INTO `t_resource` VALUES ('30777', 'com.liuhe.redpacket.web.oms.QrCodeController:QrCode');
+INSERT INTO `t_resource` VALUES ('30776', 'com.liuhe.redpacket.web.oms.QrCodeController:query');
+INSERT INTO `t_resource` VALUES ('30775', 'com.liuhe.redpacket.web.oms.QrCodeController:save');
+INSERT INTO `t_resource` VALUES ('30778', 'com.liuhe.redpacket.web.oms.QrCodeController:showQrCode');
+INSERT INTO `t_resource` VALUES ('31446', 'com.liuhe.redpacket.web.oms.QrCodeController:zipFile');
 INSERT INTO `t_resource` VALUES ('3782', 'com.liuhe.redpacket.web.oms.RandomCodeController:getRandColor');
 INSERT INTO `t_resource` VALUES ('3781', 'com.liuhe.redpacket.web.oms.RandomCodeController:service');
 INSERT INTO `t_resource` VALUES ('5471', 'com.liuhe.redpacket.web.oms.RedpacketController$$EnhancerBySpringCGLIB$$96c9ffc7:addAdvice');
@@ -2497,191 +2712,194 @@ INSERT INTO `t_resource` VALUES ('3784', 'com.liuhe.redpacket.web.oms.RedpacketC
 INSERT INTO `t_resource` VALUES ('9235', 'com.liuhe.redpacket.web.oms.RedpacketController:ALL');
 INSERT INTO `t_resource` VALUES ('9229', 'com.liuhe.redpacket.web.oms.RedpacketController:delete');
 INSERT INTO `t_resource` VALUES ('9230', 'com.liuhe.redpacket.web.oms.RedpacketController:disable');
+INSERT INTO `t_resource` VALUES ('30419', 'com.liuhe.redpacket.web.oms.RedpacketController:downloadTemplet');
 INSERT INTO `t_resource` VALUES ('9231', 'com.liuhe.redpacket.web.oms.RedpacketController:enable');
 INSERT INTO `t_resource` VALUES ('9232', 'com.liuhe.redpacket.web.oms.RedpacketController:query');
 INSERT INTO `t_resource` VALUES ('9233', 'com.liuhe.redpacket.web.oms.RedpacketController:Redpacket');
 INSERT INTO `t_resource` VALUES ('9228', 'com.liuhe.redpacket.web.oms.RedpacketController:save');
 INSERT INTO `t_resource` VALUES ('9234', 'com.liuhe.redpacket.web.oms.RedpacketController:showRedpacket');
-INSERT INTO `t_resource` VALUES ('8845', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:addAdvice');
-INSERT INTO `t_resource` VALUES ('8836', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:addAdvisor');
-INSERT INTO `t_resource` VALUES ('8848', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$BIND_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('8866', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$clone$7');
-INSERT INTO `t_resource` VALUES ('8863', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$equals$4');
-INSERT INTO `t_resource` VALUES ('8847', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$findMethodProxy');
-INSERT INTO `t_resource` VALUES ('8865', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$hashCode$6');
-INSERT INTO `t_resource` VALUES ('8833', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$queryGroupAd$0');
-INSERT INTO `t_resource` VALUES ('8832', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$queryInfo$1');
-INSERT INTO `t_resource` VALUES ('8830', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$DrawLog$2');
-INSERT INTO `t_resource` VALUES ('8856', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$SET_STATIC_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('8855', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$SET_THREAD_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('8834', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$STATICHOOK27');
-INSERT INTO `t_resource` VALUES ('8831', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$STATICHOOK28');
-INSERT INTO `t_resource` VALUES ('8864', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$toString$5');
-INSERT INTO `t_resource` VALUES ('8826', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:clone');
-INSERT INTO `t_resource` VALUES ('8823', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:equals');
-INSERT INTO `t_resource` VALUES ('8840', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:getAdvisors');
-INSERT INTO `t_resource` VALUES ('8843', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:getCallback');
-INSERT INTO `t_resource` VALUES ('8844', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:getCallbacks');
-INSERT INTO `t_resource` VALUES ('8850', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:getProxiedInterfaces');
-INSERT INTO `t_resource` VALUES ('8835', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:getTargetClass');
-INSERT INTO `t_resource` VALUES ('8858', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:getTargetSource');
-INSERT INTO `t_resource` VALUES ('8825', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:hashCode');
-INSERT INTO `t_resource` VALUES ('8827', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:indexOf');
-INSERT INTO `t_resource` VALUES ('8862', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:isExposeProxy');
-INSERT INTO `t_resource` VALUES ('8829', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:isFrozen');
-INSERT INTO `t_resource` VALUES ('8851', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:isInterfaceProxied');
-INSERT INTO `t_resource` VALUES ('8849', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:isPreFiltered');
-INSERT INTO `t_resource` VALUES ('8859', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:isProxyTargetClass');
-INSERT INTO `t_resource` VALUES ('8828', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:newInstance');
-INSERT INTO `t_resource` VALUES ('8837', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:queryGroupAd');
-INSERT INTO `t_resource` VALUES ('8838', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:queryInfo');
-INSERT INTO `t_resource` VALUES ('8839', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:DrawLog');
-INSERT INTO `t_resource` VALUES ('8846', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:removeAdvice');
-INSERT INTO `t_resource` VALUES ('8852', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:removeAdvisor');
-INSERT INTO `t_resource` VALUES ('8853', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:replaceAdvisor');
-INSERT INTO `t_resource` VALUES ('8841', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:setCallback');
-INSERT INTO `t_resource` VALUES ('8842', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:setCallbacks');
-INSERT INTO `t_resource` VALUES ('8861', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:setExposeProxy');
-INSERT INTO `t_resource` VALUES ('8860', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:setPreFiltered');
-INSERT INTO `t_resource` VALUES ('8857', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:setTargetSource');
-INSERT INTO `t_resource` VALUES ('8854', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:toProxyConfigString');
-INSERT INTO `t_resource` VALUES ('8824', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$35bd9430:toString');
-INSERT INTO `t_resource` VALUES ('4666', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:addAdvice');
-INSERT INTO `t_resource` VALUES ('4668', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:addAdvisor');
-INSERT INTO `t_resource` VALUES ('4680', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$BIND_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('4690', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$clone$7');
-INSERT INTO `t_resource` VALUES ('4687', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$equals$4');
-INSERT INTO `t_resource` VALUES ('4679', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$findMethodProxy');
-INSERT INTO `t_resource` VALUES ('4689', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$hashCode$6');
-INSERT INTO `t_resource` VALUES ('4694', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$queryGroupAd$0');
-INSERT INTO `t_resource` VALUES ('4693', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$queryInfo$1');
-INSERT INTO `t_resource` VALUES ('4691', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$DrawLog$2');
-INSERT INTO `t_resource` VALUES ('4678', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$SET_STATIC_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('4677', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$SET_THREAD_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('4695', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$STATICHOOK27');
-INSERT INTO `t_resource` VALUES ('4692', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$STATICHOOK28');
-INSERT INTO `t_resource` VALUES ('4688', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$toString$5');
-INSERT INTO `t_resource` VALUES ('4656', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:clone');
-INSERT INTO `t_resource` VALUES ('4653', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:equals');
-INSERT INTO `t_resource` VALUES ('4662', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:getAdvisors');
-INSERT INTO `t_resource` VALUES ('4664', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:getCallback');
-INSERT INTO `t_resource` VALUES ('4665', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:getCallbacks');
-INSERT INTO `t_resource` VALUES ('4682', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:getProxiedInterfaces');
-INSERT INTO `t_resource` VALUES ('4661', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:getTargetClass');
-INSERT INTO `t_resource` VALUES ('4672', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:getTargetSource');
-INSERT INTO `t_resource` VALUES ('4655', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:hashCode');
-INSERT INTO `t_resource` VALUES ('4657', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:indexOf');
-INSERT INTO `t_resource` VALUES ('4676', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:isExposeProxy');
-INSERT INTO `t_resource` VALUES ('4659', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:isFrozen');
-INSERT INTO `t_resource` VALUES ('4683', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:isInterfaceProxied');
-INSERT INTO `t_resource` VALUES ('4681', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:isPreFiltered');
-INSERT INTO `t_resource` VALUES ('4673', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:isProxyTargetClass');
-INSERT INTO `t_resource` VALUES ('4658', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:newInstance');
-INSERT INTO `t_resource` VALUES ('4669', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:queryGroupAd');
-INSERT INTO `t_resource` VALUES ('4670', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:queryInfo');
-INSERT INTO `t_resource` VALUES ('4671', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:DrawLog');
-INSERT INTO `t_resource` VALUES ('4667', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:removeAdvice');
-INSERT INTO `t_resource` VALUES ('4684', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:removeAdvisor');
-INSERT INTO `t_resource` VALUES ('4685', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:replaceAdvisor');
-INSERT INTO `t_resource` VALUES ('4696', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:setCallback');
-INSERT INTO `t_resource` VALUES ('4663', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:setCallbacks');
-INSERT INTO `t_resource` VALUES ('4675', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:setExposeProxy');
-INSERT INTO `t_resource` VALUES ('4674', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:setPreFiltered');
-INSERT INTO `t_resource` VALUES ('4660', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:setTargetSource');
-INSERT INTO `t_resource` VALUES ('4686', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:toProxyConfigString');
-INSERT INTO `t_resource` VALUES ('4654', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$3914ddb8:toString');
-INSERT INTO `t_resource` VALUES ('3877', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:addAdvice');
-INSERT INTO `t_resource` VALUES ('3852', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:addAdvisor');
-INSERT INTO `t_resource` VALUES ('3870', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$BIND_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('3846', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$clone$7');
-INSERT INTO `t_resource` VALUES ('3843', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$equals$4');
-INSERT INTO `t_resource` VALUES ('3869', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$findMethodProxy');
-INSERT INTO `t_resource` VALUES ('3845', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$hashCode$6');
-INSERT INTO `t_resource` VALUES ('3850', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$queryGroupAd$0');
-INSERT INTO `t_resource` VALUES ('3849', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$queryInfo$1');
-INSERT INTO `t_resource` VALUES ('3847', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$DrawLog$2');
-INSERT INTO `t_resource` VALUES ('3868', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$SET_STATIC_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('3867', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$SET_THREAD_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('3851', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$STATICHOOK27');
-INSERT INTO `t_resource` VALUES ('3848', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$STATICHOOK28');
-INSERT INTO `t_resource` VALUES ('3844', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$toString$5');
-INSERT INTO `t_resource` VALUES ('3838', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:clone');
-INSERT INTO `t_resource` VALUES ('3835', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:equals');
-INSERT INTO `t_resource` VALUES ('3856', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:getAdvisors');
-INSERT INTO `t_resource` VALUES ('3859', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:getCallback');
-INSERT INTO `t_resource` VALUES ('3860', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:getCallbacks');
-INSERT INTO `t_resource` VALUES ('3872', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:getProxiedInterfaces');
-INSERT INTO `t_resource` VALUES ('3842', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:getTargetClass');
-INSERT INTO `t_resource` VALUES ('3862', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:getTargetSource');
-INSERT INTO `t_resource` VALUES ('3837', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:hashCode');
-INSERT INTO `t_resource` VALUES ('3839', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:indexOf');
-INSERT INTO `t_resource` VALUES ('3866', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:isExposeProxy');
-INSERT INTO `t_resource` VALUES ('3841', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:isFrozen');
-INSERT INTO `t_resource` VALUES ('3873', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:isInterfaceProxied');
-INSERT INTO `t_resource` VALUES ('3871', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:isPreFiltered');
-INSERT INTO `t_resource` VALUES ('3863', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:isProxyTargetClass');
-INSERT INTO `t_resource` VALUES ('3840', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:newInstance');
-INSERT INTO `t_resource` VALUES ('3853', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:queryGroupAd');
-INSERT INTO `t_resource` VALUES ('3854', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:queryInfo');
-INSERT INTO `t_resource` VALUES ('3855', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:DrawLog');
-INSERT INTO `t_resource` VALUES ('3878', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:removeAdvice');
-INSERT INTO `t_resource` VALUES ('3874', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:removeAdvisor');
-INSERT INTO `t_resource` VALUES ('3875', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:replaceAdvisor');
-INSERT INTO `t_resource` VALUES ('3857', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:setCallback');
-INSERT INTO `t_resource` VALUES ('3858', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:setCallbacks');
-INSERT INTO `t_resource` VALUES ('3865', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:setExposeProxy');
-INSERT INTO `t_resource` VALUES ('3864', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:setPreFiltered');
-INSERT INTO `t_resource` VALUES ('3861', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:setTargetSource');
-INSERT INTO `t_resource` VALUES ('3876', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:toProxyConfigString');
-INSERT INTO `t_resource` VALUES ('3836', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$492a9db9:toString');
-INSERT INTO `t_resource` VALUES ('5518', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:addAdvice');
-INSERT INTO `t_resource` VALUES ('5509', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:addAdvisor');
-INSERT INTO `t_resource` VALUES ('5502', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$BIND_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('5528', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$clone$7');
-INSERT INTO `t_resource` VALUES ('5525', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$equals$4');
-INSERT INTO `t_resource` VALUES ('5501', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$findMethodProxy');
-INSERT INTO `t_resource` VALUES ('5527', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$hashCode$6');
-INSERT INTO `t_resource` VALUES ('5523', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$queryGroupAd$0');
-INSERT INTO `t_resource` VALUES ('5522', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$queryInfo$1');
-INSERT INTO `t_resource` VALUES ('5520', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$DrawLog$2');
-INSERT INTO `t_resource` VALUES ('5530', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$SET_STATIC_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('5529', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$SET_THREAD_CALLBACKS');
-INSERT INTO `t_resource` VALUES ('5524', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$STATICHOOK27');
-INSERT INTO `t_resource` VALUES ('5521', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$STATICHOOK28');
-INSERT INTO `t_resource` VALUES ('5526', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$toString$5');
-INSERT INTO `t_resource` VALUES ('5490', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:clone');
-INSERT INTO `t_resource` VALUES ('5487', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:equals');
-INSERT INTO `t_resource` VALUES ('5513', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:getAdvisors');
-INSERT INTO `t_resource` VALUES ('5516', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:getCallback');
-INSERT INTO `t_resource` VALUES ('5517', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:getCallbacks');
-INSERT INTO `t_resource` VALUES ('5504', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:getProxiedInterfaces');
-INSERT INTO `t_resource` VALUES ('5494', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:getTargetClass');
-INSERT INTO `t_resource` VALUES ('5496', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:getTargetSource');
-INSERT INTO `t_resource` VALUES ('5489', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:hashCode');
-INSERT INTO `t_resource` VALUES ('5491', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:indexOf');
-INSERT INTO `t_resource` VALUES ('5500', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:isExposeProxy');
-INSERT INTO `t_resource` VALUES ('5493', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:isFrozen');
-INSERT INTO `t_resource` VALUES ('5505', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:isInterfaceProxied');
-INSERT INTO `t_resource` VALUES ('5503', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:isPreFiltered');
-INSERT INTO `t_resource` VALUES ('5497', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:isProxyTargetClass');
-INSERT INTO `t_resource` VALUES ('5492', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:newInstance');
-INSERT INTO `t_resource` VALUES ('5510', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:queryGroupAd');
-INSERT INTO `t_resource` VALUES ('5511', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:queryInfo');
-INSERT INTO `t_resource` VALUES ('5512', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:DrawLog');
-INSERT INTO `t_resource` VALUES ('5519', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:removeAdvice');
-INSERT INTO `t_resource` VALUES ('5506', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:removeAdvisor');
-INSERT INTO `t_resource` VALUES ('5507', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:replaceAdvisor');
-INSERT INTO `t_resource` VALUES ('5514', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:setCallback');
-INSERT INTO `t_resource` VALUES ('5515', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:setCallbacks');
-INSERT INTO `t_resource` VALUES ('5499', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:setExposeProxy');
-INSERT INTO `t_resource` VALUES ('5498', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:setPreFiltered');
-INSERT INTO `t_resource` VALUES ('5495', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:setTargetSource');
-INSERT INTO `t_resource` VALUES ('5508', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:toProxyConfigString');
-INSERT INTO `t_resource` VALUES ('5488', 'com.liuhe.redpacket.web.oms.DrawLogController$$EnhancerBySpringCGLIB$$fae060f5:toString');
-INSERT INTO `t_resource` VALUES ('9239', 'com.liuhe.redpacket.web.oms.DrawLogController:ALL');
-INSERT INTO `t_resource` VALUES ('9236', 'com.liuhe.redpacket.web.oms.DrawLogController:queryGroupAd');
-INSERT INTO `t_resource` VALUES ('9237', 'com.liuhe.redpacket.web.oms.DrawLogController:queryInfo');
-INSERT INTO `t_resource` VALUES ('9238', 'com.liuhe.redpacket.web.oms.DrawLogController:DrawLog');
+INSERT INTO `t_resource` VALUES ('8845', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:addAdvice');
+INSERT INTO `t_resource` VALUES ('8836', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:addAdvisor');
+INSERT INTO `t_resource` VALUES ('8848', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$BIND_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('8866', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$clone$7');
+INSERT INTO `t_resource` VALUES ('8863', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$equals$4');
+INSERT INTO `t_resource` VALUES ('8847', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$findMethodProxy');
+INSERT INTO `t_resource` VALUES ('8865', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$hashCode$6');
+INSERT INTO `t_resource` VALUES ('8833', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$queryGroupAd$0');
+INSERT INTO `t_resource` VALUES ('8832', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$queryInfo$1');
+INSERT INTO `t_resource` VALUES ('8830', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$RedpacketLog$2');
+INSERT INTO `t_resource` VALUES ('8856', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$SET_STATIC_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('8855', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$SET_THREAD_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('8834', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$STATICHOOK27');
+INSERT INTO `t_resource` VALUES ('8831', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$STATICHOOK28');
+INSERT INTO `t_resource` VALUES ('8864', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:CGLIB$toString$5');
+INSERT INTO `t_resource` VALUES ('8826', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:clone');
+INSERT INTO `t_resource` VALUES ('8823', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:equals');
+INSERT INTO `t_resource` VALUES ('8840', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:getAdvisors');
+INSERT INTO `t_resource` VALUES ('8843', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:getCallback');
+INSERT INTO `t_resource` VALUES ('8844', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:getCallbacks');
+INSERT INTO `t_resource` VALUES ('8850', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:getProxiedInterfaces');
+INSERT INTO `t_resource` VALUES ('8835', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:getTargetClass');
+INSERT INTO `t_resource` VALUES ('8858', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:getTargetSource');
+INSERT INTO `t_resource` VALUES ('8825', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:hashCode');
+INSERT INTO `t_resource` VALUES ('8827', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:indexOf');
+INSERT INTO `t_resource` VALUES ('8862', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:isExposeProxy');
+INSERT INTO `t_resource` VALUES ('8829', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:isFrozen');
+INSERT INTO `t_resource` VALUES ('8851', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:isInterfaceProxied');
+INSERT INTO `t_resource` VALUES ('8849', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:isPreFiltered');
+INSERT INTO `t_resource` VALUES ('8859', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:isProxyTargetClass');
+INSERT INTO `t_resource` VALUES ('8828', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:newInstance');
+INSERT INTO `t_resource` VALUES ('8837', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:queryGroupAd');
+INSERT INTO `t_resource` VALUES ('8838', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:queryInfo');
+INSERT INTO `t_resource` VALUES ('8839', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:RedpacketLog');
+INSERT INTO `t_resource` VALUES ('8846', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:removeAdvice');
+INSERT INTO `t_resource` VALUES ('8852', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:removeAdvisor');
+INSERT INTO `t_resource` VALUES ('8853', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:replaceAdvisor');
+INSERT INTO `t_resource` VALUES ('8841', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:setCallback');
+INSERT INTO `t_resource` VALUES ('8842', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:setCallbacks');
+INSERT INTO `t_resource` VALUES ('8861', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:setExposeProxy');
+INSERT INTO `t_resource` VALUES ('8860', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:setPreFiltered');
+INSERT INTO `t_resource` VALUES ('8857', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:setTargetSource');
+INSERT INTO `t_resource` VALUES ('8854', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:toProxyConfigString');
+INSERT INTO `t_resource` VALUES ('8824', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$35bd9430:toString');
+INSERT INTO `t_resource` VALUES ('4666', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:addAdvice');
+INSERT INTO `t_resource` VALUES ('4668', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:addAdvisor');
+INSERT INTO `t_resource` VALUES ('4680', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$BIND_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('4690', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$clone$7');
+INSERT INTO `t_resource` VALUES ('4687', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$equals$4');
+INSERT INTO `t_resource` VALUES ('4679', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$findMethodProxy');
+INSERT INTO `t_resource` VALUES ('4689', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$hashCode$6');
+INSERT INTO `t_resource` VALUES ('4694', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$queryGroupAd$0');
+INSERT INTO `t_resource` VALUES ('4693', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$queryInfo$1');
+INSERT INTO `t_resource` VALUES ('4691', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$RedpacketLog$2');
+INSERT INTO `t_resource` VALUES ('4678', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$SET_STATIC_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('4677', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$SET_THREAD_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('4695', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$STATICHOOK27');
+INSERT INTO `t_resource` VALUES ('4692', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$STATICHOOK28');
+INSERT INTO `t_resource` VALUES ('4688', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:CGLIB$toString$5');
+INSERT INTO `t_resource` VALUES ('4656', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:clone');
+INSERT INTO `t_resource` VALUES ('4653', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:equals');
+INSERT INTO `t_resource` VALUES ('4662', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:getAdvisors');
+INSERT INTO `t_resource` VALUES ('4664', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:getCallback');
+INSERT INTO `t_resource` VALUES ('4665', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:getCallbacks');
+INSERT INTO `t_resource` VALUES ('4682', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:getProxiedInterfaces');
+INSERT INTO `t_resource` VALUES ('4661', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:getTargetClass');
+INSERT INTO `t_resource` VALUES ('4672', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:getTargetSource');
+INSERT INTO `t_resource` VALUES ('4655', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:hashCode');
+INSERT INTO `t_resource` VALUES ('4657', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:indexOf');
+INSERT INTO `t_resource` VALUES ('4676', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:isExposeProxy');
+INSERT INTO `t_resource` VALUES ('4659', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:isFrozen');
+INSERT INTO `t_resource` VALUES ('4683', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:isInterfaceProxied');
+INSERT INTO `t_resource` VALUES ('4681', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:isPreFiltered');
+INSERT INTO `t_resource` VALUES ('4673', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:isProxyTargetClass');
+INSERT INTO `t_resource` VALUES ('4658', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:newInstance');
+INSERT INTO `t_resource` VALUES ('4669', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:queryGroupAd');
+INSERT INTO `t_resource` VALUES ('4670', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:queryInfo');
+INSERT INTO `t_resource` VALUES ('4671', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:RedpacketLog');
+INSERT INTO `t_resource` VALUES ('4667', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:removeAdvice');
+INSERT INTO `t_resource` VALUES ('4684', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:removeAdvisor');
+INSERT INTO `t_resource` VALUES ('4685', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:replaceAdvisor');
+INSERT INTO `t_resource` VALUES ('4696', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:setCallback');
+INSERT INTO `t_resource` VALUES ('4663', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:setCallbacks');
+INSERT INTO `t_resource` VALUES ('4675', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:setExposeProxy');
+INSERT INTO `t_resource` VALUES ('4674', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:setPreFiltered');
+INSERT INTO `t_resource` VALUES ('4660', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:setTargetSource');
+INSERT INTO `t_resource` VALUES ('4686', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:toProxyConfigString');
+INSERT INTO `t_resource` VALUES ('4654', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$3914ddb8:toString');
+INSERT INTO `t_resource` VALUES ('3877', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:addAdvice');
+INSERT INTO `t_resource` VALUES ('3852', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:addAdvisor');
+INSERT INTO `t_resource` VALUES ('3870', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$BIND_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('3846', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$clone$7');
+INSERT INTO `t_resource` VALUES ('3843', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$equals$4');
+INSERT INTO `t_resource` VALUES ('3869', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$findMethodProxy');
+INSERT INTO `t_resource` VALUES ('3845', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$hashCode$6');
+INSERT INTO `t_resource` VALUES ('3850', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$queryGroupAd$0');
+INSERT INTO `t_resource` VALUES ('3849', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$queryInfo$1');
+INSERT INTO `t_resource` VALUES ('3847', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$RedpacketLog$2');
+INSERT INTO `t_resource` VALUES ('3868', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$SET_STATIC_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('3867', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$SET_THREAD_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('3851', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$STATICHOOK27');
+INSERT INTO `t_resource` VALUES ('3848', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$STATICHOOK28');
+INSERT INTO `t_resource` VALUES ('3844', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:CGLIB$toString$5');
+INSERT INTO `t_resource` VALUES ('3838', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:clone');
+INSERT INTO `t_resource` VALUES ('3835', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:equals');
+INSERT INTO `t_resource` VALUES ('3856', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:getAdvisors');
+INSERT INTO `t_resource` VALUES ('3859', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:getCallback');
+INSERT INTO `t_resource` VALUES ('3860', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:getCallbacks');
+INSERT INTO `t_resource` VALUES ('3872', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:getProxiedInterfaces');
+INSERT INTO `t_resource` VALUES ('3842', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:getTargetClass');
+INSERT INTO `t_resource` VALUES ('3862', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:getTargetSource');
+INSERT INTO `t_resource` VALUES ('3837', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:hashCode');
+INSERT INTO `t_resource` VALUES ('3839', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:indexOf');
+INSERT INTO `t_resource` VALUES ('3866', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:isExposeProxy');
+INSERT INTO `t_resource` VALUES ('3841', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:isFrozen');
+INSERT INTO `t_resource` VALUES ('3873', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:isInterfaceProxied');
+INSERT INTO `t_resource` VALUES ('3871', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:isPreFiltered');
+INSERT INTO `t_resource` VALUES ('3863', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:isProxyTargetClass');
+INSERT INTO `t_resource` VALUES ('3840', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:newInstance');
+INSERT INTO `t_resource` VALUES ('3853', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:queryGroupAd');
+INSERT INTO `t_resource` VALUES ('3854', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:queryInfo');
+INSERT INTO `t_resource` VALUES ('3855', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:RedpacketLog');
+INSERT INTO `t_resource` VALUES ('3878', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:removeAdvice');
+INSERT INTO `t_resource` VALUES ('3874', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:removeAdvisor');
+INSERT INTO `t_resource` VALUES ('3875', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:replaceAdvisor');
+INSERT INTO `t_resource` VALUES ('3857', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:setCallback');
+INSERT INTO `t_resource` VALUES ('3858', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:setCallbacks');
+INSERT INTO `t_resource` VALUES ('3865', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:setExposeProxy');
+INSERT INTO `t_resource` VALUES ('3864', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:setPreFiltered');
+INSERT INTO `t_resource` VALUES ('3861', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:setTargetSource');
+INSERT INTO `t_resource` VALUES ('3876', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:toProxyConfigString');
+INSERT INTO `t_resource` VALUES ('3836', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$492a9db9:toString');
+INSERT INTO `t_resource` VALUES ('5518', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:addAdvice');
+INSERT INTO `t_resource` VALUES ('5509', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:addAdvisor');
+INSERT INTO `t_resource` VALUES ('5502', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$BIND_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('5528', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$clone$7');
+INSERT INTO `t_resource` VALUES ('5525', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$equals$4');
+INSERT INTO `t_resource` VALUES ('5501', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$findMethodProxy');
+INSERT INTO `t_resource` VALUES ('5527', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$hashCode$6');
+INSERT INTO `t_resource` VALUES ('5523', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$queryGroupAd$0');
+INSERT INTO `t_resource` VALUES ('5522', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$queryInfo$1');
+INSERT INTO `t_resource` VALUES ('5520', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$RedpacketLog$2');
+INSERT INTO `t_resource` VALUES ('5530', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$SET_STATIC_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('5529', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$SET_THREAD_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('5524', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$STATICHOOK27');
+INSERT INTO `t_resource` VALUES ('5521', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$STATICHOOK28');
+INSERT INTO `t_resource` VALUES ('5526', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:CGLIB$toString$5');
+INSERT INTO `t_resource` VALUES ('5490', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:clone');
+INSERT INTO `t_resource` VALUES ('5487', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:equals');
+INSERT INTO `t_resource` VALUES ('5513', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:getAdvisors');
+INSERT INTO `t_resource` VALUES ('5516', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:getCallback');
+INSERT INTO `t_resource` VALUES ('5517', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:getCallbacks');
+INSERT INTO `t_resource` VALUES ('5504', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:getProxiedInterfaces');
+INSERT INTO `t_resource` VALUES ('5494', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:getTargetClass');
+INSERT INTO `t_resource` VALUES ('5496', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:getTargetSource');
+INSERT INTO `t_resource` VALUES ('5489', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:hashCode');
+INSERT INTO `t_resource` VALUES ('5491', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:indexOf');
+INSERT INTO `t_resource` VALUES ('5500', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:isExposeProxy');
+INSERT INTO `t_resource` VALUES ('5493', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:isFrozen');
+INSERT INTO `t_resource` VALUES ('5505', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:isInterfaceProxied');
+INSERT INTO `t_resource` VALUES ('5503', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:isPreFiltered');
+INSERT INTO `t_resource` VALUES ('5497', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:isProxyTargetClass');
+INSERT INTO `t_resource` VALUES ('5492', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:newInstance');
+INSERT INTO `t_resource` VALUES ('5510', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:queryGroupAd');
+INSERT INTO `t_resource` VALUES ('5511', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:queryInfo');
+INSERT INTO `t_resource` VALUES ('5512', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:RedpacketLog');
+INSERT INTO `t_resource` VALUES ('5519', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:removeAdvice');
+INSERT INTO `t_resource` VALUES ('5506', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:removeAdvisor');
+INSERT INTO `t_resource` VALUES ('5507', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:replaceAdvisor');
+INSERT INTO `t_resource` VALUES ('5514', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:setCallback');
+INSERT INTO `t_resource` VALUES ('5515', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:setCallbacks');
+INSERT INTO `t_resource` VALUES ('5499', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:setExposeProxy');
+INSERT INTO `t_resource` VALUES ('5498', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:setPreFiltered');
+INSERT INTO `t_resource` VALUES ('5495', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:setTargetSource');
+INSERT INTO `t_resource` VALUES ('5508', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:toProxyConfigString');
+INSERT INTO `t_resource` VALUES ('5488', 'com.liuhe.redpacket.web.oms.RedpacketLogController$$EnhancerBySpringCGLIB$$fae060f5:toString');
+INSERT INTO `t_resource` VALUES ('9239', 'com.liuhe.redpacket.web.oms.RedpacketLogController:ALL');
+INSERT INTO `t_resource` VALUES ('32236', 'com.liuhe.redpacket.web.oms.RedpacketLogController:query');
+INSERT INTO `t_resource` VALUES ('9236', 'com.liuhe.redpacket.web.oms.RedpacketLogController:queryGroupAd');
+INSERT INTO `t_resource` VALUES ('9237', 'com.liuhe.redpacket.web.oms.RedpacketLogController:queryInfo');
+INSERT INTO `t_resource` VALUES ('32237', 'com.liuhe.redpacket.web.oms.RedpacketLogController:queryTotalAmount');
+INSERT INTO `t_resource` VALUES ('9238', 'com.liuhe.redpacket.web.oms.RedpacketLogController:RedpacketLog');
 INSERT INTO `t_resource` VALUES ('3879', 'com.liuhe.redpacket.web.oms.ResourceController:roleAll');
 INSERT INTO `t_resource` VALUES ('3881', 'com.liuhe.redpacket.web.oms.RoleController:delete');
 INSERT INTO `t_resource` VALUES ('3882', 'com.liuhe.redpacket.web.oms.RoleController:echo');
@@ -3966,6 +4184,54 @@ INSERT INTO `t_resource` VALUES ('21503', 'com.liuhe.redpacket.web.oms.UserContr
 INSERT INTO `t_resource` VALUES ('21523', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$31a7619:toProxyConfigString');
 INSERT INTO `t_resource` VALUES ('21477', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$31a7619:toString');
 INSERT INTO `t_resource` VALUES ('21488', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$31a7619:up');
+INSERT INTO `t_resource` VALUES ('24246', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:addAdvice');
+INSERT INTO `t_resource` VALUES ('24257', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:addAdvisor');
+INSERT INTO `t_resource` VALUES ('24241', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$BIND_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24230', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$clone$9');
+INSERT INTO `t_resource` VALUES ('24235', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$delete$1');
+INSERT INTO `t_resource` VALUES ('24231', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$equals$6');
+INSERT INTO `t_resource` VALUES ('24242', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$findMethodProxy');
+INSERT INTO `t_resource` VALUES ('24234', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$hashCode$8');
+INSERT INTO `t_resource` VALUES ('24233', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$index$0');
+INSERT INTO `t_resource` VALUES ('24236', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$leave$3');
+INSERT INTO `t_resource` VALUES ('24237', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$query$2');
+INSERT INTO `t_resource` VALUES ('24240', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$SET_STATIC_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24239', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$SET_THREAD_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24260', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$STATICHOOK7');
+INSERT INTO `t_resource` VALUES ('24261', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$STATICHOOK8');
+INSERT INTO `t_resource` VALUES ('24232', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$toString$7');
+INSERT INTO `t_resource` VALUES ('24238', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:CGLIB$up$4');
+INSERT INTO `t_resource` VALUES ('24218', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:clone');
+INSERT INTO `t_resource` VALUES ('24221', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:delete');
+INSERT INTO `t_resource` VALUES ('24215', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:equals');
+INSERT INTO `t_resource` VALUES ('24224', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:getAdvisors');
+INSERT INTO `t_resource` VALUES ('24251', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:getCallback');
+INSERT INTO `t_resource` VALUES ('24252', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:getCallbacks');
+INSERT INTO `t_resource` VALUES ('24244', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:getProxiedInterfaces');
+INSERT INTO `t_resource` VALUES ('24226', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:getTargetClass');
+INSERT INTO `t_resource` VALUES ('24255', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:getTargetSource');
+INSERT INTO `t_resource` VALUES ('24217', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:hashCode');
+INSERT INTO `t_resource` VALUES ('24214', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:index');
+INSERT INTO `t_resource` VALUES ('24219', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:indexOf');
+INSERT INTO `t_resource` VALUES ('24258', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:isExposeProxy');
+INSERT INTO `t_resource` VALUES ('24222', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:isFrozen');
+INSERT INTO `t_resource` VALUES ('24245', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:isInterfaceProxied');
+INSERT INTO `t_resource` VALUES ('24248', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:isPreFiltered');
+INSERT INTO `t_resource` VALUES ('24229', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:isProxyTargetClass');
+INSERT INTO `t_resource` VALUES ('24227', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:leave');
+INSERT INTO `t_resource` VALUES ('24220', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:newInstance');
+INSERT INTO `t_resource` VALUES ('24223', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:query');
+INSERT INTO `t_resource` VALUES ('24249', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:removeAdvice');
+INSERT INTO `t_resource` VALUES ('24250', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:removeAdvisor');
+INSERT INTO `t_resource` VALUES ('24247', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:replaceAdvisor');
+INSERT INTO `t_resource` VALUES ('24225', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:setCallback');
+INSERT INTO `t_resource` VALUES ('24253', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:setCallbacks');
+INSERT INTO `t_resource` VALUES ('24259', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:setExposeProxy');
+INSERT INTO `t_resource` VALUES ('24256', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:setPreFiltered');
+INSERT INTO `t_resource` VALUES ('24254', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:setTargetSource');
+INSERT INTO `t_resource` VALUES ('24243', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:toProxyConfigString');
+INSERT INTO `t_resource` VALUES ('24216', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:toString');
+INSERT INTO `t_resource` VALUES ('24228', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3d2ee034:up');
 INSERT INTO `t_resource` VALUES ('9267', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3f87bce5:addAdvice');
 INSERT INTO `t_resource` VALUES ('9269', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3f87bce5:addAdvisor');
 INSERT INTO `t_resource` VALUES ('9294', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$3f87bce5:CGLIB$BIND_CALLBACKS');
@@ -5552,6 +5818,54 @@ INSERT INTO `t_resource` VALUES ('10031', 'com.liuhe.redpacket.web.oms.UserContr
 INSERT INTO `t_resource` VALUES ('10044', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e53021ab:toProxyConfigString');
 INSERT INTO `t_resource` VALUES ('10016', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e53021ab:toString');
 INSERT INTO `t_resource` VALUES ('10046', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e53021ab:up');
+INSERT INTO `t_resource` VALUES ('24205', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:addAdvice');
+INSERT INTO `t_resource` VALUES ('24198', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:addAdvisor');
+INSERT INTO `t_resource` VALUES ('24191', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$BIND_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24183', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$clone$9');
+INSERT INTO `t_resource` VALUES ('24187', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$delete$1');
+INSERT INTO `t_resource` VALUES ('24185', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$equals$6');
+INSERT INTO `t_resource` VALUES ('24190', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$findMethodProxy');
+INSERT INTO `t_resource` VALUES ('24181', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$hashCode$8');
+INSERT INTO `t_resource` VALUES ('24180', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$index$0');
+INSERT INTO `t_resource` VALUES ('24182', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$leave$3');
+INSERT INTO `t_resource` VALUES ('24179', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$query$2');
+INSERT INTO `t_resource` VALUES ('24189', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$SET_STATIC_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24188', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$SET_THREAD_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24212', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$STATICHOOK7');
+INSERT INTO `t_resource` VALUES ('24213', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$STATICHOOK8');
+INSERT INTO `t_resource` VALUES ('24184', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$toString$7');
+INSERT INTO `t_resource` VALUES ('24186', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:CGLIB$up$4');
+INSERT INTO `t_resource` VALUES ('24170', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:clone');
+INSERT INTO `t_resource` VALUES ('24173', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:delete');
+INSERT INTO `t_resource` VALUES ('24167', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:equals');
+INSERT INTO `t_resource` VALUES ('24211', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:getAdvisors');
+INSERT INTO `t_resource` VALUES ('24210', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:getCallback');
+INSERT INTO `t_resource` VALUES ('24209', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:getCallbacks');
+INSERT INTO `t_resource` VALUES ('24192', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:getProxiedInterfaces');
+INSERT INTO `t_resource` VALUES ('24176', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:getTargetClass');
+INSERT INTO `t_resource` VALUES ('24197', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:getTargetSource');
+INSERT INTO `t_resource` VALUES ('24169', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:hashCode');
+INSERT INTO `t_resource` VALUES ('24166', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:index');
+INSERT INTO `t_resource` VALUES ('24171', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:indexOf');
+INSERT INTO `t_resource` VALUES ('24201', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:isExposeProxy');
+INSERT INTO `t_resource` VALUES ('24174', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:isFrozen');
+INSERT INTO `t_resource` VALUES ('24193', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:isInterfaceProxied');
+INSERT INTO `t_resource` VALUES ('24203', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:isPreFiltered');
+INSERT INTO `t_resource` VALUES ('24195', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:isProxyTargetClass');
+INSERT INTO `t_resource` VALUES ('24177', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:leave');
+INSERT INTO `t_resource` VALUES ('24172', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:newInstance');
+INSERT INTO `t_resource` VALUES ('24175', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:query');
+INSERT INTO `t_resource` VALUES ('24202', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:removeAdvice');
+INSERT INTO `t_resource` VALUES ('24204', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:removeAdvisor');
+INSERT INTO `t_resource` VALUES ('24206', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:replaceAdvisor');
+INSERT INTO `t_resource` VALUES ('24207', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:setCallback');
+INSERT INTO `t_resource` VALUES ('24208', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:setCallbacks');
+INSERT INTO `t_resource` VALUES ('24200', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:setExposeProxy');
+INSERT INTO `t_resource` VALUES ('24199', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:setPreFiltered');
+INSERT INTO `t_resource` VALUES ('24196', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:setTargetSource');
+INSERT INTO `t_resource` VALUES ('24194', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:toProxyConfigString');
+INSERT INTO `t_resource` VALUES ('24168', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:toString');
+INSERT INTO `t_resource` VALUES ('24178', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e5dbb6e6:up');
 INSERT INTO `t_resource` VALUES ('4848', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e74a2f58:addAdvice');
 INSERT INTO `t_resource` VALUES ('4850', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e74a2f58:addAdvisor');
 INSERT INTO `t_resource` VALUES ('4861', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$e74a2f58:CGLIB$BIND_CALLBACKS');
@@ -5936,6 +6250,54 @@ INSERT INTO `t_resource` VALUES ('22705', 'com.liuhe.redpacket.web.oms.UserContr
 INSERT INTO `t_resource` VALUES ('22703', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f36d26b7:toProxyConfigString');
 INSERT INTO `t_resource` VALUES ('22672', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f36d26b7:toString');
 INSERT INTO `t_resource` VALUES ('22687', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f36d26b7:up');
+INSERT INTO `t_resource` VALUES ('24288', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:addAdvice');
+INSERT INTO `t_resource` VALUES ('24289', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:addAdvisor');
+INSERT INTO `t_resource` VALUES ('24301', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$BIND_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24273', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$clone$9');
+INSERT INTO `t_resource` VALUES ('24276', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$delete$1');
+INSERT INTO `t_resource` VALUES ('24275', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$equals$6');
+INSERT INTO `t_resource` VALUES ('24300', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$findMethodProxy');
+INSERT INTO `t_resource` VALUES ('24281', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$hashCode$8');
+INSERT INTO `t_resource` VALUES ('24274', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$index$0');
+INSERT INTO `t_resource` VALUES ('24280', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$leave$4');
+INSERT INTO `t_resource` VALUES ('24279', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$query$2');
+INSERT INTO `t_resource` VALUES ('24299', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$SET_STATIC_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24298', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$SET_THREAD_CALLBACKS');
+INSERT INTO `t_resource` VALUES ('24309', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$STATICHOOK7');
+INSERT INTO `t_resource` VALUES ('24295', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$STATICHOOK8');
+INSERT INTO `t_resource` VALUES ('24278', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$toString$7');
+INSERT INTO `t_resource` VALUES ('24277', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:CGLIB$up$3');
+INSERT INTO `t_resource` VALUES ('24266', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:clone');
+INSERT INTO `t_resource` VALUES ('24269', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:delete');
+INSERT INTO `t_resource` VALUES ('24263', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:equals');
+INSERT INTO `t_resource` VALUES ('24297', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:getAdvisors');
+INSERT INTO `t_resource` VALUES ('24308', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:getCallback');
+INSERT INTO `t_resource` VALUES ('24307', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:getCallbacks');
+INSERT INTO `t_resource` VALUES ('24303', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:getProxiedInterfaces');
+INSERT INTO `t_resource` VALUES ('24272', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:getTargetClass');
+INSERT INTO `t_resource` VALUES ('24292', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:getTargetSource');
+INSERT INTO `t_resource` VALUES ('24265', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:hashCode');
+INSERT INTO `t_resource` VALUES ('24262', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:index');
+INSERT INTO `t_resource` VALUES ('24267', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:indexOf');
+INSERT INTO `t_resource` VALUES ('24293', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:isExposeProxy');
+INSERT INTO `t_resource` VALUES ('24270', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:isFrozen');
+INSERT INTO `t_resource` VALUES ('24302', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:isInterfaceProxied');
+INSERT INTO `t_resource` VALUES ('24286', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:isPreFiltered');
+INSERT INTO `t_resource` VALUES ('24296', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:isProxyTargetClass');
+INSERT INTO `t_resource` VALUES ('24283', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:leave');
+INSERT INTO `t_resource` VALUES ('24268', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:newInstance');
+INSERT INTO `t_resource` VALUES ('24271', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:query');
+INSERT INTO `t_resource` VALUES ('24287', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:removeAdvice');
+INSERT INTO `t_resource` VALUES ('24285', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:removeAdvisor');
+INSERT INTO `t_resource` VALUES ('24284', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:replaceAdvisor');
+INSERT INTO `t_resource` VALUES ('24305', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:setCallback');
+INSERT INTO `t_resource` VALUES ('24306', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:setCallbacks');
+INSERT INTO `t_resource` VALUES ('24291', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:setExposeProxy');
+INSERT INTO `t_resource` VALUES ('24290', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:setPreFiltered');
+INSERT INTO `t_resource` VALUES ('24294', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:setTargetSource');
+INSERT INTO `t_resource` VALUES ('24304', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:toProxyConfigString');
+INSERT INTO `t_resource` VALUES ('24264', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:toString');
+INSERT INTO `t_resource` VALUES ('24282', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f458ed64:up');
 INSERT INTO `t_resource` VALUES ('14238', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f7286155:addAdvice');
 INSERT INTO `t_resource` VALUES ('14247', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f7286155:addAdvisor');
 INSERT INTO `t_resource` VALUES ('14229', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f7286155:CGLIB$BIND_CALLBACKS');
@@ -6080,6 +6442,12 @@ INSERT INTO `t_resource` VALUES ('9694', 'com.liuhe.redpacket.web.oms.UserContro
 INSERT INTO `t_resource` VALUES ('9714', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f92f6e94:toProxyConfigString');
 INSERT INTO `t_resource` VALUES ('9680', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f92f6e94:toString');
 INSERT INTO `t_resource` VALUES ('9693', 'com.liuhe.redpacket.web.oms.UserController$$EnhancerBySpringCGLIB$$f92f6e94:up');
+INSERT INTO `t_resource` VALUES ('24439', 'com.liuhe.redpacket.web.oms.UserController:ALL');
+INSERT INTO `t_resource` VALUES ('24435', 'com.liuhe.redpacket.web.oms.UserController:delete');
+INSERT INTO `t_resource` VALUES ('24434', 'com.liuhe.redpacket.web.oms.UserController:index');
+INSERT INTO `t_resource` VALUES ('24437', 'com.liuhe.redpacket.web.oms.UserController:leave');
+INSERT INTO `t_resource` VALUES ('24436', 'com.liuhe.redpacket.web.oms.UserController:query');
+INSERT INTO `t_resource` VALUES ('24438', 'com.liuhe.redpacket.web.oms.UserController:up');
 INSERT INTO `t_resource` VALUES ('4076', 'com.liuhe.redpacket.web.oms._TestCotroller:adPositionId');
 INSERT INTO `t_resource` VALUES ('4078', 'com.mangofactory.swagger.controllers.DefaultSwaggerController:getApiListing');
 INSERT INTO `t_resource` VALUES ('4077', 'com.mangofactory.swagger.controllers.DefaultSwaggerController:getResourceListing');
@@ -6148,7 +6516,7 @@ CREATE TABLE `t_systemdictionary` (
   `intro` text,
   `status` bigint(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_systemdictionary
@@ -6169,7 +6537,7 @@ CREATE TABLE `t_systemdictionaryitem` (
   `intro` text,
   `parent_id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_systemdictionaryitem
@@ -6192,12 +6560,12 @@ CREATE TABLE `t_systemexception` (
   `exceptionCode` varchar(191) DEFAULT NULL,
   `exceptionDetail` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=712 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=865 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_systemexception
 -- ----------------------------
-INSERT INTO `t_systemexception` VALUES ('673', '2017-12-15 11:19:48', '61.129.7.254', 'RedpacketServiceImpl.getRedpacket', '76..', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_redpacket_log (          userId ,          adId ,          redpacketId ,          redpacketName ,          userName ,          openid ,          wechat ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\n; SQL []; Column \'openid\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('673', '2017-12-15 11:19:48', '61.129.7.254', 'RedpacketServiceImpl.getRedpacket', '76..', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.RedpacketLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_redpacket_log (          userId ,          adId ,          redpacketId ,          redpacketName ,          userName ,          openid ,          wechat ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\n; SQL []; Column \'openid\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null');
 INSERT INTO `t_systemexception` VALUES ('674', '2017-12-15 11:19:51', '125.67.97.67', 'CardsServiceImpl.cardsComplete', '51..', 'LogicException', '领取失败');
 INSERT INTO `t_systemexception` VALUES ('675', '2017-12-15 11:20:04', '101.226.33.237', 'CardsServiceImpl.cardsComplete', '51..', 'LogicException', '领取失败');
 INSERT INTO `t_systemexception` VALUES ('676', '2017-12-15 11:20:08', '125.67.97.67', 'CardsServiceImpl.cardsComplete', '51..', 'LogicException', '领取失败');
@@ -6234,8 +6602,161 @@ INSERT INTO `t_systemexception` VALUES ('706', '2017-12-18 00:58:12', '182.131.1
 INSERT INTO `t_systemexception` VALUES ('707', '2017-12-18 01:03:53', '182.131.12.12', 'RedpacketServiceImpl.getRedpacket', '76..', 'ArrayIndexOutOfBoundsException', null);
 INSERT INTO `t_systemexception` VALUES ('708', '2017-12-18 01:05:14', '182.131.12.12', 'RedpacketServiceImpl.getRedpacket', '76..', 'ArrayIndexOutOfBoundsException', null);
 INSERT INTO `t_systemexception` VALUES ('709', '2017-12-18 01:21:15', '182.131.12.12', 'RedpacketServiceImpl.getRedpacket', '76..', 'NullPointerException', null);
-INSERT INTO `t_systemexception` VALUES ('710', '2017-12-18 14:19:00', '61.129.7.217', 'RedpacketServiceImpl.receiveRedpacket', '78..', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_redpacket_log (          userId ,          adId ,          redpacketId ,          redpacketName ,          userName ,          openid ,          wechat ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\n; SQL []; Column \'openid\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('710', '2017-12-18 14:19:00', '61.129.7.217', 'RedpacketServiceImpl.receiveRedpacket', '78..', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.RedpacketLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_redpacket_log (          userId ,          adId ,          redpacketId ,          redpacketName ,          userName ,          openid ,          wechat ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null\n; SQL []; Column \'openid\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'openid\' cannot be null');
 INSERT INTO `t_systemexception` VALUES ('711', '2017-12-18 14:19:59', '125.67.97.67', 'CardsServiceImpl.cardsComplete', '53..', 'LogicException', '领取失败');
+INSERT INTO `t_systemexception` VALUES ('712', '2018-05-15 00:20:37', '0:0:0:0:0:0:0:1', 'CardsServiceImpl.update', 'Cards', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'name\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.CardsMapper.update-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update t_cards set   name = ? ,   info = ? ,                       beginTime = ? ,   endTime = ?   where id=?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'name\' cannot be null\n; SQL []; Column \'name\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'name\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('713', '2018-05-15 00:22:06', '0:0:0:0:0:0:0:1', 'CardServiceImpl.save', 'CommonsMultipartFile.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.CardMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_card (   name ,   image ,   cardsId ,   isDel ,   delTime ,   ratio   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null\n; SQL []; Column \'cardsId\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('714', '2018-05-15 00:22:08', '0:0:0:0:0:0:0:1', 'CardServiceImpl.save', 'CommonsMultipartFile.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.CardMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_card (   name ,   image ,   cardsId ,   isDel ,   delTime ,   ratio   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null\n; SQL []; Column \'cardsId\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('715', '2018-05-15 00:22:12', '0:0:0:0:0:0:0:1', 'CardServiceImpl.save', 'CommonsMultipartFile.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.CardMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_card (   name ,   image ,   cardsId ,   isDel ,   delTime ,   ratio   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null\n; SQL []; Column \'cardsId\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'cardsId\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('716', '2018-06-03 02:03:16', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.adId\' in \'on clause\'\r\n### The error may exist in file [C:\\WorkTool\\apache-tomcat-8.5.4\\webapps\\ROOT\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.query-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select r.*   from t_draw_log r   left join t_ad a on r.adId = a.id        WHERE  r.redpacketId = ?                and r.receiveTime is not null       order by r.receiveTime desc        limit ?,?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.adId\' in \'on clause\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.adId\' in \'on clause\'');
+INSERT INTO `t_systemexception` VALUES ('717', '2018-06-03 02:06:39', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'\r\n### The error may exist in file [C:\\WorkTool\\apache-tomcat-8.5.4\\webapps\\ROOT\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.query-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select d.*   from t_draw_log d        WHERE  d.redpacketId = ?            and r.receiveTime is not null       order by d.receiveTime desc        limit ?,?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'');
+INSERT INTO `t_systemexception` VALUES ('718', '2018-06-03 12:20:00', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('719', '2018-06-03 12:21:12', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('720', '2018-06-03 12:21:13', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('721', '2018-06-03 12:21:37', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'BadSqlGrammarException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.update-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update t_redpacket_log set   userId = ? ,   redpacketId = ? ,   redpacketName = ? ,   userName = ? ,   openid = ? ,   remark = ? ,   type = ? ,   receiveTime = ? ,   amount = ?   where id=?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist');
+INSERT INTO `t_systemexception` VALUES ('722', '2018-06-03 12:23:19', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'BadSqlGrammarException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.update-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update t_redpacket_log set   userId = ? ,   redpacketId = ? ,   redpacketName = ? ,   userName = ? ,   openid = ? ,   remark = ? ,   type = ? ,   receiveTime = ? ,   amount = ?   where id=?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist');
+INSERT INTO `t_systemexception` VALUES ('723', '2018-06-03 12:24:12', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'BadSqlGrammarException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.update-Inline\r\n### The error occurred while setting parameters\r\n### SQL: update t_redpacket_log set   userId = ? ,   redpacketId = ? ,   redpacketName = ? ,   userName = ? ,   openid = ? ,   remark = ? ,   type = ? ,   receiveTime = ? ,   amount = ?   where id=?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table \'redpacket.t_redpacket_log\' doesn\'t exist');
+INSERT INTO `t_systemexception` VALUES ('724', '2018-06-03 17:59:53', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('725', '2018-06-03 17:59:55', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('726', '2018-06-03 17:59:56', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('727', '2018-06-03 17:59:56', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('728', '2018-06-03 17:59:57', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('729', '2018-06-03 17:59:57', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('730', '2018-06-03 17:59:57', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('731', '2018-06-03 18:00:38', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('732', '2018-06-03 18:01:37', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('733', '2018-06-03 18:01:42', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('734', '2018-06-03 18:01:43', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('735', '2018-06-03 18:01:45', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('736', '2018-06-03 18:01:55', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('737', '2018-06-03 18:01:57', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('738', '2018-06-03 18:02:11', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('739', '2018-06-03 18:02:12', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('740', '2018-06-03 18:02:21', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.draw', 'null.', 'BadSqlGrammarException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'\r\n### The error may involve com.liuhe.redpacket.mapper.UserCardMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_user_card (          cardId ,          openid ,          userId ,          wechat ,          DrawLogId ,          receiveTime          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'');
+INSERT INTO `t_systemexception` VALUES ('741', '2018-06-03 18:02:48', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.draw', 'null.', 'BadSqlGrammarException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'\r\n### The error may involve com.liuhe.redpacket.mapper.UserCardMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_user_card (          cardId ,          openid ,          userId ,          wechat ,          DrawLogId ,          receiveTime          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'');
+INSERT INTO `t_systemexception` VALUES ('742', '2018-06-03 18:03:06', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.draw', 'null.', 'BadSqlGrammarException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'\r\n### The error may involve com.liuhe.redpacket.mapper.UserCardMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_user_card (          cardId ,          openid ,          userId ,          wechat ,          DrawLogId ,          receiveTime          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'DrawLogId\' in \'field list\'');
+INSERT INTO `t_systemexception` VALUES ('743', '2018-06-03 23:54:28', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.findByUser', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'redpacketId\' in \'class java.lang.String\'');
+INSERT INTO `t_systemexception` VALUES ('744', '2018-06-03 23:54:33', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.findByUser', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'redpacketId\' in \'class java.lang.String\'');
+INSERT INTO `t_systemexception` VALUES ('745', '2018-06-03 23:54:39', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.findByUser', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'redpacketId\' in \'class java.lang.String\'');
+INSERT INTO `t_systemexception` VALUES ('746', '2018-06-04 00:30:25', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('747', '2018-06-04 00:31:09', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('748', '2018-06-04 00:33:41', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('749', '2018-06-04 00:33:42', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('750', '2018-06-04 00:33:47', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('751', '2018-06-04 00:33:47', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('752', '2018-06-04 00:33:48', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('753', '2018-06-04 00:33:48', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('754', '2018-06-04 00:33:48', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('755', '2018-06-04 00:33:48', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('756', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('757', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('758', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('759', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('760', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('761', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('762', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('763', '2018-06-04 00:33:49', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('764', '2018-06-04 00:38:54', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.getSum', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('765', '2018-06-04 00:38:54', '0:0:0:0:0:0:0:1', 'UserServiceImpl.userInfo', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select COUNT (id) num,sum(if(type = 1,amount,0)) amount         from t_draw_log   where openid = ?  and receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: FUNCTION redpacket.COUNT does not exist. Check the \'Function Name Parsing and Resolution\' section in the Reference Manual');
+INSERT INTO `t_systemexception` VALUES ('766', '2018-06-04 00:42:55', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'is_del\' in \'where clause\'\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\CardMapper.xml]\r\n### The error may involve defaultParameterMap\r\n### The error occurred while setting parameters\r\n### SQL: select * from t_card where is_del = 0\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'is_del\' in \'where clause\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'is_del\' in \'where clause\'');
+INSERT INTO `t_systemexception` VALUES ('767', '2018-06-04 00:46:38', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'type\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_draw_log (          userId ,          redpacketId ,          redpacketName ,          cardId ,          cardName ,          userName ,          openid ,          remark ,          type ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'type\' cannot be null\n; SQL []; Column \'type\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'type\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('768', '2018-06-04 00:47:18', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'type\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_draw_log (          userId ,          redpacketId ,          redpacketName ,          cardId ,          cardName ,          userName ,          openid ,          remark ,          type ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'type\' cannot be null\n; SQL []; Column \'type\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'type\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('769', '2018-06-04 00:47:19', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_draw_log (          userId ,          redpacketId ,          redpacketName ,          cardId ,          cardName ,          userName ,          openid ,          remark ,          type ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null\n; SQL []; Column \'amount\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('770', '2018-06-04 00:47:21', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_draw_log (          userId ,          redpacketId ,          redpacketName ,          cardId ,          cardName ,          userName ,          openid ,          remark ,          type ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null\n; SQL []; Column \'amount\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('771', '2018-06-04 00:47:22', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.drawInfo', '76.', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_draw_log (          userId ,          redpacketId ,          redpacketName ,          cardId ,          cardName ,          userName ,          openid ,          remark ,          type ,          receiveTime ,          amount          ) VALUES (          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ? ,          ?          )\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null\n; SQL []; Column \'amount\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'amount\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('772', '2018-06-04 00:47:53', '0:0:0:0:0:0:0:1', 'RedpacketServiceImpl.draw', '76.', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'exchangeTime\' in \'class com.liuhe.redpacket.domain.UserCard\'');
+INSERT INTO `t_systemexception` VALUES ('773', '2018-06-04 01:53:08', '0:0:0:0:0:0:0:1', 'UserCardServiceImpl.queryList', 'UserCardQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('774', '2018-06-04 01:53:08', '0:0:0:0:0:0:0:1', 'CardsCompleteServiceImpl.exchange', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4.', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('775', '2018-06-04 01:53:09', '0:0:0:0:0:0:0:1', 'UserCardServiceImpl.queryList', 'UserCardQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('776', '2018-06-04 01:53:09', '0:0:0:0:0:0:0:1', 'CardsCompleteServiceImpl.exchange', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4.', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('777', '2018-06-04 01:53:10', '0:0:0:0:0:0:0:1', 'UserCardServiceImpl.queryList', 'UserCardQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('778', '2018-06-04 01:53:10', '0:0:0:0:0:0:0:1', 'CardsCompleteServiceImpl.exchange', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4.', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('779', '2018-06-04 01:53:10', '0:0:0:0:0:0:0:1', 'UserCardServiceImpl.queryList', 'UserCardQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('780', '2018-06-04 01:53:10', '0:0:0:0:0:0:0:1', 'CardsCompleteServiceImpl.exchange', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4.', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('781', '2018-06-04 01:53:10', '0:0:0:0:0:0:0:1', 'UserCardServiceImpl.queryList', 'UserCardQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('782', '2018-06-04 01:53:10', '0:0:0:0:0:0:0:1', 'CardsCompleteServiceImpl.exchange', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4.', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('783', '2018-06-04 01:53:22', '0:0:0:0:0:0:0:1', 'UserCardServiceImpl.queryList', 'UserCardQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('784', '2018-06-04 01:53:22', '0:0:0:0:0:0:0:1', 'CardsCompleteServiceImpl.exchange', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4.', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named \'receiveTime\' in \'class com.liuhe.redpacket.query.UserCardQuery\'');
+INSERT INTO `t_systemexception` VALUES ('785', '2018-06-05 23:35:43', '182.131.12.12', 'RedpacketServiceImpl.drawInfo', '82.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('786', '2018-06-05 23:37:04', '182.131.12.12', 'RedpacketServiceImpl.drawInfo', '82.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('787', '2018-06-05 23:38:55', '182.131.12.12', 'RedpacketServiceImpl.drawInfo', '82.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('788', '2018-06-06 00:28:21', '182.131.12.12', 'RedpacketServiceImpl.drawInfo', '82.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('789', '2018-06-06 00:29:03', '182.131.12.12', 'RedpacketServiceImpl.drawInfo', '82.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('790', '2018-06-06 00:30:16', '125.69.42.176', 'RedpacketServiceImpl.drawInfo', '82.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('791', '2018-06-06 00:35:51', '125.69.42.176', 'RedpacketServiceImpl.drawInfo', '82.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('792', '2018-06-06 01:24:20', '125.69.42.176', 'EmployeeServiceImpl.findcheckLogin', 'admin....', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('793', '2018-06-06 17:47:12', '223.150.157.162', 'EmployeeServiceImpl.findcheckLogin', 'admin....', 'LogicException', '验证码输入错误！！');
+INSERT INTO `t_systemexception` VALUES ('794', '2018-06-10 22:25:13', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n### The error may exist in file [/usr/local/src/apache-tomcat8-redpacket/webapps/ROOT/WEB-INF/classes/com/liuhe/redpacket/mapper/DrawLogMapper.xml]\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\n### The error occurred while setting parameters\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('795', '2018-06-10 22:28:11', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n### The error may exist in file [/usr/local/src/apache-tomcat8-redpacket/webapps/ROOT/WEB-INF/classes/com/liuhe/redpacket/mapper/DrawLogMapper.xml]\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\n### The error occurred while setting parameters\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('796', '2018-06-10 22:28:12', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n### The error may exist in file [/usr/local/src/apache-tomcat8-redpacket/webapps/ROOT/WEB-INF/classes/com/liuhe/redpacket/mapper/DrawLogMapper.xml]\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\n### The error occurred while setting parameters\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('797', '2018-06-10 22:28:12', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n### The error may exist in file [/usr/local/src/apache-tomcat8-redpacket/webapps/ROOT/WEB-INF/classes/com/liuhe/redpacket/mapper/DrawLogMapper.xml]\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\n### The error occurred while setting parameters\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('798', '2018-06-10 22:28:27', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件\"');
+INSERT INTO `t_systemexception` VALUES ('799', '2018-06-10 22:30:20', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件\"');
+INSERT INTO `t_systemexception` VALUES ('800', '2018-06-10 22:30:21', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件\"');
+INSERT INTO `t_systemexception` VALUES ('801', '2018-06-10 22:30:22', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件\"');
+INSERT INTO `t_systemexception` VALUES ('802', '2018-06-10 22:30:26', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-05-0\' at line 4\n### The error may exist in file [/usr/local/src/apache-tomcat8-redpacket/webapps/ROOT/WEB-INF/classes/com/liuhe/redpacket/mapper/DrawLogMapper.xml]\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\n### The error occurred while setting parameters\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-05-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-05-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('803', '2018-06-10 22:30:26', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-05-0\' at line 4\n### The error may exist in file [/usr/local/src/apache-tomcat8-redpacket/webapps/ROOT/WEB-INF/classes/com/liuhe/redpacket/mapper/DrawLogMapper.xml]\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\n### The error occurred while setting parameters\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-05-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-05-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('804', '2018-06-10 22:30:36', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"');
+INSERT INTO `t_systemexception` VALUES ('805', '2018-06-10 22:30:37', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"');
+INSERT INTO `t_systemexception` VALUES ('806', '2018-06-10 22:30:38', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"');
+INSERT INTO `t_systemexception` VALUES ('807', '2018-06-10 22:30:38', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"');
+INSERT INTO `t_systemexception` VALUES ('808', '2018-06-10 22:30:39', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"');
+INSERT INTO `t_systemexception` VALUES ('809', '2018-06-10 22:30:39', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"');
+INSERT INTO `t_systemexception` VALUES ('810', '2018-06-10 22:30:39', '223.86.107.142', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'MyBatisSystemException', 'nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database.  Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"\n### Cause: java.lang.NumberFormatException: For input string: \"软件定制开发\"');
+INSERT INTO `t_systemexception` VALUES ('811', '2018-06-12 01:07:25', '0:0:0:0:0:0:0:1', 'EmployeeServiceImpl.findcheckLogin', 'admin....', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('812', '2018-06-12 01:09:59', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('813', '2018-06-12 01:10:01', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('814', '2018-06-12 01:10:02', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('815', '2018-06-12 01:10:10', '0:0:0:0:0:0:0:1', 'DrawLogServiceImpl.query', 'DrawLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\DrawLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.DrawLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   from t_draw_log d        WHERE  d.userName likeconcat(\'%\',?,\'%\')                             and d.receiveTime>=?             and d.receiveTime < ?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'likeconcat(\'%\',\'\',\'%\')\n			\n			\n			\n			\n			\n			\n				and d.receiveTime>=\'2018-06-0\' at line 4');
+INSERT INTO `t_systemexception` VALUES ('816', '2018-06-23 00:25:08', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.query', 'QrCodeQuery', 'BindingException', 'Invalid bound statement (not found): com.liuhe.redpacket.mapper.QrCodeMapper.queryTotal');
+INSERT INTO `t_systemexception` VALUES ('817', '2018-06-23 00:32:31', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.query', 'QrCodeQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\QrCodeMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select   count(1)   from t_qr_code        WHERE  r.receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'');
+INSERT INTO `t_systemexception` VALUES ('818', '2018-06-23 00:32:37', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.query', 'QrCodeQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\QrCodeMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select   count(1)   from t_qr_code        WHERE  r.receiveTime is not null\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column \'r.receiveTime\' in \'where clause\'');
+INSERT INTO `t_systemexception` VALUES ('819', '2018-06-23 00:33:32', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.query', 'QrCodeQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'from t_qr_code\n		 \n		  \n	 \n		 \n			limit 0,10\' at line 2\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\QrCodeMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.query-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select r*   from t_qr_code                    limit ?,?\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'from t_qr_code\n		 \n		  \n	 \n		 \n			limit 0,10\' at line 2\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'from t_qr_code\n		 \n		  \n	 \n		 \n			limit 0,10\' at line 2');
+INSERT INTO `t_systemexception` VALUES ('820', '2018-06-23 00:36:42', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', 'QrCode', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: java.sql.SQLException: Field \'id\' doesn\'t have a default value\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: java.sql.SQLException: Field \'id\' doesn\'t have a default value\n; SQL []; Field \'id\' doesn\'t have a default value; nested exception is java.sql.SQLException: Field \'id\' doesn\'t have a default value');
+INSERT INTO `t_systemexception` VALUES ('821', '2018-06-23 23:16:56', '0:0:0:0:0:0:0:1', 'RedpacketLogServiceImpl.query', 'RedpacketLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\RedpacketLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.RedpacketLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   (select count(1)   from t_redpacket_log r   left join t_qr_code a on r.qrCodeId = a.id        WHERE  r.receiveTime is not null    ) c\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2');
+INSERT INTO `t_systemexception` VALUES ('822', '2018-06-23 23:27:43', '0:0:0:0:0:0:0:1', 'RedpacketLogServiceImpl.query', 'RedpacketLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\RedpacketLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.RedpacketLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   (select count(1)   from t_redpacket_log r   left join t_qr_code a on r.qrCodeId = a.id        WHERE  r.receiveTime is not null    ) c\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2');
+INSERT INTO `t_systemexception` VALUES ('823', '2018-06-23 23:27:49', '0:0:0:0:0:0:0:1', 'RedpacketLogServiceImpl.query', 'RedpacketLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\RedpacketLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.RedpacketLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   (select count(1)   from t_redpacket_log r   left join t_qr_code a on r.qrCodeId = a.id        WHERE  r.receiveTime is not null    ) c\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2');
+INSERT INTO `t_systemexception` VALUES ('824', '2018-06-23 23:27:51', '0:0:0:0:0:0:0:1', 'RedpacketLogServiceImpl.query', 'RedpacketLogQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\RedpacketLogMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.RedpacketLogMapper.queryTotal-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select count(1)   (select count(1)   from t_redpacket_log r   left join t_qr_code a on r.qrCodeId = a.id        WHERE  r.receiveTime is not null    ) c\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'(select count(1)\n		from t_redpacket_log r\n		left join t_qr_code a on r.qrCodeId \' at line 2');
+INSERT INTO `t_systemexception` VALUES ('825', '2018-06-23 23:43:27', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.query', 'QrCodeQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\QrCodeMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.query-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select *   from t_qr_code                    limit ?,?       order by id desc\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9');
+INSERT INTO `t_systemexception` VALUES ('826', '2018-06-23 23:43:34', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.query', 'QrCodeQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\QrCodeMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.query-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select *   from t_qr_code                    limit ?,?       order by id desc\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9');
+INSERT INTO `t_systemexception` VALUES ('827', '2018-06-23 23:44:57', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.query', 'QrCodeQuery', 'BadSqlGrammarException', '\r\n### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9\r\n### The error may exist in file [C:\\WorkTool\\IdeaWorkSpace\\redpacket\\target\\redpacket\\WEB-INF\\classes\\com\\liuhe\\redpacket\\mapper\\QrCodeMapper.xml]\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.query-Inline\r\n### The error occurred while setting parameters\r\n### SQL: select *   from t_qr_code                    limit ?,?       order by id desc\r\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9\n; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'order by id desc\' at line 9');
+INSERT INTO `t_systemexception` VALUES ('828', '2018-06-23 23:46:44', '0:0:0:0:0:0:0:1', 'EmployeeServiceImpl.findcheckLogin', 'admin....', 'LogicException', '验证码输入错误！！');
+INSERT INTO `t_systemexception` VALUES ('829', '2018-06-23 23:48:27', '118.116.19.182', 'EmployeeServiceImpl.findcheckLogin', 'admin....', 'LogicException', '验证码输入错误！！');
+INSERT INTO `t_systemexception` VALUES ('830', '2018-06-23 23:51:07', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('831', '2018-06-23 23:51:10', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('832', '2018-06-23 23:51:11', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('833', '2018-06-23 23:51:11', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('834', '2018-06-23 23:51:11', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('835', '2018-06-23 23:51:41', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('836', '2018-06-23 23:51:46', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('837', '2018-06-23 23:51:47', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('838', '2018-06-23 23:51:47', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('839', '2018-06-23 23:51:48', '0:0:0:0:0:0:0:1', 'QrCodeServiceImpl.save', '2', 'DataIntegrityViolationException', '\r\n### Error updating database.  Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\r\n### The error may involve com.liuhe.redpacket.mapper.QrCodeMapper.save-Inline\r\n### The error occurred while setting parameters\r\n### SQL: insert into t_qr_code (   code ,   url ,   isUsed ,   usedTime ,   isDel ,   delTime   ) VALUES (   ? ,   ? ,   ? ,   ? ,   ? ,   ?   )\r\n### Cause: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1\n; SQL []; Data truncation: Data too long for column \'code\' at row 1; nested exception is com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column \'code\' at row 1');
+INSERT INTO `t_systemexception` VALUES ('840', '2018-06-25 00:03:52', '118.116.19.182', 'EmployeeServiceImpl.findcheckLogin', 'admin....', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('841', '2018-06-25 10:02:00', '182.131.11.51', 'DrawLogServiceImpl.draw', '33db21c56b9d4e4cba11a7f6cdd1e57e.', 'NullPointerException', null);
+INSERT INTO `t_systemexception` VALUES ('842', '2018-06-25 10:03:56', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('843', '2018-06-25 10:03:58', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('844', '2018-06-25 10:03:59', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('845', '2018-06-25 10:03:59', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('846', '2018-06-25 10:04:28', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('847', '2018-06-25 10:04:29', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('848', '2018-06-25 10:04:30', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('849', '2018-06-25 10:04:30', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('850', '2018-06-25 10:04:30', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('851', '2018-06-25 10:04:30', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('852', '2018-06-25 10:04:33', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('853', '2018-06-25 10:04:34', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('854', '2018-06-25 10:04:34', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('855', '2018-06-25 10:04:35', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('856', '2018-06-25 10:04:35', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('857', '2018-06-25 10:04:35', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('858', '2018-06-25 10:04:35', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('859', '2018-06-25 10:04:35', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('860', '2018-06-25 10:04:36', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('861', '2018-06-25 10:04:36', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('862', '2018-06-25 10:04:36', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('863', '2018-06-25 10:04:36', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
+INSERT INTO `t_systemexception` VALUES ('864', '2018-06-25 10:04:37', '171.92.19.129', 'RedpacketServiceImpl.update', 'Redpacket', 'DataIntegrityViolationException', '\n### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n### The error may involve com.liuhe.redpacket.mapper.RedpacketMapper.update-Inline\n### The error occurred while setting parameters\n### SQL: update t_redpacket set   name = ? ,   info = ? ,   cardsId = ? ,                        ratio = ? ,       min = ? ,   max = ?   where id=?\n### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null\n; SQL []; Column \'info\' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column \'info\' cannot be null');
 
 -- ----------------------------
 -- Table structure for t_systemlog
@@ -6250,11 +6771,15 @@ CREATE TABLE `t_systemlog` (
   `params` varchar(191) DEFAULT NULL,
   `description` varchar(191) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1312 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_systemlog
 -- ----------------------------
+INSERT INTO `t_systemlog` VALUES ('1', '超级管理员', '2018-05-14 23:46:16', '0:0:0:0:0:0:0:1', 'UserController.index', '', '用户账号-主页');
+INSERT INTO `t_systemlog` VALUES ('2', '超级管理员', '2018-05-14 23:46:45', '0:0:0:0:0:0:0:1', 'UserController.index', '', '用户账号-主页');
+INSERT INTO `t_systemlog` VALUES ('3', '超级管理员', '2018-05-14 23:46:57', '0:0:0:0:0:0:0:1', 'UserController.index', '', '用户账号-主页');
+INSERT INTO `t_systemlog` VALUES ('4', '超级管理员', '2018-05-14 23:53:00', '0:0:0:0:0:0:0:1', 'UserController.index', '', '用户账号-主页');
 
 -- ----------------------------
 -- Table structure for t_user
@@ -6270,14 +6795,30 @@ CREATE TABLE `t_user` (
   `wechat` varchar(191) DEFAULT NULL,
   `openid` varchar(191) DEFAULT NULL,
   `remark` varchar(191) DEFAULT NULL,
+  `drawNum` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('11', null, null, '78.53', null, '1', null, 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null);
-INSERT INTO `t_user` VALUES ('12', null, null, '10.33', null, '1', null, 'o4HNe0v3J5sGFBDYRoZOJimRzqPE', null);
+INSERT INTO `t_user` VALUES ('11', '测试账号', null, '93.69', 'http://wx.qlogo.cn/mmopen/vi_32/iaBkJqtAGXh0UeP3gr6Wcu2Crywl3fV8TNTRgKOTKGzEJvNbYBjJjDW5fibpcYNLXAvMzJHsYlq6gHjfUNJ5POHw/132', '1', '12', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null, '0');
+INSERT INTO `t_user` VALUES ('14', '杨宇飞', null, '299.08', 'http://thirdwx.qlogo.cn/mmopen/vi_32/k7mhYPpo3Fh9yaM9DUdL66MicQCF0ibibdhh6sxgNXCf4lDXFcXFtoUGrfeE85sD1ybmceBM6nfkicaymfWVCYFC4g/132', '1', '杨宇飞', 'oJuS_04-w66iRdIXR5njdKiGTLI0', null, '0');
+INSERT INTO `t_user` VALUES ('15', '软件定制开发', null, '82.30', 'http://thirdwx.qlogo.cn/mmopen/vi_32/Cc3cesNQJNTswuiavUQMpAbUZC9atNxnuiblG67f7cgMT7HBzhLbKY2ITqRLwx3jStCAY48J2icqiaNARm7KyA3Njg/132', '1', '软件定制开发', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', null, '0');
+INSERT INTO `t_user` VALUES ('16', '千山真木板湘西北总代周亮', null, '178.96', 'http://thirdwx.qlogo.cn/mmopen/vi_32/Hcca0FTxVxdjYTMfIssiasGuDFJ2CZDIAkaOrKQj9fz98j4UDup4pA5p3nQTT8Y1Gya2Ad2Fbz6gkKubDyfsbmQ/132', '1', '千山真木板湘西北总代周亮', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', null, '0');
+INSERT INTO `t_user` VALUES ('17', 'A0《板材先森》胡刚', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/N0btrSPcyLBn6yvIn11Go9tnH4oFE5K8AMiao9HZ14cg97euTX2WJbz3SCwJD1P5Mib5c1BicASnYECJLIUFAoyNw/132', null, 'A0《板材先森》胡刚', 'oJuS_01IJXKWcF8XUrnHEOSsIn0Y', null, '0');
+INSERT INTO `t_user` VALUES ('18', '娇妹酱', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/xQpY1triag0T0BA5fPpGcO2micvHKiaHhib9RKDTc2TNg6rWGR4RvibaWZqWWmeRIIPq640lWFCm10zjXQlEBnFekEA/132', '1', '娇妹酱', 'oJuS_0yPsd1vxaEkD4HLiFQXNUus', null, null);
+INSERT INTO `t_user` VALUES ('19', '千山真木板朱朱', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/dQQR8nfd3k8zO9Z7TjOxSv3fhqibibpZXOWCB9onA9g5JkicdJdX5z5rZ2EWpFZc3cIxE3tkbwAtUxnmic9vKj232Q/132', null, '千山真木板朱朱', 'oJuS_01ZgngKySweFNh1bgdO1b_g', null, null);
+INSERT INTO `t_user` VALUES ('20', '千山真木板18873635499', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/c8xgay6glKRURyticOpn62M0p1HeAyn6kvpk5cqqVicUyd3iauxAF3SkKcU6eqPEKDshgcgP2u2bfcM7BzxBDB0Mw/132', null, '千山真木板18873635499', 'oJuS_041xwOyuLVKsYVzgXgboO3Q', null, null);
+INSERT INTO `t_user` VALUES ('21', '周', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/hTeBRCiaXNpz2ICazPkKKgia1fxDbiaB8Y63HpDrTfwKyibXm8icUviafcRPLdbicFtPibSNGH7ib0gHVJT0MZ2sCweTWlA/132', '1', '周', 'oJuS_0_qqbmXvrv6A9uibDAOwDL8', null, null);
+INSERT INTO `t_user` VALUES ('22', 'ECHO', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/3AwzcNfraW2PjibVZehXLXjypJsM8PhVJtZMdPvkYyfTk34KWFgeBUNoDlQ1tew4FEco1RLL2RDZdIaG4d3wh5Q/132', '1', 'ECHO', 'oJuS_0yIH_sbdo-Ipis-g_Mw5IqE', null, null);
+INSERT INTO `t_user` VALUES ('23', 'MISS WANG YOGA 娇娇', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/WUj9OyyKJ7tGlngYsL0EnARbIskK3ADbeEQLlf191YFx3DRhOukMzy7biajMnCNiclyROr6enSAd79WWCurv1ibYg/132', null, 'MISS WANG YOGA 娇娇', 'oJuS_0x90qs2v7vT3VJuTRv8qi1g', null, null);
+INSERT INTO `t_user` VALUES ('24', '1', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLof0S0RH77yJoibH1UX9ssk1jtFziaVxq5IKZ0txejFdgTkbichPfAx1EbPtN2TBD28SW9aO7siadEdg/132', null, '1', 'oJuS_09a8w1GhUctzjzL1esZvXTs', null, null);
+INSERT INTO `t_user` VALUES ('25', '视若珍宝', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL6g1I6nZE3hgMjzkFgmmVtNe8ev0emiaqX3glCg15r8LszNuanStUPkhpJLfSlsRMcasN6A0DY9bg/132', null, '视若珍宝', 'oJuS_00hiaZRPIVZIK9eLDqXSmLI', null, null);
+INSERT INTO `t_user` VALUES ('26', '尚弘云木业', null, '3.88', 'http://thirdwx.qlogo.cn/mmopen/vi_32/5uwiabBLsBtUMiaOsDKjIRiaqPVeKPu10RmqBicgEYQSx5aia3g4dzWoLSO8lf15TTaud48koJZXE23u5wgebWZrD7A/132', '1', '尚弘云木业', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', null, null);
+INSERT INTO `t_user` VALUES ('27', '流年', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/8JPHicG0asK6giblKAP8XIKlKuJ7GlMTGjkoNw5daIkzoVeRU3clmNyb6OKwWlOUXWKWDbWdKhQuqtf1OPfibpY4A/132', '1', '流年', 'oJuS_08Qccp5RgldV5eaZyFrmkoI', null, null);
+INSERT INTO `t_user` VALUES ('28', '小月', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/MwicU798h4GcQgAGAhQEOHCsOEJhnFKh8jF21OiaMxqd1LpEVO5XTWNhxcSU0XjYeicm95sbvXIVCmE0luk8Tb9vw/132', null, '小月', 'oJuS_065AEmVr0VLU68bkuMQko-0', null, null);
+INSERT INTO `t_user` VALUES ('29', '刘其玲', null, '0.00', 'http://thirdwx.qlogo.cn/mmopen/vi_32/8MTplMt8gSw7Axsh4sg11hsyq8N8NL6j852KBu9AcgJpgFibCBAuvdR8DT5lm500iazeMKjN5kzAPricogApx9ztQ/132', null, '刘其玲', 'oJuS_0yr2sOzS2JveGpiwCIEi7S4', null, null);
 
 -- ----------------------------
 -- Table structure for t_user_card
@@ -6290,17 +6831,55 @@ CREATE TABLE `t_user_card` (
   `userId` bigint(20) DEFAULT NULL,
   `wechat` varchar(255) DEFAULT NULL,
   `receiveTime` datetime DEFAULT NULL,
-  `DrawLogId` bigint(20) DEFAULT NULL,
+  `drawLogId` bigint(20) DEFAULT NULL,
+  `exchangeTime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=292 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_user_card
 -- ----------------------------
-INSERT INTO `t_user_card` VALUES ('281', '140', 'o4HNe0v3J5sGFBDYRoZOJimRzqPE', null, null, '2017-12-18 01:26:36', '298');
-INSERT INTO `t_user_card` VALUES ('286', '145', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null, null, '2017-12-18 14:20:24', '303');
-INSERT INTO `t_user_card` VALUES ('287', '145', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null, null, '2017-12-18 14:20:39', '304');
-INSERT INTO `t_user_card` VALUES ('288', '145', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null, null, '2017-12-18 14:20:47', '305');
-INSERT INTO `t_user_card` VALUES ('289', '147', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null, null, '2017-12-18 14:20:57', '306');
-INSERT INTO `t_user_card` VALUES ('290', '145', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null, null, '2017-12-18 14:21:10', '307');
-INSERT INTO `t_user_card` VALUES ('291', '147', 'o4HNe0iimVnHuAbhA0p3_SkHqnb4', null, null, '2017-12-18 14:21:21', '308');
+INSERT INTO `t_user_card` VALUES ('1', '4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 00:56:04', '348', '2018-06-26 11:03:46');
+INSERT INTO `t_user_card` VALUES ('2', '3', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 00:56:46', '349', '2018-06-26 11:03:46');
+INSERT INTO `t_user_card` VALUES ('3', '3', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 10:59:43', '350', '2018-06-26 11:03:46');
+INSERT INTO `t_user_card` VALUES ('4', '3', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 11:01:26', '351', null);
+INSERT INTO `t_user_card` VALUES ('5', '3', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 11:02:50', '352', null);
+INSERT INTO `t_user_card` VALUES ('6', '1', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 11:03:42', '354', null);
+INSERT INTO `t_user_card` VALUES ('7', '4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 11:15:29', '356', null);
+INSERT INTO `t_user_card` VALUES ('8', '1', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 22:21:45', '359', null);
+INSERT INTO `t_user_card` VALUES ('9', '1', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 22:24:21', '361', null);
+INSERT INTO `t_user_card` VALUES ('10', '-4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-26 22:29:54', '364', null);
+INSERT INTO `t_user_card` VALUES ('11', '-3', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-26 23:43:54', '375', '2018-06-30 09:30:17');
+INSERT INTO `t_user_card` VALUES ('12', '5', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-27 00:15:03', '376', null);
+INSERT INTO `t_user_card` VALUES ('13', '4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-27 00:16:23', '377', null);
+INSERT INTO `t_user_card` VALUES ('14', '5', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-27 00:17:45', '378', null);
+INSERT INTO `t_user_card` VALUES ('15', '4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-27 00:18:13', '379', null);
+INSERT INTO `t_user_card` VALUES ('16', '4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-27 00:19:17', '380', null);
+INSERT INTO `t_user_card` VALUES ('17', '4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-27 00:24:30', '382', null);
+INSERT INTO `t_user_card` VALUES ('18', '4', 'oJuS_04-w66iRdIXR5njdKiGTLI0', '14', null, '2018-06-27 00:24:50', '383', null);
+INSERT INTO `t_user_card` VALUES ('19', '5', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-28 10:31:45', '384', '2018-06-30 09:30:17');
+INSERT INTO `t_user_card` VALUES ('20', '4', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-28 11:42:03', '385', '2018-06-30 19:58:50');
+INSERT INTO `t_user_card` VALUES ('21', '5', 'oJuS_041xwOyuLVKsYVzgXgboO3Q', '20', null, '2018-06-29 12:13:43', '386', null);
+INSERT INTO `t_user_card` VALUES ('22', '4', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-30 09:28:05', '387', '2018-06-30 09:30:17');
+INSERT INTO `t_user_card` VALUES ('23', '4', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-30 09:29:26', '388', '2018-06-30 09:33:58');
+INSERT INTO `t_user_card` VALUES ('24', '1', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-30 09:30:11', '389', '2018-06-30 09:33:58');
+INSERT INTO `t_user_card` VALUES ('25', '3', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-30 09:32:35', '390', '2018-06-30 09:33:58');
+INSERT INTO `t_user_card` VALUES ('26', '3', 'oJuS_0x90qs2v7vT3VJuTRv8qi1g', '23', null, '2018-06-30 09:41:48', '391', null);
+INSERT INTO `t_user_card` VALUES ('27', '3', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-30 15:51:46', '392', '2018-06-30 19:58:50');
+INSERT INTO `t_user_card` VALUES ('28', '3', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-30 15:55:37', '393', '2018-06-30 19:58:50');
+INSERT INTO `t_user_card` VALUES ('29', '2', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-30 15:58:00', '394', '2018-06-30 21:06:42');
+INSERT INTO `t_user_card` VALUES ('30', '3', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-30 15:58:38', '395', '2018-06-30 21:06:42');
+INSERT INTO `t_user_card` VALUES ('31', '3', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-30 18:12:24', '396', '2018-06-30 21:04:03');
+INSERT INTO `t_user_card` VALUES ('32', '2', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-30 20:10:30', '399', '2018-06-30 21:06:42');
+INSERT INTO `t_user_card` VALUES ('33', '4', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-30 20:10:56', '401', '2018-07-02 09:44:44');
+INSERT INTO `t_user_card` VALUES ('34', '1', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '26', null, '2018-06-30 20:12:22', '402', '2018-06-30 20:13:49');
+INSERT INTO `t_user_card` VALUES ('35', '3', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '26', null, '2018-06-30 20:12:41', '403', '2018-06-30 20:13:49');
+INSERT INTO `t_user_card` VALUES ('36', '5', 'oJuS_05BpxGVpQCOlXp0IADvGUlM', '26', null, '2018-06-30 20:13:37', '405', '2018-06-30 20:13:49');
+INSERT INTO `t_user_card` VALUES ('37', '1', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-30 21:03:00', '408', '2018-06-30 21:04:03');
+INSERT INTO `t_user_card` VALUES ('38', '2', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-06-30 21:03:44', '409', '2018-06-30 21:04:03');
+INSERT INTO `t_user_card` VALUES ('39', '3', 'oJuS_08Qccp5RgldV5eaZyFrmkoI', '27', null, '2018-06-30 22:02:43', '411', null);
+INSERT INTO `t_user_card` VALUES ('40', '2', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-06-30 23:02:26', '412', '2018-07-02 09:44:44');
+INSERT INTO `t_user_card` VALUES ('41', '3', 'oJuS_065AEmVr0VLU68bkuMQko-0', '28', null, '2018-07-01 10:32:07', '414', null);
+INSERT INTO `t_user_card` VALUES ('42', '4', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-07-01 11:12:14', '415', '2018-07-02 09:44:44');
+INSERT INTO `t_user_card` VALUES ('43', '1', 'oJuS_01GSMG39Aup-XY5ZpwYO1x8', '15', null, '2018-07-01 14:33:48', '417', null);
+INSERT INTO `t_user_card` VALUES ('44', '4', 'oJuS_0xe3wZMsFY1grDYtYEWRKzw', '16', null, '2018-07-02 17:41:54', '419', null);
